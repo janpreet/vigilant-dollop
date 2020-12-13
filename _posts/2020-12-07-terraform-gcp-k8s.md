@@ -2,8 +2,8 @@
 layout: post
 title:  "Terraform-GCP-K8s: A Jenkins DevOps story"
 date:   2020-12-07 20:15:29 -0500
-categories: jekyll update
-comments: true
+categories: tech
+comments: false
 ---
 
 In this post we are going to bootstrap a disposable `Kubernetes cluster` in `Google Cloud Platform` using `Terraform`. Once we have the cluster ready, we will use a `Docker` based ephemeral `Jenkins Configuration as Code` node to setup a pipeline to deploy `Helm packages` into our cluster. We'll call it the `K8s Playground`.
