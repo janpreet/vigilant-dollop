@@ -1,0 +1,24 @@
+title: Janpreet Singh
+email: singh@janpreet.com
+description: >-
+  Welcome to Singhventures - 
+  join Janpreet Singh’s journey through the world of Coding, DevOps, Site Reliability and bad programming humour.
+baseurl: "/"
+disqus:
+  shortname: janpreet
+url: "janpreet.com"
+twitter_username: SinghJanpreet
+github_username:  Janpreet
+linkedin_username: Janpreet
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: "assets/"
+    values:
+      images: true
+
+show_excerpts: true 
