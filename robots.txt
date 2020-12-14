@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-Disallow: /404.html
-Disallow: /assets/main.css
