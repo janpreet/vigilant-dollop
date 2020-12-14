@@ -14,7 +14,7 @@ This write-up assumes you have a basic idea about these tools. This is what we-r
 Things you'll learn-
 - How to use Terraform Cloud as a remote state store.
 - How to provision an auto-scaling Kubernetes cluster managed by Google.
-- How to use create a Jenkins master-worker setup using [JCasC](https://www.jenkins.io/projects/jcasc/){:target="_blank" rel="noopener"} and Docker.
+- How to create a Jenkins master-worker setup using [JCasC](https://www.jenkins.io/projects/jcasc/){:target="_blank" rel="noopener"} and Docker.
 - How to deploy components to a Kubernetes cluster using Helm.
 
 Code for this project-
@@ -77,7 +77,7 @@ The first block configures Terraform to use a remote backend to store states aut
 Now go ahead and run `Terraform plan` to read about what your infrastructure would look like. If you're satisfied, you may run `Terraform apply` to create the infrastructure, you'd want to follow the prompt, and at the end this would be the result.
 ![Terraform apply](/assets/2020-12-07-terraform-gcp-k8s/Terraform-apply.png)
 
-Go to [Google Cloud Console](https://console.cloud.google.com/){:target="_blank" rel="noopener"} -> Select your project 'Test-cluster` -> Compute Engine -> VM Instances, you can see the worker nodes. If you select Kubernetes Engine from the navigation menu, you can learn about your cluster and explore the Google managed dashboard.
+Go to [Google Cloud Console](https://console.cloud.google.com/){:target="_blank" rel="noopener"} -> Select your project `Test-cluster` -> Compute Engine -> VM Instances, you can see the worker nodes. If you select Kubernetes Engine from the navigation menu, you can learn about your cluster and explore the Google managed dashboard.
 
 #### Terraform-GCP-Jenkins
 We'll deploy our Jenkins container on a VM. Let's do the following-
@@ -184,7 +184,7 @@ The best part?
 If you run `Terraform destroy` and approve the prompt, for both of your projects, it will completely destroy everything we have created in this exercise. 
 > Do not forget to `Terraform destroy` your workspaces so you're not using GCP resources when you don't need to.
 
-The next time you do a `Terraform apply`, it would set it up for you in the exact same order and setup, because the code is centrally organized and version controlled in GitHub. There is no reason why you can not make use of an PR-driven [Atlantis](https://www.runatlantis.io/){:target="_blank" rel="noopener"} to automatically apply your Terraform plan while working in a team. Look into it.
+The next time you do a `Terraform apply`, it would set it up for you in the exact same order and setup, because the code is centrally organized and version controlled in GitHub. There is no reason why you can not make use of a PR-driven [Atlantis](https://www.runatlantis.io/){:target="_blank" rel="noopener"} to automatically apply your Terraform plan while working in a team. Look into it.
 
 I hope this helps you learn something new.
 Thank you for reading.
