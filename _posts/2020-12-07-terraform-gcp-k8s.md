@@ -39,7 +39,11 @@ Registries for this project-
 - Go to User Settings -> Tokens -> Create an API Token. Copy and securely save this token for the next step.
 - Follow the [official guide](https://www.terraform.io/docs/commands/cli-config.html){:target="_blank" rel="noopener"} to create a file named `.terraformrc`. (name may change depending on your OS - follow the guide for this). Add the token generated in the previous step to this file
 
-<script src="https://gist.github.com/janpreet/c1bf8026e9121996fbe9658f48896bc2.js"></script>
+```hcl
+credentials "app.terraform.io" {
+  token = "xxxxxx.atlasv1.zzzzzzzzzzzzz"
+}
+```
 
 - Create an environment variable `TF_CLI_CONFIG_FILE` pointing to the .terraformrc file location. `You must never share this file or publish it to a Git repo. This is a secret and must be stored securely`.
 - Select your organization from top left drop-down and create a new workspace of `CLI-driven workflow` type.
@@ -56,21 +60,126 @@ Registries for this project-
 #### Terraform-GKE
 Let's start with a simple environment variables list which must be sourced every time before running a Terraform command. As a quick hack you can always create an `alias Terraform="source env.sh && terraform"` to operate automatically. I also never store env.sh in a Git repository, I create symlinks inside my project pointing to securely stored env.sh along with a `.gitignore`. If you don't like polluting your environment variables, there are better ways of handling secrets like [Hashicorp Vault](https://www.vaultproject.io/){:target="_blank" rel="noopener"} or [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html){:target="_blank" rel="noopener"}. Encrypted or not, sharing your secrets is still NEVER recommended. 
 
-<script src="https://gist.github.com/janpreet/02a5690f346bd092f90b005cf95ed2b5.js"></script>
+```bash
+# env.sh
+export TF_VAR_credentials="/path/to/gcp-project-key"
+export TF_VAR_project="gcp-project"
+export TF_VAR_region="gcp-region"
+export TF_VAR_zones='["gcp-region-a", "gcp-region-b"]'
+export TF_CLI_CONFIG_FILE="/path/to/Terraform-CLI-Configuration-File"
+export TF_VAR_kubeconfig="/path/to/kubeconfig"
+```
 Here Google project and credentials variables here must be pointing to `Test-Cluster` project you created earlier.
-<script src="https://gist.github.com/janpreet/bd64bb2407a721aa896a45022c0288ad.js"></script>
+```bash
+# .gitignore
+add_disk/disk*
+.dockerignore
+.DS_Stor*
+env.sh
+.gitignore
+.helmignore
+kubeconfig
+.terraform/
+terraform.tfvars
+```
 
 We will not be making use of all these variables in this project. All variables prefixed with `TF_VAR_` are going to be picked up and used by Terraform as long as they are declared in a variables.tf
 
-<script src="https://gist.github.com/janpreet/c1cd5a1f57d6e114748ce6305b509223.js"></script>
+```hcl
+# var.tf
+variable "project" {
+  type = string
+}
+variable "region" {
+  type = string
+}
+variable "credentials" {
+  type = string
+}
+variable "cluster_name" {
+  type = string
+}
+variable "machine_type" {
+  type = string
+}
+variable "initial_node_count" {
+  type = string
+}
+variable "kubeconfig" {
+  type = string
+}
+variable "oauth_scopes" {
+  type = list(string)
+}
+variable "min_node_count" {
+  type = string
+}
+variable "max_node_count" {
+  type = string
+}
+```
 
 I like to maintain a separate file for default definitions
 
-<script src="https://gist.github.com/janpreet/5a66246bb9d5d7f30331bf32dbd0bcf4.js"></script>
+```hcl
+# var.auto.tf
+username = {}
+password = {}
+cluster_name = "k8s-playground"
+machine_type = "n1-standard-1"
+initial_node_count = 1
+oauth_scopes = [
+        "https://www.googleapis.com/auth/compute",
+        "https://www.googleapis.com/auth/devstorage.read_only",
+        "https://www.googleapis.com/auth/logging.write",
+        "https://www.googleapis.com/auth/monitoring",
+        "https://www.googleapis.com/auth/service.management.readonly",
+        "https://www.googleapis.com/auth/servicecontrol",
+        "https://www.googleapis.com/auth/trace.append"     
+    ]
+min_node_count = 3
+max_node_count = 100
+```
 
 Note that secret variables have not been defined in `.auto.tf` file, because their values will be assigned by `TF_VAR_` environment variables. Now to the main file
 
-<script src="https://gist.github.com/janpreet/756c36f0de7297ade136c5dd8d30ae05.js"></script>
+```hcl
+# main.tf
+# Remote State
+terraform {
+  required_version = "~>0.12"
+  backend "remote" {
+    organization = "Singhventures"
+    workspaces {
+      name = "K8s-GKE"
+    }
+  }
+}
+
+# Random unique username and password
+resource "random_id" "username" {
+  byte_length = 14
+}
+
+resource "random_id" "password" {
+  byte_length = 18
+}
+
+# Variables
+variable "username" {}
+variable "password" {}
+
+# GKE
+module "cluster-kubeconfig" {
+    source  = "janpreet/cluster-kubeconfig/google"
+    username = random_id.username.hex
+    password = random_id.password.hex
+    project = var.project
+    region = var.region
+    credentials = var.credentials
+    kubeconfig = var.kubeconfig 
+}
+```
 
 The first block configures Terraform to use a remote backend to store states authenticated by `TF_CLI_CONFIG_FILE`. I'm using a custom module here `janpreet/cluster-kubeconfig/google` because Terraform's [google-container-cluster](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/container_cluster#attributes-reference){:target="_blank" rel="noopener"} does not have a straight-forward way of exposing a Kubeconfig for your cluster. The variable `var.kubeconfig` is going to be the path where you'd like to store the kubeconfig, defined as a Terraform environment variable. If you quickly want to see this in action you may just; clone [Terraform-GKE](https://github.com/janpreet/Terraform-GKE){:target="_blank" rel="noopener"} repo, change variables, organization name and workspace name to your match your setup, source environment variables, and run `Terraform init` to initialize Terraform modules and providers in your working directory. Your output should look like this.
 ![Terraform init](/assets/2020-12-07-terraform-gcp-k8s/Terraform-init.png)
@@ -86,13 +195,160 @@ We'll deploy our Jenkins container on a VM. Let's do the following-
 - Clone [Terraform-GCP-Jenkins](https://github.com/janpreet/Terraform-GCP-Jenkins){:target="_blank" rel="noopener"}. 
 
 Here Google project and credentials variables must be pointing to `Test-VM` project. Which requires you to maintain two different collection of Terraform environment variables.
-<script src="https://gist.github.com/janpreet/9400eb9f90333c8d2f9ff40ad7ada21d.js"></script>
+```bash
+# env.sh
+export TF_VAR_credentials="/path/to/gcp-project-key"
+export TF_VAR_project="gcp-project-name"
+export TF_VAR_region="gcp-region"
+export TF_VAR_zones='["gcp-zone-1", "gcp-zone-2"]'
+export TF_CLI_CONFIG_FILE="/path/to/Terraform-CLI-Configuration-File"
+export TF_VAR_diskNameFile="" #Name of the new mountable persistent disk
+export TF_VAR_jenkins_storage_uuid="" #UUID of the new mountable persistent disk
+export TF_VAR_mnt_drive_id="/path/to/mountable-drive/" #From lsblk
+export TF_VAR_github_admin_password=""
+export TF_VAR_github_admin_user=""
+export TF_VAR_jenkins_admin_user=""
+export TF_VAR_jenkins_admin_password=""
+export TF_VAR_kubeconfig="/path/to/kubeconfig"
+export TF_VAR_dockerhub_admin_password=""
+export TF_VAR_dockerhub_admin_user=""
+```
 We would be creating a single VM to host our Master Jenkins in a container. For that we would be using a Container Optimized image for the VM `cos-cloud/cos-stable-69-10895-71-0`. You'll find these details in vars.* files. It is important to note that you may choose to create your own image using a tool like [Packer](https://www.packer.io/){:target="_blank" rel="noopener"}.
 To make our Jenkins setup truly ephemeral we require it to behave exactly the same every time it it re-created. For that Terraform would be rendering this template as Jenkins.yml and feeding it to the VM
-<script src="https://gist.github.com/janpreet/e7c3a8c0aa7a8bf73171af92dc12c1dd.js"></script>
+```yaml
+# jenkins.yml.tpl
+jenkins:
+  systemMessage: "\n\nHi. This Jenkins is configured automatically by Jenkins Configuration as Code plugin.\n To create a new job or a pipeline, please push the Jenkinsfile as a separate remote branch to https://github.com/janpreet/Jenkins-Job-DSL.\n\n"
+
+  numExecutors: 3
+  mode: NORMAL
+  scmCheckoutRetryCount: 5
+  labelString: "master"  
+
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+      - id: ${j_admin_user}
+        password: ${j_admin_password}
+
+  clouds:
+    - docker:
+        dockerApi:
+          dockerHost:
+            uri: "unix://var/run/docker.sock"
+        name: "docker"
+        templates:
+        - connector: attach
+          dockerTemplateBase:
+            cpuPeriod: 0
+            cpuQuota: 0
+            image: "janpreet/jenkins-slave"
+          labelString: "all-in-one"
+          name: "docker-slave"
+          pullStrategy: PULL_ALWAYS          
+          remoteFs: "/home/jenkins"                    
+
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+
+  disableRememberMe: true  
+  
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "View/Read:authenticated"
+        - "Job/Read:authenticated"
+        - "Job/Build:authenticated"        
+        - "Job/Discover:authenticated"
+        - "Job/Workspace:authenticated"
+        - "Job/Cancel:authenticated"
+        - "Run/Replay:authenticated"
+        - "Run/Update:authenticated"
+        - "Overall/Read:authenticated"  
+        - "Overall/Administer:${j_admin_user}"        
+
+  remotingSecurity:
+    enabled: true    
+
+tool:
+  git:
+    installations:
+      - name: git
+        home: /usr/bin/git
+  dockerTool:
+    installations:
+    - name: docker
+      properties:
+      - installSource:
+          installers:
+          - fromDocker:
+              version: "latest"        
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+        - usernamePassword:
+            scope: "GLOBAL"
+            id: "github-user"
+            description: github username/password            
+            username: ${gh_admin_user}
+            password: ${gh_admin_password}
+        - usernamePassword:
+            scope: "GLOBAL"
+            id: "dockerHub-user"
+            description: "Docker Hub User Credentials"
+            username: $${dh_admin_user}
+            password: ${dh_admin_password}
+        - usernamePassword:
+            scope: "GLOBAL"
+            id: "jenkins-admin"
+            description: "Jenkins Admin Credentials"
+            username: $${j_admin_user}
+            password: ${j_admin_password}              
+        - file:
+            description: "K8s Kubeconfig"
+            fileName: "kubeconfig"
+            id: "kubeconfig"
+            scope: GLOBAL
+            secretBytes: ${secretBytes}     
+
+jobs:
+  - script: >
+      multibranchPipelineJob('Jenkins-Job-DSL') {
+          branchSources {
+              git {
+                  id = 'Jenkins-Job-DSL'
+                  remote('https://github.com/janpreet/Jenkins-Job-DSL.git')
+              }
+          }
+      }
+
+unclassified:
+  location:
+    url: "${j_url}"
+    adminAddress: janpreetsinghgill@gmail.com 
+```
 Where the startup script will handle it (along with the Kubeconfig), mount a directory and tell Jenkins where to look for the coded configuration file by setting `CASC_JENKINS_CONFIG="/var/jenkins_home/jenkins.yml"`.
 As the last step in provisioning our VM, Terraform would be running this startup script, to complete setting up the Jenkins Master container-
-<script src="https://gist.github.com/janpreet/1fd276298049d6abfb3446a1cd2c5bae.js"></script>
+```bash
+# master.sh.tpl
+sudo mkdir /var/jenkins_home
+sudo chmod -R 777 /var/jenkins_home
+sudo echo "export KUBECONFIG=/var/jenkins_home/kubeconfig" >> /etc/bash/bashrc
+sudo usermod -a -G root $USER
+sudo chmod 777 /var/run/docker.sock
+JENKINS_IMAGE="janpreet/jenkins-with-docker"
+sudo docker pull $JENKINS_IMAGE
+sleep 30
+sudo mv ${jenkins_upload}/jenkins.yml /var/jenkins_home/jenkins.yml
+sudo mv ${jenkins_upload}/kubeconfig /var/jenkins_home/kubeconfig
+sleep 30
+sudo docker run -d -p 8080:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/kubectl:/usr/bin/kubectl --env JAVA_OPTS="-Djenkins.install.runSetupWizard=false" --env CASC_JENKINS_CONFIG="/var/jenkins_home/jenkins.yml" --name master $JENKINS_IMAGE
+sudo source /etc/bash/bashrc
+```
 It is important to note that, our secrets so far have been handled by Terraform environment variables. Sky is the limit when it comes to codifying your configuration.
 If you're satisfied with your definitions of Terraform environment variables for this project, you may `Terraform init`, `Terraform plan` and then `Terraform apply` to create the VM. On Google Cloud Console, you can go to the VM project `Test-VM` -> Compute Engine -> VM Instances, to see the newly created VM. 
 In our master script, while creating the container we are telling VM Docker engine to map incoming requests at port 8080 with container port 8080 which will be served by the Jenkins service. That means we are now ready to access our Master Jenkins at `<Google Cloud VM's External IP>:8080`. Login to your Jenkins using Jenkins username and password you've defined in `TF_VAR_jenkins_admin_user and TF_VAR_jenkins_admin_password`. 
@@ -116,49 +372,143 @@ Please note that these are not the only options you can always implement an CD o
 Different use-cases will require different practices. I leave it open for you to decide what's the best deployment method.
 
 Let's verify our deployments. Before we being please make sure you have copied the `Kubeconfig` generated during `Terraform-GKE setup`, and placed it at `~/.kube/config`. It is a very important step without which you will not be able to interact with your Kubernetes cluster.
-- Kubernetes Dashboard
-1. First copy the admin user token from the K8s Dashboard deployment by running 
+1. Kubernetes Dashboard
+* First copy the admin user token from the K8s Dashboard deployment by running 
 ```bash
 kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
 ```
-1. Because the dashboard is using ClusterIP service we can only access it from within the cluster. So we'd have to use kubectl proxy to route localhost requests to the API server. Run
+* Because the dashboard is using ClusterIP service we can only access it from within the cluster. So we'd have to use kubectl proxy to route localhost requests to the API server. Run
 ```bash
 kubectl proxy
 ```
-1. Now we can access Dashboard at [this link](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/). Paste the token generated in step 1 and this what you should see. Take a pause to play around and explore the dashboard, before moving on.
+* Now we can access Dashboard at [this link](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/). Paste the token generated in step 1 and this what you should see. Take a pause to play around and explore the dashboard, before moving on.
 ![Kubernetes Dashboard](/assets/2020-12-07-terraform-gcp-k8s/K8s-dashboard.png)
 <br /><br />
-- Maven Hello World
-1. Note that to interact with our deployment from outside the cluster we have defined a Loadlancer type service resource. To handle the external traffic, behind the scenes we are using GCP managed LoadBalancer using GKE Cloud Controller which sits between our cluster and GCP API endpoints.
-<script src="https://gist.github.com/janpreet/07740eb7cacfbadfb926d6a30d02963f.js"></script>
-1. Our service would be listening to our request at port 8080 and will be routing it to the node-port 32592, to pod target-port 8080, to container port 8080 exposed by our maven-hello-world container
-<script src="https://gist.github.com/janpreet/0f8cb7a746cb352bb2bf61731773fd4f.js"></script>
-1. That means as long as we have an IP address for the LoadBalancer we can interact with Maven-Hello-World at port 8080. Let's get the IP address by running
-```bash
-kubectl get svc maven-hello-world -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
-```
-1. This is what you should see if you go to `<External-IP-Address-from-above>:8080`
-![Maven Hello World](/assets/2020-12-07-terraform-gcp-k8s/maven-hello-world.png)
-<br /><br />
-- Simple Python API
-1. For this deployment we are passing the following config to a Helm Package called [Bare-Bones](https://github.com/janpreet/helm-charts/tree/main/bare-bones){:target="_blank" rel="noopener"}
-<script src="https://gist.github.com/janpreet/78e1ba15bab6b7f78546581855231204.js"></script>
-1. This is what our install command looks like
-```bash
-helm install simple-python-api -f values.yaml janpreet/bare-bones
-```
-1. This is also using a LoadBalancer service listening at port 8080, so let's get the external IP address by running
-```bash
-kubectl get svc simple-python-api-bare-bones -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
-```
-1. This is what you should see when you go to: `<External-IP-Address-from-above>:8080`
-![Python API Root](/assets/2020-12-07-terraform-gcp-k8s/python-api-root.png)
-1. Let's look at the Flask URL routing
-<script src="https://gist.github.com/janpreet/c4f4f5bcc618e94a4987476e52b17cb7.js"></script>
-1. Because Flask is also mapping `/api/v1/resources/users/all` to the function `api_all` which is using jsonify to convert our dummy list to a json string. You can also access the records added via the API by going to: `<External-IP-Address-from-above>:8080/api/v1/resources/users/all` and this should be your output-
-```json
-[{"id":1,"name":"Janpreet Singh","unique":"DL935"},{"id":2,"name":"Second User","unique":"PBX"}]
-```
+
+1. Maven Hello World
+    * Note that to interact with our deployment from outside the cluster we have defined a Loadlancer type service resource. To handle the external traffic, behind the scenes we are using GCP managed LoadBalancer using GKE Cloud Controller which sits between our cluster and GCP API endpoints.
+
+    ```yaml
+    # service.yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+    annotations:
+        meta.helm.sh/release-name: maven-hello-world
+        meta.helm.sh/release-namespace: default
+    creationTimestamp: "2020-12-12T15:14:30Z"
+    finalizers:
+    - service.kubernetes.io/load-balancer-cleanup
+    labels:
+        app.kubernetes.io/instance: maven-hello-world
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: maven-hello-world
+        app.kubernetes.io/version: 1.16.0
+        helm.sh/chart: maven-hello-world-0.1.0
+    name: maven-hello-world
+    namespace: default
+    resourceVersion: ""
+    selfLink: /api/v1/namespaces/default/services/maven-hello-world
+    uid: 
+    spec:
+    clusterIP: 
+    externalTrafficPolicy: Cluster
+    ports:
+    - name: http
+        nodePort: 32592
+        port: 8080
+        protocol: TCP
+        targetPort: 8080
+    selector:
+        app.kubernetes.io/instance: maven-hello-world
+        app.kubernetes.io/name: maven-hello-world
+    sessionAffinity: None
+    type: LoadBalancer
+    status:
+    loadBalancer:
+        ingress:
+        - ip: 
+    ```
+    * Our service would be listening to our request at port 8080 and will be routing it to the node-port 32592, to pod target-port 8080, to container port 8080 exposed by our maven-hello-world container
+
+    ```dockerfile
+    # Dockerfile
+    FROM maven:adoptopenjdk AS build
+    LABEL Maintainer="Janpreet Singh"  
+    COPY src /usr/src/app/src  
+    COPY pom.xml /usr/src/app  
+    RUN mvn -f /usr/src/app/pom.xml clean package
+
+    FROM adoptopenjdk/openjdk11:alpine-jre
+    ARG JAR_FILE=/usr/src/app/target/maven-hello-world.jar
+    WORKDIR /opt/app
+    COPY --from=build ${JAR_FILE} app.jar  
+    EXPOSE 8080  
+    ENTRYPOINT ["java","-jar","app.jar"]  
+    ```
+    * That means as long as we have an IP address for the LoadBalancer we can interact with Maven-Hello-World at port 8080. Let's get the IP address by running
+    ```bash
+    kubectl get svc maven-hello-world -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
+    ```
+    * This is what you should see if you go to `<External-IP-Address-from-above>:8080`
+    ![Maven Hello World](/assets/2020-12-07-terraform-gcp-k8s/maven-hello-world.png)
+    <br /><br />
+
+1. Simple Python API
+    * For this deployment we are passing the following config to a Helm Package called [Bare-Bones](https://github.com/janpreet/helm-charts/tree/main/bare-bones){:target="_blank" rel="noopener"}
+    ```yaml
+    # values.yaml
+    replicaCount: 1
+    image:
+    repository: janpreet/simple-python-api
+    pullPolicy: Always
+    tag: "latest"
+    service:
+    type: LoadBalancer
+    port: 8080
+    targetPort: 5000
+    livenessProbe:
+    enabled: false
+    readinessProbe:
+    enabled: false
+    ```
+
+    * This is what our install command looks like
+    ```bash
+    helm install simple-python-api -f values.yaml janpreet/bare-bones
+    ```
+    * This is also using a LoadBalancer service listening at port 8080, so let's get the external IP address by running
+    ```bash
+    kubectl get svc simple-python-api-bare-bones -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
+    ```
+    * This is what you should see when you go to: `<External-IP-Address-from-above>:8080`
+    ![Python API Root](/assets/2020-12-07-terraform-gcp-k8s/python-api-root.png)
+    * Let's look at the Flask URL routing
+    ```python
+    # api.py
+    import flask
+    from flask import request, jsonify
+    app = flask.Flask(__name__)
+    users = [
+        {'id': 1,
+        'name': 'Janpreet Singh',
+        'unique': 'DL935'},
+        {'id': 2,
+        'name': 'Second User',
+        'unique': 'PBX'}
+    ]
+    @app.route('/', methods=['GET'])
+    def home():
+        return "<h1>Singhventures Python API</h1><p>Prototype API for the coolest users.</p>"
+    @app.route('/api/v1/resources/users/all', methods=['GET'])
+    def api_all():
+        return jsonify(users)    
+    ```
+
+    * Because Flask is also mapping `/api/v1/resources/users/all` to the function `api_all` which is using jsonify to convert our dummy list to a json string. You can also access the records added via the API by going to: `<External-IP-Address-from-above>:8080/api/v1/resources/users/all` and this should be your output-
+    ```json
+    [{"id":1,"name":"Janpreet Singh","unique":"DL935"},{"id":2,"name":"Second User","unique":"PBX"}]
+    ```
 
 That is the end of our deployments. Let's do a full recap of what we've learned so far
 - Created a Kubernetes cluster using Terraform + GCP.
