@@ -39,7 +39,8 @@ Registries for this project-
 - Go to User Settings -> Tokens -> Create an API Token. Copy and securely save this token for the next step.
 - Follow the [official guide](https://www.terraform.io/docs/commands/cli-config.html){:target="_blank" rel="noopener"} to create a file named `.terraformrc`. (name may change depending on your OS - follow the guide for this). Add the token generated in the previous step to this file
 
-```hcl
+```terraform
+# .terraformrc
 credentials "app.terraform.io" {
   token = "xxxxxx.atlasv1.zzzzzzzzzzzzz"
 }
@@ -85,7 +86,7 @@ terraform.tfvars
 
 We will not be making use of all these variables in this project. All variables prefixed with `TF_VAR_` are going to be picked up and used by Terraform as long as they are declared in a variables.tf
 
-```hcl
+```terraform
 # var.tf
 variable "project" {
   type = string
@@ -121,8 +122,8 @@ variable "max_node_count" {
 
 I like to maintain a separate file for default definitions
 
-```hcl
-# var.auto.tf
+```terraform
+# vars.auto.tfvars
 username = {}
 password = {}
 cluster_name = "k8s-playground"
@@ -143,7 +144,7 @@ max_node_count = 100
 
 Note that secret variables have not been defined in `.auto.tf` file, because their values will be assigned by `TF_VAR_` environment variables. Now to the main file
 
-```hcl
+```terraform
 # main.tf
 # Remote State
 terraform {
