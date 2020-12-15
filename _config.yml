@@ -6,7 +6,7 @@ description: >-
 baseurl: "/"
 disqus:
   shortname: janpreet
-url: "janpreet.com"
+url: "https://janpreet.com"
 twitter_username: SinghJanpreet
 github_username:  Janpreet
 linkedin_username: Janpreet
@@ -24,3 +24,8 @@ defaults:
       images: true
 
 show_excerpts: true 
+
+header_pages:
+  - index.md
+  - about.md
+  - contact.md
