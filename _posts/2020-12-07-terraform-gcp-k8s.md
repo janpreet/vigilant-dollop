@@ -142,7 +142,7 @@ min_node_count = 3
 max_node_count = 100
 ```
 
-Note that secret variables have not been defined in `.auto.tf` file, because their values will be assigned by `TF_VAR_` environment variables. Now to the main file
+Note that secret variables have not been defined in `.auto.tfvars` file, because their values will be assigned by `TF_VAR_` environment variables. Now to the main file
 
 ```terraform
 # main.tf
