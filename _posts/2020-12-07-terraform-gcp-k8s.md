@@ -14,7 +14,7 @@ This write-up assumes you have a basic idea about these tools. This is what we-r
 Things you'll learn-
 - How to use Terraform Cloud as a remote state store.
 - How to provision an auto-scaling Kubernetes cluster managed by Google.
-- How to create a Jenkins master-worker setup using [JCasC](https://www.jenkins.io/projects/jcasc/){:target="_blank" rel="noopener"} and Docker.
+- How to create a Jenkins master-worker setup using [JCasC](https://www.jenkins.io/projects/jcasc/){:target="_blank" rel="noopener"} and Docker Cloud.
 - How to deploy components to a Kubernetes cluster using Helm.
 
 Code for this project-
