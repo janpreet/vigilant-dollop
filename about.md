@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /about
 ---
 <img src="/assets/about/portrait.jpg" alt="Janpreet-Singh-portrait" style="width:300px; float: left"/>
 In 2005, I wrote my first line of HTML as a high school student in New Delhi.  Ever since then, I have been consumed with the need to learn more and find ways to integrate coding into every aspect of my educational and professional life. <br /><br />
