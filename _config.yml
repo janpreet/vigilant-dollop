@@ -1,5 +1,6 @@
 title: Janpreet Singh
-email: singh@janpreet.com
+email: hire@janpreet.com
+author: Janpreet Singh
 description: >-
   Welcome to Singhventures - 
   join Janpreet Singh’s journey through the world of Coding, DevOps, Site Reliability and bad programming humour.
@@ -29,3 +30,4 @@ header_pages:
   - index.md
   - about.md
   - contact.md
+  
