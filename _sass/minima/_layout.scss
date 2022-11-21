@@ -166,6 +166,8 @@
 .footer-col-3 {
   width: -webkit-calc(45% - (#{$spacing-unit} / 2));
   width:         calc(45% - (#{$spacing-unit} / 2));
+  text-align: justify;
+  text-justify: inter-word;  
 }
 
 @include media-query($on-laptop) {
@@ -178,6 +180,8 @@
   .footer-col-3 {
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
     width:         calc(100% - (#{$spacing-unit} / 2));
+    text-align: justify;
+    text-justify: inter-word;    
   }
 }
 
@@ -215,6 +219,10 @@
   > li {
     margin-bottom: $spacing-unit;
   }
+  p {
+    text-align: justify;
+    text-justify: inter-word;      
+  }
 }
 
 .post-meta {
@@ -250,7 +258,8 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
-
+  text-align: justify;
+  text-justify: inter-word;  
   h2 {
     @include relative-font-size(2);
 
