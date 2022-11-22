@@ -17,6 +17,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 defaults:
   - scope:
@@ -30,5 +31,8 @@ header_pages:
   - index.md
   - about.md
   - contact.md
+  - resume.md
   
 permalink: pretty  
+redirect_from:
+  json: false
