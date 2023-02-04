@@ -4,11 +4,4 @@ title: About
 permalink: /about
 ---
 <img src="/assets/about/portrait.jpg" alt="Janpreet-Singh-portrait" style="width:300px; float: left"/>
-In 2005, I wrote my first line of HTML as a high school student in New Delhi.  Ever since then, I have been consumed with the need to learn more and find ways to integrate coding into every aspect of my educational and professional life. <br /><br />
-When I'm not sitting in front of the computer, I'm-<br />
-&nbsp;&nbsp;&nbsp;1. Playing Rocket League.<br />
-&nbsp;&nbsp;&nbsp;2. Obsessively watching Bollywood movies.<br />
-&nbsp;&nbsp;&nbsp;3. Re-watching The Office for the nth time.<br />
-&nbsp;&nbsp;&nbsp;4. Cooking healthy vegetarian meals :)
-<br />
-<font size="2">PS: Reach out to <a href="https://www.rvgillustration.com/" target="_blank">Rachel Goyeau</a> for a digital portrait like mine, or infographics found on this web-site. </font>
+<br />ੴ ॥ ਏਹਿ ਭਿ ਦਾਤਿ ਤੇਰੀ ਦਾਤਾਰ ॥ Hello there 👋 I'm a self-taught tech enthusiast with a passion for video games, Bollywood movies, cooking up delicious vegetarian meals, and tinkering with home automation. When I'm not behind a computer screen, you can find me out and about with my wife and our corgi puppy, exploring scenic routes, discovering new breakfast spots, and of course, going on long drives. Here, I hope to share my experiences and what I've learned so far, in the hopes of inspiring others to pursue their own passions. Thank you for visiting!"
