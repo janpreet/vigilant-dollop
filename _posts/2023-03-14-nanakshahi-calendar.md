@@ -4,6 +4,7 @@ title:  "Nanakshahi Calendar"
 date:   2023-03-14 19:15:29 -0500
 categories: tech
 comments: false
+permalink: /nanakshahi-calendar
 ---
 
 Happy 555th Sikh New Year 🎉, also 1st day of Sikh month Chet, `ਚੇਤਿ ਗੋਵਿੰਦੁ ਅਰਾਧੀਐ ਹੋਵੈ ਅਨੰਦੁ ਘਣਾ ||`. I wanted to share with you a [project](https://github.com/janpreet/nanakshahi-ical) that I've been working on recently. I have created a script that generates an ICS file for Nanakshahi dates and Sikh religious holidays. 
