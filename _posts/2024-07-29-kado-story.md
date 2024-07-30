@@ -14,7 +14,7 @@ Kado was born out of a practical need in my homelab setup, as it was frustrated 
 My wife not only came up with the name "Kado" and designed its logo but also contributed several internal code terms like "beads," "relay," and "path." The "kado set" command was her suggestion as well.
 
 Speaking of the logo, it's a perfect representation of what Kado does. The design features the word "kado" in a clean, modern font, with an artistic element emerging from the "d" - three colorful dotted lines that flow upward and outward, culminating in red, blue, and green circles. This imagery cleverly represents the concept of multiple "beads" or components merging together to form a cohesive final product or infrastructure. It's visually appealing while also conveying the tool's functionality in an abstract way.
-![Kado logo](/assets/2024-07-29-kado-story/kado.png)
+![Kado logo](/assets/2024-07-29-kado-story/kado.png){:height="250" width="300"}
 
 Developing Kado has been an enriching learning experience. I chose Go for this project, and I'm impressed with its capabilities. Each obstacle I encountered became an opportunity to expand my skills and knowledge. Something I wanted to point out was there was not a single challenge I found in Go which was not solvable in a straight forward way. I liked it a lot.
 
