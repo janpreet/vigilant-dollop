@@ -7,9 +7,9 @@ comments: false
 permalink: /kado-story
 ---
 
-Over the past month, I've dedicated my evenings to developing a project called [Kado](https://github.com/janpreet/kado){:target="_blank" rel="noopener"}. With a toddler at home, my coding sessions were limited to the quiet hours after bedtime, often extending until midnight. It's been a challenging but rewarding experience. I plan this blog post to paint back story of project Kado. I expect a follow-up post as a technical deep dive into Kado's real life operations.
+Over the past month, I've dedicated my evenings to developing a project called [Kado](https://github.com/janpreet/kado){:target="_blank" rel="noopener"}. With a toddler at home, my coding sessions were limited to the quiet hours after bedtime, often extending until midnight. It's been a challenging but rewarding experience. This blog post aims to paint the story of project Kado. I also expect a follow-up post as a technical deep dive into Kado's real life operations and how I use it.
 
-Kado was born out of a practical need in my homelab setup, as it was frustrated to constantly switch between Ansible and Terraform amd I wanted to control them both using a single YAML file.
+Kado was born out of a practical need in my homelab setup, as it was frustrating to constantly switch between Ansible and Terraform, and I wanted to control them both using a single YAML file.
 
 My wife not only came up with the name "Kado" and designed its logo but also contributed several internal code terms like "beads," "relay," and "path." The "kado set" command was her suggestion as well.
 
@@ -25,7 +25,7 @@ Kado's architecture is layered and comprehensive. It starts with the main Kado c
 
 A significant milestone was using this project to set up a Kubernetes cluster on a 2-node Proxmox setup for my homelab. Witnessing Ansible and Terraform working in tandem, orchestrated by Kado, was a gratifying experience. I plan to destroy and recreate the setup to document this process with a detailed guide and screenshots.
 
-Interestingly, Kado led to the development of another project: kado-ai. This separate Go module enables AI-powered infrastructure analysis and recommendations. It's integrated with Kado and includes a ~/.kdconfig file for easy configuration. I've been using Claude locally for kado-ai Proxmox recommendations, which has been quite effective for infrastructure analysis and decision-making.
+Interestingly, Kado led to the development of another project: [Kado-ai](https://pkg.go.dev/github.com/janpreet/kado-ai){:target="_blank" rel="noopener"}. This separate Go module enables AI-powered infrastructure analysis and recommendations. It's integrated with Kado and includes a ~/.kdconfig file for easy configuration. I've been using Claude locally for kado-ai Proxmox recommendations, which has been quite effective for infrastructure analysis and decision-making.
 
 This project has become an integral part of my daily life, evolving alongside personal milestones and celebrations. It's been a constant presence, developing in the background as life progresses. Kind of like it participated in my life events by just being in my head.
 
