@@ -13,7 +13,3 @@ The name of this repository, "Vigilant Dollop," was a fun and random suggestion 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to adjust this further if you want to add more details or specific sections!
