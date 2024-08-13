@@ -7,9 +7,7 @@ comments: false
 permalink: /kado-proxy
 ---
 
-Hello :), nother night, another tale from the trenches of late-night programming that'll make you laugh, cry, and maybe reach for your debugger.
-
-Picture this: It's the late hours of the night, the house is peacefully quiet, and I'm basking in the soft glow of my monitor. No, I'm not fueled by coffee – my energy comes from a much more powerful source. Just down the hall, my little one is sleeping soundly, blissfully unaware that her dad is on a mission to make her future brighter, one line of code at a time.
+Hello :), another night, another tale from the trenches of late-night programming that'll make you laugh, cry, and maybe reach for your debugger. Picture this: It's the late hours of the night, the house is peacefully quiet, and I'm basking in the soft glow of my monitor. No, I'm not fueled by coffee – my energy comes from a much more powerful source. Just down the hall, my little one is sleeping soundly, blissfully unaware that her dad is on a mission to make her future brighter, one line of code at a time.
 
 ## The Kado-Proxy Chronicles: When Tests Rebel
 
