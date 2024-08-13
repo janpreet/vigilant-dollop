@@ -1,13 +1,11 @@
 ---
 layout: post
-title:  "From Kado to Rust: The Late-Night Coding Saga Continues"
-date:   2024-08-10 20:15:29 -0500
+title:  "Kado Proxy"
+date:   2024-08-12 20:15:29 -0500
 categories: tech
 comments: false
-permalink: /rust-badge-generator
+permalink: /kado-proxy
 ---
-
-# Kado Proxy
 
 Hello :), nother night, another tale from the trenches of late-night programming that'll make you laugh, cry, and maybe reach for your debugger.
 
