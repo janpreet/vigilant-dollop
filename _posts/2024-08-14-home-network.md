@@ -7,7 +7,7 @@ comments: false
 permalink: /home-network
 ---
 
-In an era of increasingly connected homes, a robust, secure, and efficient network is crucial. This blog post chronicles my journey from a simple mesh system to a sophisticated, multi-VLAN setup with enterprise-grade features. Whether you're a networking enthusiast or just starting to explore beyond basic routers, you'll find insights into the evolution of home networking technologies, the challenges of implementation, and the rewards of a well-designed system.
+In this age of increasingly connected homes with smart devices, a robust, secure, and efficient network is crucial. I this post, I'd try to chronicle my journey from a simple mesh system to a sophisticated, multi-VLAN setup with almost enterprise-grade features. Whether you're a networking enthusiast or just starting to explore beyond basic routers, you'll find insights into the evolution of home networking technologies, the challenges of implementation, and the rewards of a well-designed system.
 
 ## The OSI Model: A Foundation for Understanding
 
@@ -85,6 +85,27 @@ Implementing VLANs was not without its challenges. The concept of logically sepa
 
 Many fiber providers use Carrier-Grade NAT (CGNAT) to conserve IPv4 addresses. While this doesn't affect most users, it can create challenges for those running servers or requiring port forwarding. Understanding and working around CGNAT limitations became an important part of my networking education.
 
+### CGNAT Workarounds
+
+To get around challenges for remote access with CGNAT, I was offered two main solutions:
+
+1. Static IP: My ISP offered a static IP for a fixed monthly fee, which would have bypassed CGNAT issues entirely.
+2. IPv6 + VPN: I opted for this more cost-effective solution. By leveraging IPv6 and setting up a VPN server on my Firewalla, I can securely access my home network when I'm away.
+
+This setup allows me to maintain access to my home devices and services without incurring additional monthly costs, while also adding an extra layer of security to my remote connections.
+
+#### Tailscale: A Game-Changer for Remote Access
+
+In addition to the IPv6 + irewlla VPN server, I've implemented Tailscale as my primary VPN solution. Tailscale runs on my Synology NAS, providing a seamless and secure way to access my home network from anywhere. This setup offers several advantages:
+
+1. Easy Setup: Tailscale's configuration is straightforward compared to traditional VPNs.
+2. Enhanced Security: Tailscale uses WireGuard protocol, known for its robust security and performance.
+3. NAT Traversal: It works well even behind CGNAT, solving many remote access issues.
+
+However, implementing Tailscale wasn't without its challenges. I discovered that the encryption and decryption processes required by Tailscale can be quite resource-intensive. This led me to max out the RAM on my Synology NAS to ensure smooth performance, especially when streaming local media while away from home.
+
+During my troubleshooting of slow Tailscale speeds on non-home networks, I came across this thread ["Firewalla Tailscale Performance Bottleneck"](https://help.firewalla.com/hc/en-us/community/posts/25365367131539-Firewalla-Tailscale-Performance-Bottleneck), which shed light on the relationship between Tailscale's performance and available system resources. This knowledge was crucial in optimizing my setup and understanding the importance of adequate hardware resources in maintaining a high-performance home network, even when accessing it remotely.
+
 ### Implementing a Robust Failover System
 
 Initially, I kept both my cable and fiber connections, using them in a failover configuration. This dual-WAN setup provided redundancy, ensuring I'd stay connected even if one ISP experienced issues.
@@ -95,15 +116,6 @@ Eventually, I optimized my setup further:
 2. Secondary Failover: Firewalla's Wi-Fi SD as a receiver for my phone's 5G hotspot
 
 This configuration leverages the high speed of fiber while using the ubiquity of cellular networks as a backup. It's a testament to how home networks can now rival business setups in terms of reliability and redundancy.
-
-### CGNAT Workarounds
-
-When I upgraded to fiber internet, I encountered Carrier-Grade NAT (CGNAT), which can pose challenges for remote access and certain online services. I was offered two main solutions:
-
-1. Static IP: My ISP offered a static IP for a fixed monthly fee, which would have bypassed CGNAT issues entirely.
-2. IPv6 + VPN: I opted for this more cost-effective solution. By leveraging IPv6 and setting up a VPN server on my Firewalla, I can securely access my home network when I'm away.
-
-This setup allows me to maintain access to my home devices and services without incurring additional monthly costs, while also adding an extra layer of security to my remote connections.
 
 ## The UniFi Transition (2024)
 
@@ -211,7 +223,7 @@ As my network continues to grow in complexity, I'm also contemplating getting a 
 
 ## Conclusion
 
-My home network has evolved from a simple consumer-grade setup to a sophisticated system that rivals many small business networks. This journey has not just been about improving my home's connectivity; it's been an educational experience that's given me a deep appreciation for the complexities of modern networking.
+My home network has evolved from a simple consumer-grade setup to a sophisticated system. This journey has not just been about improving my home's connectivity; it's been an educational experience that's given me a deep appreciation for the complexities of modern networking.
 
 For those embarking on their own home networking projects, my advice is to start small, research thoroughly, and don't be afraid to experiment. The world of networking is vast and ever-changing, but with patience and curiosity, you can build a home network that perfectly suits your needs while providing a fantastic learning experience.
 
