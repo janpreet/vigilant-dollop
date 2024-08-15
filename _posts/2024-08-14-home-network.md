@@ -245,49 +245,6 @@ Just as cloud architects might debate the merits of AWS vs. Azure vs GCP, networ
 
 I'm excited to see how my journey with UniFi evolves. While I'm still in the early stages and quite comfortable and happy with Firewalla, the potential for customization and the breadth of the ecosystem are already apparent. It's like how I felt in 2019, when I had just scratched the surface of what AWS offers - there's so much more to explore!
 
-## Advanced VLAN Usage and Network Segmentation
-
-My exploration of VLANs went beyond basic network segmentation. One particularly useful application was the ability to create distinct trusted and untrusted networks, as well as "airgap" certain noisy or potentially insecure devices. Here's how I leveraged this:
-
-1. Trusted Network: This VLAN includes personal devices, work equipment, and other devices that require full access to home network resources. It has the highest level of security and unrestricted internal access.
-
-2. Untrusted Network: This VLAN is for devices that need internet access but shouldn't have access to the rest of the network. This includes guest devices, IoT gadgets with questionable security practices, and any device with frequent, unnecessary network chatter.
-
-3. IoT Quarantine: Some smart home devices are isolated on their own VLAN. This prevents them from accessing other parts of my network while still allowing them to function and be controlled as needed.
-
-4. Media Streaming Optimization: Devices like smart TVs and streaming boxes are on their own VLAN, allowing me to prioritize their traffic without affecting other network activities.
-
-By strategically using VLANs, I've not only enhanced my network's security but also gained fine-grained control over how different devices interact and how network resources are allocated. This segmentation provides an additional layer of protection against potential security breaches and allows for more efficient network management.
-
-### Traffic Shaping with CAKE and Smart Queues
-
-For media streaming and overall network performance, I've implemented CAKE (Common Applications Kept Enhanced) and Smart Queues. These advanced Quality of Service (QoS) mechanisms help ensure that my network remains responsive even under heavy load:
-
-- CAKE: This modern queuing discipline provides a sophisticated approach to traffic shaping. It helps reduce bufferbloat, ensures fair bandwidth allocation, and can significantly improve the responsiveness of your network, especially when it's approaching capacity.
-
-- Smart Queues: This feature, available on my Firewalla, works in conjunction with CAKE to prioritize different types of traffic. It ensures that time-sensitive applications (like video calls or online gaming) get priority over less time-sensitive traffic (like large downloads).
-
-By implementing these technologies, I've been able to maintain excellent streaming quality and low latency for gaming and video calls, even when the network is under heavy use.
-
-### The Challenge of Advanced QoS
-
-Setting up CAKE and Smart Queues was one of the more challenging aspects of my network optimization. It required a deep dive into understanding traffic patterns, application requirements, and the intricacies of network congestion. The learning curve was steep, involving lots of trial and error, but the results in terms of improved network responsiveness have been remarkable.
-
-## Secure DNS and Privacy
-
-In 2023, I implemented NextDNS across my network, a cloud-based DNS resolution service that offers security and privacy features.
-
-### Benefits of NextDNS
-
-1. Ad blocking at the DNS level
-2. Protection against phishing and malware domains
-3. Custom filtering rules and whitelists
-4. Detailed analytics on network queries
-
-I even created profiles for our mobile devices using Apple Configurator, ensuring they use DNS-over-HTTPS (DoH) for secure resolution regardless of the network they're connected to (even cellular).
-
-While I considered running my own recursive DNS server using Unbound, the convenience and features of NextDNS have so far outweighed the potential privacy benefits of a self-hosted solution.
-
 ## Reflections and Future Directions
 
 My home networking journey has been one of continuous learning and improvement. Each step has brought new challenges and insights, from understanding the intricacies of VLAN tagging to implementing multi-WAN failover configurations.
@@ -299,8 +256,8 @@ Looking back, I see how each technology I adopted built upon the last:
 - Firewalla introduced advanced security features and routing capabilities.
 - VLANs and managed switches allowed for logical network segmentation and improved security.
 - Fiber internet and cellular failover provided speed and redundancy.
-- UniFi APs offered a glimpse into more scalable, integrated network management.
 - CAKE and Smart Queues optimized traffic flow and application performance.
+- UniFi APs offered a glimpse into more scalable, integrated network management.
 
 As for the future, I'm keeping an eye on several emerging technologies:
 
