@@ -48,6 +48,24 @@ MoCA adapters use the existing coaxial cable infrastructure in homes to create a
 2. Low Latency: Typically under 3-4 ms, crucial for gaming and video conferencing.
 3. Reliability: Not subject to wireless interference like Wi-Fi.
 
+### Implementing MoCA Securely
+
+As I delved deeper into MoCA implementation, I learned about several important security measures:
+
+1. Point of Entry (PoE) Filter: I learned about the importance of using a PoE filter, particularly crucial because I had cable internet at the beginning of my MoCA journey. Here's what I discovered:
+   - Function: A PoE filter is essentially a unidirectional diode for MoCA signals.
+   - Installation: It should be installed upstream from the source splitter, typically where the cable line enters your home.
+   - Purpose: The primary purpose is to prevent your intra-house MoCA signals from leaking out to the external cable network.
+   - Security: By containing your MoCA signals within your home, you're enhancing the security of your network and preventing potential interference with neighboring MoCA networks.
+   - Signal Boost: An additional benefit is that the PoE filter reflects the MoCA signals back into your home network, potentially boosting signal strength.
+
+2. Password Protection: In addition to the PoE filter, I implemented password protection on my MoCA adapters. This adds an extra layer of security by:
+   - Preventing unauthorized devices from joining the MoCA network
+   - Encrypting the data transmitted over the coaxial lines
+   - Ensuring that even if someone were to bypass the PoE filter, they couldn't access or interfere with my MoCA network without the password
+
+Understanding and implementing these security measures was a crucial step in ensuring that my MoCA network was not only high-performing but also secure and non-disruptive to the broader cable network.
+
 By using MoCA adapters to create a hardwired backhaul for my Orbi satellites, I was able to significantly improve the performance of my mesh system. This hybrid approach - wireless mesh frontend with wired backhaul - represents an optimal solution for many homes, combining the convenience of Wi-Fi with the reliability of a wired connection.
 
 ## Embracing Advanced Routing and Security (Late 2022)
