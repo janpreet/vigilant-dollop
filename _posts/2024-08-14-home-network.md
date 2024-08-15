@@ -16,11 +16,11 @@ What finally motivated me to do this write-up was a growing sense of positivity 
 Before diving into my journey, it's crucial to understand the OSI (Open Systems Interconnection) model, which provides a framework for how different networking technologies interact:
 
 1. Physical Layer (Layer 1): This is where technologies like MoCA operate, dealing with the physical transmission of data.
-2. Data Link Layer (Layer 2): VLANs function at this layer, managing how data is formatted for transmission.
-3. Network Layer (Layer 3): IP routing occurs here, determining how data is sent between different networks.
+2. Data Link Layer (Layer 2): VLANs function at this layer, managing how data is formatted for transmission. Most managed switches, including those I use in my setup, primarily operate at this layer, handling tasks like VLAN tagging and frame forwarding.
+3. Network Layer (Layer 3): IP routing occurs here, determining how data is sent between different networks. While my router (Firewalla) primarily operates at this layer, some advanced managed switches (often called "Layer 3 switches") can also perform basic routing functions at this layer.
 4. Transport Layer (Layer 4) and above: This is where more advanced features like Firewalla's application identification operate.
 
-Understanding this model has been crucial in my networking journey, helping me troubleshoot issues and design a more effective network.
+Understanding this model has been crucial in my networking journey, helping me troubleshoot issues and design a more effective network. It's particularly important when configuring managed switches and understanding how they interact with other devices in the network.
 
 ## The Mesh Networking Revolution (2021)
 
