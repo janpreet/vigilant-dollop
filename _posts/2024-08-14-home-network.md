@@ -7,7 +7,7 @@ comments: false
 permalink: /home-network
 ---
 
-In this age of increasingly connected homes with smart devices, a robust, secure, and efficient network is crucial. I this post, I'd try to chronicle my journey from a simple mesh system to a sophisticated, multi-VLAN setup with almost enterprise-grade features. Whether you're a networking enthusiast or just starting to explore beyond basic routers, you'll find insights into the evolution of home networking technologies, the challenges of implementation, and the rewards of a well-designed system.
+In this age of increasingly connected homes with smart devices, a robust, secure, and efficient network is crucial. This post chronicles my journey from a simple mesh system to a sophisticated, multi-VLAN setup with almost enterprise-grade features. Whether you're a networking enthusiast or just starting to explore beyond basic routers, you'll find insights into the evolution of home networking technologies, the challenges of implementation, and the rewards of a well-designed system.
 
 ## The OSI Model: A Foundation for Understanding
 
@@ -73,9 +73,54 @@ With Firewalla acting as my primary router, I delved into the world of VLANs (Vi
 
 I invested in managed switches and Meraki Go APs to fully leverage VLAN capabilities. This allowed me to create separate networks for different purposes, significantly enhancing both the security and functionality of my home network.
 
+### VLAN ID Naming Convention
+
+To maintain consistency and ease of management, I adopted a systematic approach to naming my VLAN IDs. I chose to align the VLAN ID with the third octet of the subnet's IP address. For example:
+
+- If the subnet is 10.10.34.0/24, the corresponding VLAN ID would be 34.
+- For a subnet of 192.168.50.0/24, the VLAN ID would be 50.
+
+This convention provides a clear, logical relationship between the VLAN ID and its associated subnet, making it easier to identify and manage different network segments.
+
 ### The VLAN Learning Curve
 
-Implementing VLANs was not without its challenges. The concept of logically separating a physical network took some time to grasp fully. I spent countless hours researching, configuring, and sometimes troubleshooting issues like devices not communicating across VLANs when they should, or conversely, accessing resources they shouldn't. However, the effort was worth it, as the resulting network segmentation has dramatically improved my network's security and performance.
+Implementing VLANs was not without its challenges. The concept of logically separating a physical network took some time to grasp fully. I spent countless hours researching, configuring, and sometimes troubleshooting issues like devices not communicating across VLANs when they should, or conversely, accessing resources they shouldn't.
+
+One of the most interesting aspects of my VLAN journey was learning about the different terminologies used by various vendors for the same concepts. For instance, I discovered that what Cisco calls a "default VLAN" is referred to as a "PVID" (Port VLAN ID) by other manufacturers. This diversity in terminology initially caused some confusion but ultimately broadened my understanding of networking concepts across different platforms.
+
+I also delved deep into understanding the intricacies of trunk ports and the difference between tagged and untagged traffic:
+
+- Trunk Ports: These are ports that carry traffic for multiple VLANs. I learned that trunk ports should only be used when connecting to another VLAN-aware device, such as another managed switch or a router.
+
+- Tagged vs. Untagged Traffic: Untagged traffic enters a switch port without a VLAN tag, and the switch assigns it to a specific VLAN (often the PVID of the port). Tagged traffic already has a VLAN ID assigned. I discovered that configuring these correctly is crucial for proper VLAN operation.
+
+Through my research and experimentation, I also picked up some best practices:
+
+1. Avoid using default VLANs when possible. This adds an extra layer of security by ensuring that all traffic is intentionally assigned to a specific VLAN.
+
+2. For ports connected to a single device (like a computer or IoT device), configure them as access ports. This means they're assigned to only one VLAN. The traffic enters the port untagged, but the switch tags it with the appropriate VLAN ID when sending it upstream.
+
+3. Only configure trunk ports when connecting to another VLAN-aware device that can handle tagged traffic.
+
+My setup includes a mix of TP-Link and Netgear smart switches, which are working seamlessly with UniFi APs and my Firewalla router + MoCA. This combination has proven to be both cost-effective and highly functional, demonstrating that you don't need a single-vendor solution to create a robust, VLAN-capable network.
+
+The effort invested in understanding and implementing VLANs was absolutely worth it. The resulting network segmentation has dramatically improved my network's security, performance, and manageability. It's given me the ability to isolate potentially vulnerable devices, optimize traffic flow, and maintain granular control over my home network.
+
+For anyone embarking on their own VLAN journey, I'd encourage patience and persistence. The learning curve can be steep, but the benefits in terms of network control and security are immense. Don't be afraid to mix and match equipment from different vendors - with proper configuration, you can create a powerful and flexible network setup tailored to your specific needs.
+
+## Advanced VLAN Usage and Network Segmentation
+
+My exploration of VLANs went beyond basic network segmentation. One particularly useful application was the ability to create distinct trusted and untrusted networks, as well as "airgap" certain noisy or potentially insecure devices. Here's how I leveraged this:
+
+1. Trusted Network: This VLAN includes personal devices, work equipment, and other devices that require full access to home network resources. It has the highest level of security and unrestricted internal access.
+
+2. Untrusted Network: This VLAN is for devices that need internet access but shouldn't have access to the rest of the network. This includes guest devices, IoT gadgets with questionable security practices, and any device with frequent, unnecessary network chatter.
+
+3. IoT Quarantine: Some smart home devices are isolated on their own VLAN. This prevents them from accessing other parts of my network while still allowing them to function and be controlled as needed.
+
+4. Media Streaming Optimization: Devices like smart TVs and streaming boxes are on their own VLAN, allowing me to prioritize their traffic without affecting other network activities.
+
+By strategically using VLANs, I've not only enhanced my network's security but also gained fine-grained control over how different devices interact and how network resources are allocated. This segmentation provides an additional layer of protection against potential security breaches and allows for more efficient network management.
 
 ## The Fiber Optic Upgrade and Failover Strategies (2023)
 
@@ -96,7 +141,7 @@ This setup allows me to maintain access to my home devices and services without 
 
 #### Tailscale: A Game-Changer for Remote Access
 
-In addition to the IPv6 + irewlla VPN server, I've implemented Tailscale as my primary VPN solution. Tailscale runs on my Synology NAS, providing a seamless and secure way to access my home network from anywhere. This setup offers several advantages:
+In addition to the IPv6 + Firewalla VPN server, I've implemented Tailscale as my primary VPN solution. Tailscale runs on my Synology NAS, providing a seamless and secure way to access my home network from anywhere. This setup offers several advantages:
 
 1. Easy Setup: Tailscale's configuration is straightforward compared to traditional VPNs.
 2. Enhanced Security: Tailscale uses WireGuard protocol, known for its robust security and performance.
@@ -104,7 +149,7 @@ In addition to the IPv6 + irewlla VPN server, I've implemented Tailscale as my p
 
 However, implementing Tailscale wasn't without its challenges. I discovered that the encryption and decryption processes required by Tailscale can be quite resource-intensive. This led me to max out the RAM on my Synology NAS to ensure smooth performance, especially when streaming local media while away from home.
 
-During my troubleshooting of slow Tailscale speeds on non-home networks, I came across this thread ["Firewalla Tailscale Performance Bottleneck"](https://help.firewalla.com/hc/en-us/community/posts/25365367131539-Firewalla-Tailscale-Performance-Bottleneck), which shed light on the relationship between Tailscale's performance and available system resources. This knowledge was crucial in optimizing my setup and understanding the importance of adequate hardware resources in maintaining a high-performance home network, even when accessing it remotely.
+During my troubleshooting of slow Tailscale speeds on non-home networks, I came across this thread ["Firewalla Tailscale Performance Bottleneck"](https://help.firewalla.com/hc/en-us/community/posts/25365367131539/comments/25366143921299), which shed light on the relationship between Tailscale's performance, Firewalla, and Tailscale exit node. This knowledge was crucial in optimizing my setup and understanding the importance of adequate hardware resources in maintaining a high-performance home network, even when accessing it remotely.
 
 ### Implementing a Robust Failover System
 
@@ -116,6 +161,35 @@ Eventually, I optimized my setup further:
 2. Secondary Failover: Firewalla's Wi-Fi SD as a receiver for my phone's 5G hotspot
 
 This configuration leverages the high speed of fiber while using the ubiquity of cellular networks as a backup. It's a testament to how home networks can now rival business setups in terms of reliability and redundancy.
+
+## Traffic Shaping with CAKE and Smart Queues
+
+For media streaming and overall network performance, I've implemented CAKE (Common Applications Kept Enhanced) and Smart Queues. These advanced Quality of Service (QoS) mechanisms help ensure that my network remains responsive even under heavy load:
+
+- CAKE: This modern queuing discipline provides a sophisticated approach to traffic shaping. It helps reduce bufferbloat, ensures fair bandwidth allocation, and can significantly improve the responsiveness of your network, especially when it's approaching capacity.
+
+- Smart Queues: This feature, available on my Firewalla, works in conjunction with CAKE to prioritize different types of traffic. It ensures that time-sensitive applications (like video calls or online gaming) get priority over less time-sensitive traffic (like large downloads).
+
+By implementing these technologies, I've been able to maintain excellent streaming quality and low latency for gaming and video calls, even when the network is under heavy use.
+
+### The Challenge of Advanced QoS
+
+Setting up CAKE and Smart Queues was one of the more challenging aspects of my network optimization. It required a deep dive into understanding traffic patterns, application requirements, and the intricacies of network congestion. The learning curve was steep, involving lots of trial and error, but the results in terms of improved network responsiveness have been remarkable.
+
+## Secure DNS and Privacy
+
+In 2023, I implemented NextDNS across my network, a cloud-based DNS resolution service that offers security and privacy features.
+
+### Benefits of NextDNS
+
+1. Ad blocking at the DNS level
+2. Protection against phishing and malware domains
+3. Custom filtering rules and whitelists
+4. Detailed analytics on network queries
+
+I even created profiles for our mobile devices using Apple Configurator, ensuring they use DNS-over-HTTPS (DoH) for secure resolution regardless of the network they're connected to (even cellular).
+
+While I considered running my own recursive DNS server using Unbound, the convenience and features of NextDNS have so far outweighed the potential privacy benefits of a self-hosted solution.
 
 ## The UniFi Transition (2024)
 
