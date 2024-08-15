@@ -7,7 +7,9 @@ comments: false
 permalink: /home-network
 ---
 
-In this age of increasingly connected homes with smart devices, a robust, secure, and efficient network is crucial. This post chronicles my journey from a simple mesh system to a sophisticated, multi-VLAN setup with almost enterprise-grade features. Whether you're a networking enthusiast or just starting to explore beyond basic routers, you'll find insights into the evolution of home networking technologies, the challenges of implementation, and the rewards of a well-designed system.
+For quite some time, I've been wanting to write about my home networking journey. The complexities, challenges, and triumphs of building a sophisticated home network have been a significant part of my life, and I've often thought about sharing these experiences with others. However, it wasn't until recently that I felt truly ready to put my thoughts into words.
+
+What finally motivated me to do this write-up was a growing sense of positivity about sharing my experiences through my blog posts. I realized that my journey - from a simple mesh system to a complex, multi-VLAN setup - could provide valuable insights to others who are interested in home networking. Whether you're just starting to explore beyond basic routers or you're a seasoned networking enthusiast, I hope my experiences can offer some useful perspectives.
 
 ## The OSI Model: A Foundation for Understanding
 
