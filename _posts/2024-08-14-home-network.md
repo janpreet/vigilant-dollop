@@ -18,7 +18,9 @@ Before diving into my journey, it's crucial to understand the OSI (Open Systems 
 1. Physical Layer (Layer 1): This is where technologies like MoCA operate, dealing with the physical transmission of data.
 2. Data Link Layer (Layer 2): VLANs function at this layer, managing how data is formatted for transmission. Most managed switches, including those I use in my setup, primarily operate at this layer, handling tasks like VLAN tagging and frame forwarding.
 3. Network Layer (Layer 3): IP routing occurs here, determining how data is sent between different networks. While my router (Firewalla) primarily operates at this layer, some advanced managed switches (often called "Layer 3 switches") can also perform basic routing functions at this layer.
-4. Transport Layer (Layer 4) and above: This is where more advanced features like Firewalla's application identification operate.
+4. Transport Layer (Layer 4): This is where more advanced features like Firewalla's application identification operate. It's also where DNS queries and responses are encapsulated in UDP or TCP packets.
+5. Session Layer (Layer 5) and Presentation Layer (Layer 6): While not as directly relevant to our home networking setup, these layers handle things like session establishment and data formatting.
+6. Application Layer (Layer 7): This is where NextDNS primarily operates, providing DNS resolution, content filtering, and security features. Many of the services and applications we use in our daily internet interactions function at this layer.
 
 Understanding this model has been crucial in my networking journey, helping me troubleshoot issues and design a more effective network. It's particularly important when configuring managed switches and understanding how they interact with other devices in the network.
 
@@ -198,7 +200,7 @@ Setting up CAKE and Smart Queues was one of the more challenging aspects of my n
 
 ## Secure DNS and Privacy
 
-In 2023, I implemented NextDNS across my network, a cloud-based DNS resolution service that offers security and privacy features.
+In 2023, I implemented NextDNS across my network, a cloud-based DNS resolution service that offers security and privacy features NextDNS primarily operates at Layer 7 (Application Layer) of the OSI model, interacting with lower layers to provide its services.
 
 ### Benefits of NextDNS
 
@@ -206,6 +208,8 @@ In 2023, I implemented NextDNS across my network, a cloud-based DNS resolution s
 2. Protection against phishing and malware domains
 3. Custom filtering rules and whitelists
 4. Detailed analytics on network queries
+
+By operating at the Application Layer, NextDNS can provide these advanced features while seamlessly integrating with the lower layers of the network stack. This allows for sophisticated DNS handling without requiring changes to the underlying network infrastructure.
 
 I even created profiles for our mobile devices using Apple Configurator, ensuring they use DNS-over-HTTPS (DoH) for secure resolution regardless of the network they're connected to (even cellular).
 
