@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Home Network Journey"
-date:   2024-08-10 20:15:29 -0500
+date:   2024-08-14 20:15:29 -0500
 categories: tech
 comments: false
 permalink: /home-network
