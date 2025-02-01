@@ -7,7 +7,7 @@ comments: false
 permalink: /nanakshahi-calendar-update
 ---
 
-I've made some updates to the [Nanakshahi calendar ICS(https://janpreet.com/nanakshahi-calendar)]. In addition to tracking Gurpurabs, you can now also see the daily Nanakshahi date inn your calendar app, without any extra apps.
+I've made some updates to the [Nanakshahi calendar ICS](https://janpreet.com/nanakshahi-calendar). In addition to tracking Gurpurabs, you can now also see the daily Nanakshahi date in your calendar app, without any extra apps.
 
 The updated calendar shows:
 
