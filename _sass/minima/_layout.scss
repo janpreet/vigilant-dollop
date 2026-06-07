@@ -635,6 +635,42 @@
 }
 
 /**
+ * LLM mode — site-wide chrome stripped
+ */
+[data-llm="true"] {
+  .site-header { display: none !important; }
+  .site-footer { display: none !important; }
+  .scroll-top  { display: none !important; }
+  .search-overlay { display: none !important; }
+  .breadcrumb  { display: none !important; }
+  .post-tags   { display: none !important; }
+
+  body {
+    padding-top: 0;
+  }
+
+  .page-content {
+    padding: 24px 0;
+  }
+
+  // Plain text mode for non-post pages
+  &:not([data-post="true"]) .wrapper {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.8;
+
+    h1, h2, h3, h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+    }
+
+    img { display: none; }
+
+    a { color: var(--accent); }
+  }
+}
+
+/**
  * Search toggle button (in nav)
  */
 .search-toggle {
