@@ -605,74 +605,33 @@
     color: var(--text);
   }
 
-  svg {
-    width: 20px;
-    height: 20px;
-  }
+  // Human mode: show robot (click to go machine)
+  .human-icon { display: none; }
+  .robot-icon { display: block; }
 }
 
+// LLM mode: show human (click to go back), accent the button
 [data-llm="true"] .llm-toggle {
   color: var(--accent);
+  .human-icon { display: block; }
+  .robot-icon { display: none; }
 }
 
 /**
- * LLM view mode — strip all chrome, show plain readable content
+ * LLM raw markdown view
  */
-[data-llm="true"] {
-  .site-header,
-  .site-footer,
-  .breadcrumb,
-  .post-tags,
-  .post-meta-row .post-meta,
-  .scroll-top,
-  .search-overlay,
-  #search-toggle,
-  .llm-toggle,
-  .theme-toggle,
-  .site-nav .trigger,
-  .post-list-heading {
-    display: none !important;
-  }
-
-  .site-nav label[for="nav-trigger"] {
-    display: none !important;
-  }
-
-  body {
-    padding-top: 0;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--text);
-    background: var(--bg);
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 32px 24px;
-  }
-
-  .wrapper {
-    max-width: 100%;
-    width: 100%;
-    padding: 0;
-  }
-
-  .page-content {
-    padding: 0;
-  }
-
-  h1, h2, h3, h4 {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
-    margin: 24px 0 8px;
-  }
-
-  a {
-    color: var(--accent);
-  }
-
-  pre, code {
-    font-size: 13px;
-  }
+.llm-raw {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
 }
 
 /**
