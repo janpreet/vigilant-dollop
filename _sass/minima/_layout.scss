@@ -584,9 +584,13 @@
 }
 
 /**
- * LLM toggle button
+ * LLM toggle button — fixed top-right, always visible
  */
 .llm-toggle {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 400;
   background: transparent;
   border: none;
   color: var(--text-muted);
@@ -610,9 +614,11 @@
   .robot-icon { display: block; }
 }
 
-// LLM mode: show human (click to go back), accent the button
+// LLM mode: accent, show human icon, add background so it's findable
 [data-llm="true"] .llm-toggle {
   color: var(--accent);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
   .human-icon { display: block; }
   .robot-icon { display: none; }
 }
@@ -639,16 +645,6 @@
  */
 [data-llm="true"] {
   .site-header { display: none !important; }
-
-  .llm-toggle {
-    position: fixed;
-    top: 12px;
-    right: 16px;
-    z-index: 300;
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-  }
   .site-footer { display: none !important; }
   .scroll-top  { display: none !important; }
   .search-overlay { display: none !important; }

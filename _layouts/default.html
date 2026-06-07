@@ -15,6 +15,21 @@
 
     {%- include footer.html -%}
 
+    <!-- LLM toggle — lives outside header so it persists in LLM mode -->
+    <button id="llm-toggle" class="llm-toggle" aria-label="Toggle machine-readable view">
+      <svg class="human-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M4 21v-1a8 8 0 0 1 16 0v1" stroke-linecap="round"/>
+      </svg>
+      <svg class="robot-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="8" width="18" height="12" rx="2"/>
+        <path d="M12 2v6M9 2h6" stroke-linecap="round"/>
+        <circle cx="8.5" cy="14" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="15.5" cy="14" r="1.5" fill="currentColor" stroke="none"/>
+        <path d="M9.5 18c.8.7 4.2.7 5 0" stroke-linecap="round"/>
+      </svg>
+    </button>
+
     <!-- Scroll to top -->
     <button id="scroll-top" class="scroll-top" aria-label="Back to top">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -26,6 +41,35 @@
 
     <script>
     (function() {
+      // LLM toggle
+      var llmToggle = document.getElementById('llm-toggle');
+      if (llmToggle) {
+        var html = document.documentElement;
+
+        function applyLlmView(active) {
+          var postContent = document.querySelector('.post-content');
+          var rawEl = document.getElementById('raw-markdown');
+          if (active) {
+            html.setAttribute('data-llm', 'true');
+            if (postContent && rawEl) {
+              postContent._humanHTML = postContent.innerHTML;
+              postContent.innerHTML = '<pre class="llm-raw">' + rawEl.textContent.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
+            }
+          } else {
+            html.removeAttribute('data-llm');
+            if (postContent && postContent._humanHTML) {
+              postContent.innerHTML = postContent._humanHTML;
+            }
+          }
+        }
+
+        llmToggle.addEventListener('click', function() {
+          var active = html.getAttribute('data-llm') === 'true';
+          applyLlmView(!active);
+          localStorage[active ? 'removeItem' : 'setItem']('llm-view', 'true');
+        });
+      }
+
       // Scroll-to-top button
       var btn = document.getElementById('scroll-top');
       var THRESHOLD = 300;
