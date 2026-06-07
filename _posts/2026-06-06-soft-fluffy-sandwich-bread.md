@@ -3,6 +3,7 @@ layout: post
 title: "Soft Fluffy Sandwich Bread"
 date: 2026-06-06
 tags: [recipes, bread, baking]
+description: "A soft, enriched sandwich loaf made with bread flour, milk, butter, and egg. Stays tender for days."
 ---
 
 ## Ingredients

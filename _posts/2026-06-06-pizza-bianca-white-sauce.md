@@ -3,6 +3,7 @@ layout: post
 title: "Pizza Bianca with Quick White Sauce"
 date: 2026-06-06
 tags: [recipes, pizza, baking, sauce]
+description: "White pizza with a quick crème fraîche-style sauce made from heavy cream and yogurt. No cooking required."
 ---
 
 A white pizza (pizza bianca) built on a quick crème fraîche-style sauce made from heavy cream and yogurt — no cooking required.
