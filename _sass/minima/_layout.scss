@@ -584,12 +584,12 @@
 }
 
 /**
- * LLM toggle button — always fixed top-right at nav height
+ * LLM toggle button — fixed right side, vertically centered in header zone
  */
 .llm-toggle {
   position: fixed;
   top: 10px;
-  right: 52px; // sits left of theme toggle which is ~16px from right
+  right: 16px;
   z-index: 400;
   background: transparent;
   border: none;
@@ -609,17 +609,17 @@
     color: var(--text);
   }
 
-  // Human mode: show robot (click to go machine)
+  // Human mode: robot icon, offset left of theme toggle
+  right: 52px;
   .human-icon { display: none; }
   .robot-icon { display: block; }
 }
 
-// LLM mode: accent + subtle background so it's easy to find
 [data-llm="true"] .llm-toggle {
   color: var(--accent);
   background-color: var(--bg-surface);
   border: 1px solid var(--border);
-  right: 16px; // theme toggle is hidden, shift right
+  right: 16px; // header hidden, no theme toggle to avoid
   .human-icon { display: block; }
   .robot-icon { display: none; }
 }
