@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-theme="dark">
 
   {%- include head.html -%}
 
@@ -14,6 +14,29 @@
     </main>
 
     {%- include footer.html -%}
+
+    <!-- Scroll to top -->
+    <button id="scroll-top" class="scroll-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    {%- include search.html -%}
+
+    <script>
+    (function() {
+      // Scroll-to-top button
+      var btn = document.getElementById('scroll-top');
+      var THRESHOLD = 300;
+      window.addEventListener('scroll', function() {
+        btn.classList.toggle('visible', window.scrollY > THRESHOLD);
+      }, { passive: true });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+    </script>
 
   </body>
 

@@ -3,6 +3,7 @@ layout: post
 title:  "Nanakshahi Calendar"
 date:   2023-03-14 19:15:29 -0500
 categories: tech
+tags: [sikh, open-source, calendar, ics]
 comments: false
 permalink: /nanakshahi-calendar
 ---

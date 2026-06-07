@@ -3,6 +3,7 @@ layout: post
 title:  "Nanakshahi Calendar Update"
 date:   2025-02-01 08:15:29 -0500
 categories: tech
+tags: [sikh, calendar, open-source, ics]
 comments: false
 permalink: /nanakshahi-calendar-update
 ---

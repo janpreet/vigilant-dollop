@@ -3,14 +3,13 @@ layout: default
 ---
 
 <div class="home">
-  {%- if page.title!='Home' -%}
+  {%- if page.title != 'Home' -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
@@ -21,6 +20,13 @@ layout: default
             {{ post.title | escape }}
           </a>
         </h3>
+        {%- if post.tags.size > 0 -%}
+          <div class="post-tags">
+            {%- for tag in post.tags -%}
+              <a class="tag-chip" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}

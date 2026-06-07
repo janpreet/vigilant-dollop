@@ -3,6 +3,7 @@ layout: post
 title:  "Terraform-GCP-K8s: A Jenkins DevOps story"
 date:   2020-12-07 20:15:29 -0500
 categories: tech
+tags: [terraform, kubernetes, gcp, devops, jenkins]
 comments: false
 permalink: /terraform-gcp-k8s
 ---

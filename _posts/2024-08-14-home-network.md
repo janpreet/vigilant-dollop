@@ -3,6 +3,7 @@ layout: post
 title:  "Home Network Journey"
 date:   2024-08-14 20:15:29 -0500
 categories: tech
+tags: [home-lab, networking, self-hosted]
 comments: false
 permalink: /home-network
 ---

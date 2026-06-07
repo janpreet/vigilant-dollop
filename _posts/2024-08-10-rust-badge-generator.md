@@ -3,6 +3,7 @@ layout: post
 title:  "From Kado to Rust: The Late-Night Coding Saga Continues"
 date:   2024-08-10 20:15:29 -0500
 categories: tech
+tags: [rust, open-source, devops]
 comments: false
 permalink: /rust-badge-generator
 ---

@@ -3,6 +3,7 @@ layout: post
 title:  "Kado: Weaving Infrastructure Management into Late-Night Code"
 date:   2024-07-29 20:15:29 -0500
 categories: tech
+tags: [open-source, infrastructure, devops, golang]
 comments: false
 permalink: /kado-story
 ---
