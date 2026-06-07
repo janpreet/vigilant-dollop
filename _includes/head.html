@@ -13,10 +13,23 @@
     })();
   </script>
 
-  <!-- Google Fonts: Inter and JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Self-hosted fonts -->
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('{{ "/assets/fonts/inter-variable.woff2" | relative_url }}') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      src: url('{{ "/assets/fonts/jetbrains-mono-variable.woff2" | relative_url }}') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="shortcut icon" type="image/png" href="/favicon.png">

@@ -40,6 +40,17 @@
             </svg>
           </button>
 
+          <!-- LLM toggle -->
+          <button id="llm-toggle" class="llm-toggle" aria-label="Toggle LLM view">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+              <circle cx="7.5" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="16.5" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+              <path d="M9 13.5c1 1 5 1 6 0" stroke-linecap="round"/>
+            </svg>
+          </button>
+
           <!-- Theme toggle -->
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
             <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
@@ -74,6 +85,25 @@
         var next = current === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
+      });
+    }
+
+    // LLM toggle
+    var llmToggle = document.getElementById('llm-toggle');
+    if (llmToggle) {
+      var html = document.documentElement;
+      if (localStorage.getItem('llm-view') === 'true') {
+        html.setAttribute('data-llm', 'true');
+      }
+      llmToggle.addEventListener('click', function() {
+        var active = html.getAttribute('data-llm') === 'true';
+        if (active) {
+          html.removeAttribute('data-llm');
+          localStorage.removeItem('llm-view');
+        } else {
+          html.setAttribute('data-llm', 'true');
+          localStorage.setItem('llm-view', 'true');
+        }
       });
     }
   })();
