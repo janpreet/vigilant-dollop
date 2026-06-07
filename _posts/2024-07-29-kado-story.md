@@ -4,6 +4,7 @@ title:  "Kado: Weaving Infrastructure Management into Late-Night Code"
 date:   2024-07-29 20:15:29 -0500
 categories: tech
 tags: [open-source, infrastructure, devops, golang]
+description: "The story behind Kado — a Go tool for infrastructure management, built in late-night sessions after the toddler went to sleep."
 comments: false
 permalink: /kado-story
 ---

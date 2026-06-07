@@ -4,6 +4,7 @@ title:  "Nanakshahi Calendar Update"
 date:   2025-02-01 08:15:29 -0500
 categories: tech
 tags: [sikh, calendar, open-source, ics]
+description: "Nanakshahi calendar ICS update — daily Nanakshahi dates now show in your calendar app alongside Gurpurabs, no extra app needed."
 comments: false
 permalink: /nanakshahi-calendar-update
 ---

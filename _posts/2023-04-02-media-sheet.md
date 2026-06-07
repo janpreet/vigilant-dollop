@@ -4,6 +4,7 @@ title:  "Media Sheet"
 date:   2023-04-2 19:15:29 -0500
 categories: tech
 tags: [google-apps-script, automation, open-source]
+description: "A Google Apps Script that uses OMDB API to build a family movie tracking sheet — what we've watched, what we haven't."
 comments: false
 permalink: /media-sheet
 ---

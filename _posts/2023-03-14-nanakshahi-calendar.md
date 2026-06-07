@@ -4,6 +4,7 @@ title:  "Nanakshahi Calendar"
 date:   2023-03-14 19:15:29 -0500
 categories: tech
 tags: [sikh, open-source, calendar, ics]
+description: "A script that generates an ICS file for Nanakshahi dates and Sikh religious holidays, subscribable in any calendar app."
 comments: false
 permalink: /nanakshahi-calendar
 ---
