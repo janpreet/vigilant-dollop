@@ -1022,28 +1022,31 @@ body.search-open {
     }
   }
 
-  .home-tags-all {
-    margin-left: auto;
+  .feed-tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 20px;
+    padding-bottom: 6px;
     align-self: center;
-    font-size: 11px;
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--text-muted);
-    padding-bottom: 4px;
+    overflow-x: auto;
+    min-width: 0;
+    flex: 1;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    // fade edges hint that the strip scrolls
+    mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 24px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 24px), transparent);
 
-    &:hover {
-      color: var(--accent);
-      text-decoration: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .feed-tag {
+      cursor: pointer;
+      flex-shrink: 0;
     }
   }
-}
-
-.home-tags {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  margin: -4px 0 ($spacing-unit / 2);
-
 }
 
 .post-list > li.post-item {

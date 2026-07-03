@@ -29,20 +29,20 @@ layout: default
       {%- endif -%}
     {%- endfor -%}
 
-    <div class="feed-tabs" role="group" aria-label="Filter posts by topic">
+    {%- capture tag_sizes %}{% for tag in site.tags %}{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}|{% endfor %}{% endcapture -%}
+    {%- assign sorted_tags = tag_sizes | split: '|' | sort | reverse -%}
+    <div class="feed-tabs" role="group" aria-label="Filter posts">
       <button class="feed-tab active" data-filter="all" aria-pressed="true">All <span class="tab-count">{{ site.posts.size }}</span></button>
       <button class="feed-tab" data-filter="tech" aria-pressed="false">Tech <span class="tab-count">{{ tech_count }}</span></button>
       <button class="feed-tab" data-filter="cooking" aria-pressed="false">Cooking <span class="tab-count">{{ cooking_count }}</span></button>
-      <a class="home-tags-all" href="{{ '/tags/' | relative_url }}">all tags &rarr;</a>
-    </div>
-
-    {%- capture tag_sizes %}{% for tag in site.tags %}{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}|{% endfor %}{% endcapture -%}
-    {%- assign top_tags = tag_sizes | split: '|' | sort | reverse -%}
-    <div class="home-tags" aria-label="Popular tags">
-      {%- for entry in top_tags limit: 8 -%}
-        {%- assign tag_name = entry | split: '#' | last -%}
-        <a class="tag-chip" href="{{ '/tags/' | relative_url }}#{{ tag_name | slugify }}">{{ tag_name }}</a>
-      {%- endfor -%}
+      <div class="feed-tags" aria-label="Filter by tag">
+        {%- for entry in sorted_tags -%}
+          {%- assign tag_name = entry | split: '#' | last -%}
+          {%- if tag_name != '' -%}
+          <button class="tag-chip feed-tag" data-tag="{{ tag_name | slugify }}">{{ tag_name }}</button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
     </div>
 
     <ul class="post-list">
@@ -57,7 +57,8 @@ layout: default
       {%- endif -%}
       {%- assign words = post.content | number_of_words -%}
       {%- assign read_time = words | divided_by: 200 | at_least: 1 -%}
-      <li class="post-item" data-cat="{{ cat }}">
+      {%- capture post_tag_slugs %}{% for t in post.tags %}{{ t | slugify }} {% endfor %}{% endcapture -%}
+      <li class="post-item" data-cat="{{ cat }}" data-tags="{{ post_tag_slugs | strip }}">
         <time class="post-item-date post-meta" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
         <div class="post-item-body">
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
@@ -87,18 +88,45 @@ layout: default
 <script>
   (function () {
     var tabs = document.querySelectorAll('.feed-tab');
+    var tagBtns = document.querySelectorAll('.feed-tag');
     var items = document.querySelectorAll('.post-item');
+
+    function apply(catFilter, tagFilter) {
+      tabs.forEach(function (t) {
+        var on = !tagFilter && t.dataset.filter === catFilter;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      tagBtns.forEach(function (b) {
+        b.classList.toggle('active', b.dataset.tag === tagFilter);
+      });
+      items.forEach(function (item) {
+        var show = tagFilter
+          ? (' ' + (item.dataset.tags || '') + ' ').indexOf(' ' + tagFilter + ' ') !== -1
+          : (catFilter === 'all' || item.dataset.cat === catFilter);
+        item.style.display = show ? '' : 'none';
+      });
+    }
+
     tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        var filter = tab.dataset.filter;
-        tabs.forEach(function (t) {
-          t.classList.toggle('active', t === tab);
-          t.setAttribute('aria-pressed', t === tab ? 'true' : 'false');
-        });
-        items.forEach(function (item) {
-          item.style.display = (filter === 'all' || item.dataset.cat === filter) ? '' : 'none';
-        });
+      tab.addEventListener('click', function () { apply(tab.dataset.filter, null); });
+    });
+    tagBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        // clicking the active tag again returns to All
+        apply('all', btn.classList.contains('active') ? null : btn.dataset.tag);
       });
     });
+
+    // desktop: vertical wheel scrolls the tag strip horizontally (native swipe on touch)
+    var strip = document.querySelector('.feed-tags');
+    if (strip) {
+      strip.addEventListener('wheel', function (e) {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          strip.scrollLeft += e.deltaY;
+          e.preventDefault();
+        }
+      }, { passive: false });
+    }
   })();
 </script>
