@@ -2,6 +2,7 @@
 layout: post
 title: "Sourdough Boule"
 date: 2026-06-06
+categories: cooking
 tags: [recipes, sourdough, bread, baking]
 description: "Open-crumb sourdough boule baked in a Dutch oven. Bulk ferment, overnight cold proof, and a scored crust."
 ---

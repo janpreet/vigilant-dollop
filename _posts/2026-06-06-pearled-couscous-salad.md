@@ -2,6 +2,7 @@
 layout: post
 title: "Pearled Couscous Salad with Chickpeas"
 date: 2026-06-06
+categories: cooking
 tags: [recipes, salad, vegetarian]
 description: "Pearled couscous with chickpeas, cucumber, cherry tomatoes, olives, feta, and a lemon-Dijon dressing. Good warm or cold."
 ---

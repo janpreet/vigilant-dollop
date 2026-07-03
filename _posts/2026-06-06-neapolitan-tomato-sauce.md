@@ -2,6 +2,7 @@
 layout: post
 title: "No-Cook Neapolitan Tomato Sauce"
 date: 2026-06-06
+categories: cooking
 tags: [recipes, pizza, sauce]
 description: "Authentic no-cook Neapolitan pizza sauce — whole peeled tomatoes crushed by hand, salt, olive oil, basil. Nothing else."
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: "Sourdough Neapolitan Pizza Dough"
 date: 2026-06-06
+categories: cooking
 tags: [recipes, pizza, sourdough, baking]
 description: "Neapolitan pizza dough made entirely with sourdough starter — no commercial yeast. 48–72 hour cold ferment."
 ---

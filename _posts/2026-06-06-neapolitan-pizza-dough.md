@@ -2,6 +2,7 @@
 layout: post
 title: "Neapolitan Pizza Dough (Home Oven)"
 date: 2026-06-06
+categories: cooking
 tags: [recipes, pizza, baking, bread]
 description: "Cold-fermented Neapolitan-style pizza dough for a home oven with a pizza steel. Includes a whole wheat variant."
 ---

@@ -948,3 +948,129 @@ body.search-open {
     height: 36px;
   }
 }
+
+
+/**
+ * Home feed (intro, filter tabs, dense post list)
+ */
+.home-intro {
+  padding: ($spacing-unit / 2) 0 $spacing-unit;
+
+  .home-intro-text {
+    font-size: 17px;
+    color: var(--text);
+    max-width: 60ch;
+    margin-bottom: 8px;
+  }
+
+  .home-intro-links {
+    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+    display: flex;
+    gap: 10px;
+
+    a {
+      color: var(--accent);
+
+      &:hover {
+        color: var(--accent-dim);
+      }
+    }
+  }
+}
+
+.feed-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: $spacing-unit / 2;
+  padding-bottom: $spacing-unit / 2;
+  border-bottom: 1px solid var(--border);
+
+  .feed-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    color: var(--text-muted);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+
+    &:hover,
+    &.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background-color: var(--bg-hover);
+    }
+
+    .tab-count {
+      font-size: 10px;
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
+  }
+}
+
+.post-list > li.post-item {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 4px 20px;
+  padding: ($spacing-unit / 2) 0;
+
+  .post-item-date {
+    margin-bottom: 0;
+    padding-top: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .post-link {
+    @include relative-font-size(1.15);
+    margin-bottom: 4px;
+  }
+
+  .post-excerpt {
+    max-width: 68ch;
+    margin-bottom: 8px;
+  }
+
+  .post-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .post-item-chip {
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 7px;
+  }
+
+  .post-item-read {
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+    opacity: 0.8;
+  }
+
+  @include media-query($on-palm) {
+    grid-template-columns: 1fr;
+    gap: 2px;
+
+    .post-item-date {
+      padding-top: 0;
+    }
+  }
+}

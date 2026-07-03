@@ -7,28 +7,66 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
+  <section class="home-intro">
+    <p class="home-intro-text">{{ site.description }}</p>
+    <p class="home-intro-links">
+      <a href="https://github.com/janpreet">GitHub</a>
+      <span aria-hidden="true">·</span>
+      <a href="{{ "/nanakshahi-rebuilt" | relative_url }}">Nanakshahi calendar</a>
+      <span aria-hidden="true">·</span>
+      <a href="{{ "/resume" | relative_url }}">Resume</a>
+    </p>
+  </section>
+
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
+    {%- assign tech_count = 0 -%}
+    {%- assign cooking_count = 0 -%}
+    {%- for post in site.posts -%}
+      {%- if post.categories contains 'tech' -%}
+        {%- assign tech_count = tech_count | plus: 1 -%}
+      {%- elsif post.categories contains 'cooking' -%}
+        {%- assign cooking_count = cooking_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    <div class="feed-tabs" role="group" aria-label="Filter posts by topic">
+      <button class="feed-tab active" data-filter="all" aria-pressed="true">All <span class="tab-count">{{ site.posts.size }}</span></button>
+      <button class="feed-tab" data-filter="tech" aria-pressed="false">Tech <span class="tab-count">{{ tech_count }}</span></button>
+      <button class="feed-tab" data-filter="cooking" aria-pressed="false">Cooking <span class="tab-count">{{ cooking_count }}</span></button>
+    </div>
+
     <ul class="post-list">
       {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          <p class="post-excerpt">
-            {%- if post.description -%}
-              {{ post.description }}
-            {%- else -%}
-              {{ post.excerpt | strip_html | truncate: 160 }}
-            {%- endif -%}
-          </p>
-        {%- endif -%}
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- if post.categories contains 'tech' -%}
+        {%- assign cat = 'tech' -%}
+      {%- elsif post.categories contains 'cooking' -%}
+        {%- assign cat = 'cooking' -%}
+      {%- else -%}
+        {%- assign cat = 'other' -%}
+      {%- endif -%}
+      {%- assign words = post.content | number_of_words -%}
+      {%- assign read_time = words | divided_by: 200 | at_least: 1 -%}
+      <li class="post-item" data-cat="{{ cat }}">
+        <time class="post-item-date post-meta" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time>
+        <div class="post-item-body">
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          {%- if site.show_excerpts -%}
+            <p class="post-excerpt">
+              {%- if post.description -%}
+                {{ post.description }}
+              {%- else -%}
+                {{ post.excerpt | strip_html | truncate: 160 }}
+              {%- endif -%}
+            </p>
+          {%- endif -%}
+          <div class="post-item-meta">
+            <span class="post-item-chip">{{ cat }}</span>
+            <span class="post-item-read">{{ read_time }} min read</span>
+          </div>
+        </div>
       </li>
       {%- endfor -%}
     </ul>
@@ -37,3 +75,22 @@ layout: default
   {%- endif -%}
 
 </div>
+
+<script>
+  (function () {
+    var tabs = document.querySelectorAll('.feed-tab');
+    var items = document.querySelectorAll('.post-item');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var filter = tab.dataset.filter;
+        tabs.forEach(function (t) {
+          t.classList.toggle('active', t === tab);
+          t.setAttribute('aria-pressed', t === tab ? 'true' : 'false');
+        });
+        items.forEach(function (item) {
+          item.style.display = (filter === 'all' || item.dataset.cat === filter) ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
