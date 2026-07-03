@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Nanakshahi Calendar, Rebuilt from the Jantri"
-date:   2026-07-03 01:30:00 -0400
+date:   2026-07-03 00:30:00 -0400
 categories: tech
 tags: [sikh, calendar, open-source, ics, astronomy]
 description: "A ground-up rebuild of my Nanakshahi calendar: dates extracted from the printed Jantri, an astronomical engine for future years, and honest labels on every date."
