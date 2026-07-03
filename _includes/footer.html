@@ -20,3 +20,17 @@
   </div>
 
 </footer>
+
+<script>
+  (function () {
+    function hueIndex(name) {
+      var h = 5381;
+      for (var i = 0; i < name.length; i++) h = ((h << 5) + h + name.charCodeAt(i)) >>> 0;
+      return h % 6;
+    }
+    document.querySelectorAll('.tag-chip, .tag-filter-btn[data-tag]:not([data-tag="all"])').forEach(function (el) {
+      var name = (el.dataset.tag || el.textContent).trim().toLowerCase().replace(/\s*\d+$/, '');
+      el.classList.add('tag-hue-' + hueIndex(name));
+    });
+  })();
+</script>

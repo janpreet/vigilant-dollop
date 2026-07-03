@@ -1089,3 +1089,23 @@ body.search-open {
     }
   }
 }
+
+
+/**
+ * Deterministic tag hues: each tag name hashes to one of six muted hues
+ * (assigned by the small script in the footer), consistent across pages.
+ */
+@for $i from 0 through 5 {
+  .tag-chip.tag-hue-#{$i},
+  .tags-page .tag-filter-btn.tag-hue-#{$i} {
+    color: var(--tag-hue-#{$i});
+    border-color: color-mix(in srgb, var(--tag-hue-#{$i}) 45%, transparent);
+
+    &:hover,
+    &.active {
+      color: var(--tag-hue-#{$i});
+      border-color: var(--tag-hue-#{$i});
+      background-color: var(--bg-hover);
+    }
+  }
+}
