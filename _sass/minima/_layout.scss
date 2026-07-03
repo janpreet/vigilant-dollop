@@ -1037,8 +1037,8 @@ body.search-open {
     mask-image: linear-gradient(to right, transparent, black var(--fade-l), black calc(100% - var(--fade-r)), transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black var(--fade-l), black calc(100% - var(--fade-r)), transparent);
 
-    &.fade-l { --fade-l: 20px; }
-    &.fade-r { --fade-r: 28px; }
+    &.fade-l { --fade-l: 8px; }
+    &.fade-r { --fade-r: 16px; }
 
     &::-webkit-scrollbar {
       display: none;
