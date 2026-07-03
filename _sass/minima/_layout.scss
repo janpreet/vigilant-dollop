@@ -1023,6 +1023,26 @@ body.search-open {
   }
 }
 
+.home-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: -4px 0 ($spacing-unit / 2);
+
+  .home-tags-all {
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+    margin-left: 4px;
+
+    &:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  }
+}
+
 .post-list > li.post-item {
   display: grid;
   grid-template-columns: 108px 1fr;

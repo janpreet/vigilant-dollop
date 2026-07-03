@@ -35,6 +35,16 @@ layout: default
       <button class="feed-tab" data-filter="cooking" aria-pressed="false">Cooking <span class="tab-count">{{ cooking_count }}</span></button>
     </div>
 
+    {%- capture tag_sizes %}{% for tag in site.tags %}{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}|{% endfor %}{% endcapture -%}
+    {%- assign top_tags = tag_sizes | split: '|' | sort | reverse -%}
+    <div class="home-tags" aria-label="Popular tags">
+      {%- for entry in top_tags limit: 8 -%}
+        {%- assign tag_name = entry | split: '#' | last -%}
+        <a class="tag-chip" href="{{ '/tags/' | relative_url }}#{{ tag_name | slugify }}">{{ tag_name }}</a>
+      {%- endfor -%}
+      <a class="home-tags-all" href="{{ '/tags/' | relative_url }}">all tags &rarr;</a>
+    </div>
+
     <ul class="post-list">
       {%- for post in site.posts -%}
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
