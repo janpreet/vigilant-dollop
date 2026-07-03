@@ -26,7 +26,6 @@ show_excerpts: true
 header_pages:
   - index.md
   - about.md
-  - tags.md
   - contact.md
   - resume.md
   
