@@ -38,8 +38,9 @@ layout: default
       <div class="feed-tags" aria-label="Filter by tag">
         {%- for entry in sorted_tags -%}
           {%- assign tag_name = entry | split: '#' | last -%}
+          {%- assign tag_count = entry | split: '#' | first | minus: 1000 -%}
           {%- if tag_name != '' -%}
-          <button class="tag-chip feed-tag" data-tag="{{ tag_name | slugify }}">{{ tag_name }}</button>
+          <button class="feed-tab feed-tag" data-tag="{{ tag_name | slugify }}" aria-pressed="false">{{ tag_name }} <span class="tab-count">{{ tag_count }}</span></button>
           {%- endif -%}
         {%- endfor -%}
       </div>
@@ -87,7 +88,7 @@ layout: default
 
 <script>
   (function () {
-    var tabs = document.querySelectorAll('.feed-tab');
+    var tabs = document.querySelectorAll('.feed-tab[data-filter]');
     var tagBtns = document.querySelectorAll('.feed-tag');
     var items = document.querySelectorAll('.post-item');
 
@@ -98,7 +99,9 @@ layout: default
         t.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
       tagBtns.forEach(function (b) {
-        b.classList.toggle('active', b.dataset.tag === tagFilter);
+        var on = b.dataset.tag === tagFilter;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
       items.forEach(function (item) {
         var show = tagFilter
