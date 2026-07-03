@@ -33,6 +33,7 @@ layout: default
       <button class="feed-tab active" data-filter="all" aria-pressed="true">All <span class="tab-count">{{ site.posts.size }}</span></button>
       <button class="feed-tab" data-filter="tech" aria-pressed="false">Tech <span class="tab-count">{{ tech_count }}</span></button>
       <button class="feed-tab" data-filter="cooking" aria-pressed="false">Cooking <span class="tab-count">{{ cooking_count }}</span></button>
+      <a class="home-tags-all" href="{{ '/tags/' | relative_url }}">all tags &rarr;</a>
     </div>
 
     {%- capture tag_sizes %}{% for tag in site.tags %}{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}|{% endfor %}{% endcapture -%}
@@ -42,7 +43,6 @@ layout: default
         {%- assign tag_name = entry | split: '#' | last -%}
         <a class="tag-chip" href="{{ '/tags/' | relative_url }}#{{ tag_name | slugify }}">{{ tag_name }}</a>
       {%- endfor -%}
-      <a class="home-tags-all" href="{{ '/tags/' | relative_url }}">all tags &rarr;</a>
     </div>
 
     <ul class="post-list">
