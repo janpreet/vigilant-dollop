@@ -2,15 +2,17 @@
  * CSS Custom Properties for theming
  */
 :root {
-  --bg: #0d1117;
-  --bg-surface: #161b22;
-  --bg-hover: #21262d;
-  --border: #30363d;
+  --bg: #0d1210;
+  --bg-surface: #151b18;
+  --bg-hover: #1d2521;
+  --border: #2c3630;
   --text: #e6edf3;
   --text-muted: #8b949e;
   --accent: #84aa9e;
   --accent-dim: #5d8a7e;
-  --code-bg: #161b22;
+  --accent-hover: #a3c4b9;
+  --chip-warm: #c08d4f;
+  --code-bg: #151b18;
   --selection: rgba(132, 170, 158, 0.2);
 }
 
@@ -23,6 +25,8 @@
   --text-muted: #656d76;
   --accent: #2e7d6e;
   --accent-dim: #1a5c50;
+  --accent-hover: #1a5c50;
+  --chip-warm: #8a5a1f;
   --code-bg: #f6f8fa;
   --selection: rgba(46, 125, 110, 0.15);
 }
@@ -37,6 +41,8 @@
     --text-muted: #656d76;
     --accent: #2e7d6e;
     --accent-dim: #1a5c50;
+    --accent-hover: #1a5c50;
+    --chip-warm: #8a5a1f;
     --code-bg: #f6f8fa;
     --selection: rgba(46, 125, 110, 0.15);
   }

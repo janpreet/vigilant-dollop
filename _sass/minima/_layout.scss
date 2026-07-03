@@ -13,7 +13,7 @@
   // Subtle backdrop blur for depth
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  background-color: rgba(13, 17, 23, 0.92);
+  background-color: rgba(13, 18, 16, 0.92);
 
   [data-theme="light"] & {
     background-color: rgba(255, 255, 255, 0.92);
@@ -50,7 +50,7 @@
   }
 
   &:hover {
-    color: var(--accent-dim);
+    color: var(--accent-hover);
     text-decoration: none;
   }
 }
@@ -338,8 +338,12 @@
 
 .post-link {
   display: block;
-  color: var(--text);
   @include relative-font-size(1.375);
+
+  &,
+  &:visited {
+    color: var(--text);
+  }
   font-weight: 600;
   margin-bottom: 8px;
   line-height: 1.3;
@@ -548,9 +552,8 @@
     }
 
     .tag-count {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text-muted);
-      opacity: 0.7;
     }
   }
 
@@ -974,7 +977,7 @@ body.search-open {
       color: var(--accent);
 
       &:hover {
-        color: var(--accent-dim);
+        color: var(--accent-hover);
       }
     }
   }
@@ -1016,7 +1019,6 @@ body.search-open {
       font-size: 11px;
       font-family: 'JetBrains Mono', monospace;
       color: var(--text-muted);
-      opacity: 0.7;
     }
   }
 }
@@ -1060,13 +1062,22 @@ body.search-open {
     border: 1px solid var(--border);
     border-radius: 3px;
     padding: 2px 7px;
+
+    &.cooking {
+      color: var(--chip-warm);
+      border-color: var(--chip-warm);
+    }
+
+    &.tech {
+      color: var(--accent);
+      border-color: var(--accent-dim);
+    }
   }
 
   .post-item-read {
     font-size: 11px;
     font-family: 'JetBrains Mono', monospace;
     color: var(--text-muted);
-    opacity: 0.8;
   }
 
   @include media-query($on-palm) {
