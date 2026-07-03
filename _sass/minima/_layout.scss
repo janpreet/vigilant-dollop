@@ -1023,23 +1023,28 @@ body.search-open {
   }
 
   .feed-tags {
+    --fade-l: 0px;
+    --fade-r: 0px;
     display: flex;
     align-items: stretch;
-    gap: 20px;
+    gap: 24px;
     margin-left: 24px;
     overflow-x: auto;
     min-width: 0;
     flex: 1;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
-    // fade edges hint that the strip scrolls
-    mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 24px), transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 24px), transparent);
+    mask-image: linear-gradient(to right, transparent, black var(--fade-l), black calc(100% - var(--fade-r)), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black var(--fade-l), black calc(100% - var(--fade-r)), transparent);
+
+    &.fade-l { --fade-l: 20px; }
+    &.fade-r { --fade-r: 28px; }
 
     &::-webkit-scrollbar {
       display: none;
     }
 
+    .feed-tab,
     .feed-tag {
       flex-shrink: 0;
       white-space: nowrap;
