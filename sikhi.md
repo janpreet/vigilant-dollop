@@ -1,7 +1,8 @@
 ---
 layout: page
-title: ਸਿੱਖੀ
+title: Sikhi
 permalink: /sikhi/
+show_title: true
 description: "Sikhi resources — puratan maryada, the Nanakshahi calendar, and things worth preserving and sharing."
 ---
 

@@ -3,20 +3,22 @@ layout: default
 ---
 
 <div class="tags-page">
+  {%- assign tagged_pages = site.pages | where_exp: "p", "p.tags.size > 0" -%}
+  {%- assign all_items = site.posts | concat: tagged_pages -%}
   <div class="tags-cloud">
-    {%- assign all_tags = site.posts | map: "tags" | join: "," | split: "," | uniq | sort -%}
+    {%- assign all_tags = all_items | map: "tags" | join: "," | split: "," | uniq | sort -%}
     {%- for tag in all_tags -%}
       {%- assign tag = tag | strip -%}
       {%- if tag != "" -%}
-        {%- assign tag_count = site.posts | where_exp: "post", "post.tags contains tag" | size -%}
+        {%- assign tag_count = all_items | where_exp: "post", "post.tags contains tag" | size -%}
         <button class="tag-filter-btn" data-tag="{{ tag | slugify }}">{{ tag }}<span class="tag-count">{{ tag_count }}</span></button>
       {%- endif -%}
     {%- endfor -%}
-    <button class="tag-filter-btn tag-filter-all active" data-tag="all">all posts<span class="tag-count">{{ site.posts.size }}</span></button>
+    <button class="tag-filter-btn tag-filter-all active" data-tag="all">all posts<span class="tag-count">{{ all_items.size }}</span></button>
   </div>
 
   <div class="tags-post-list">
-    {%- for post in site.posts -%}
+    {%- for post in all_items -%}
       {%- assign post_tags = post.tags | join: " " | downcase -%}
       {%- assign slugged_tags = "" -%}
       {%- for tag in post.tags -%}

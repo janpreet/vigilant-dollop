@@ -2,6 +2,10 @@
 layout: page
 title: "Dhoop, Jot & Shastar Maryada at Home"
 permalink: /sikhi/dhoop/
+show_title: true
+parent: Sikhi
+parent_url: /sikhi/
+tags: [sikh, maryada, dhoop]
 description: "A home-practice guide to puratan Khalsa maryada — preparing dhoop from a traditional samagri, keeping the jot, and doing daily shastar prakash and seva of Maharaj's saroop."
 ---
 
