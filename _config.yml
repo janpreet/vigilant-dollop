@@ -26,6 +26,7 @@ show_excerpts: true
 header_pages:
   - index.md
   - about.md
+  - sikhi.md
   - contact.md
   - resume.md
   
