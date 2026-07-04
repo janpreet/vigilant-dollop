@@ -1,0 +1,219 @@
+<svg viewBox="0 0 1500 1720" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans Gurmukhi','Arial Unicode MS','Mukta Mahee',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1220"/>
+      <stop offset="1" stop-color="#1c1230"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c98f2e"/>
+      <stop offset="0.5" stop-color="#f6d488"/>
+      <stop offset="1" stop-color="#c98f2e"/>
+    </linearGradient>
+    <style>
+      .h1{fill:#ffffff;font-size:32px;font-weight:800}
+      .h2{fill:#e8b64c;font-size:16px;font-weight:600}
+      .muted{fill:#8f97ad;font-size:12.5px}
+      .card{fill:rgba(255,255,255,0.045);stroke:rgba(232,182,76,0.4);stroke-width:1.2}
+      .cT{fill:#ffd966;font-size:21px;font-weight:800}
+      .cS{fill:#f6d488;font-size:13.5px;font-weight:600}
+      .k{fill:#8f97ad;font-size:12.5px;font-weight:700}
+      .v{fill:#e6eaf5;font-size:12.5px}
+      .body{fill:#c7cde0;font-size:12.5px}
+      .tip{fill:#9fe6b0;font-size:12.5px;font-weight:600}
+      .tl{fill:#dfe4f0;font-size:12px;font-weight:600}
+      .tly{fill:#e8b64c;font-size:12px;font-weight:700}
+      .stepT{fill:#ffd966;font-size:14px;font-weight:700}
+      .stepB{fill:#c7cde0;font-size:11.5px}
+      .gupT{fill:#f2b8c6;font-size:14px;font-weight:700}
+    </style>
+  </defs>
+
+  <rect width="1500" height="1720" fill="url(#bg)"/>
+
+  <!-- Header -->
+  <text x="750" y="58" text-anchor="middle" class="h1">ਪੁਰਾਤਨ ਗ੍ਰੰਥ · A Map of the Puratan Sikh Granths</text>
+  <text x="750" y="88" text-anchor="middle" class="h2">Dasam Granth · Sarabloh Granth · Suraj Prakash · Prem Sumarag · Sau Sakhi — and the gupt banis of the dals</text>
+  <text x="750" y="112" text-anchor="middle" class="muted">Sri Guru Granth Sahib Ji alone is the Guru. These granths are the treasured literature of the Guru’s darbar and the Panth — the Tenth Master’s bani, history, code, poetry and prophecy around the throne of Gurbani.</text>
+
+  <!-- Timeline -->
+  <line x1="100" y1="185" x2="1400" y2="185" stroke="url(#gold)" stroke-width="3"/>
+  <g text-anchor="middle">
+    <circle cx="160" cy="185" r="6" fill="#f6d488"/>
+    <text x="160" y="165" class="tly">1604</text>
+    <text x="160" y="212" class="tl">Adi Granth</text>
+    <text x="160" y="228" class="muted">compiled by Guru Arjan Dev Ji</text>
+
+    <circle cx="420" cy="185" r="6" fill="#f6d488"/>
+    <text x="420" y="165" class="tly">1685–1708</text>
+    <text x="420" y="212" class="tl">Dasam Bani revealed</text>
+    <text x="420" y="228" class="muted">Paonta &amp; Anandpur darbar</text>
+
+    <circle cx="650" cy="185" r="6" fill="#f6d488"/>
+    <text x="650" y="165" class="tly">1698</text>
+    <text x="650" y="212" class="tl">Patna Sahib sarup</text>
+    <text x="650" y="228" class="muted">compiled by Baba Deep Singh Ji</text>
+
+    <circle cx="880" cy="185" r="6" fill="#f6d488"/>
+    <text x="880" y="165" class="tly">c. 1708</text>
+    <text x="880" y="212" class="tl">Sarabloh Granth · Nanded</text>
+    <text x="880" y="228" class="muted">kept by the Nihang dals</text>
+
+    <circle cx="1110" cy="185" r="6" fill="#f6d488"/>
+    <text x="1110" y="165" class="tly">early 1700s</text>
+    <text x="1110" y="212" class="tl">Prem Sumarag · Sau Sakhi</text>
+    <text x="1110" y="228" class="muted">rahit and prophecy of the Khalsa age</text>
+
+    <circle cx="1340" cy="185" r="6" fill="#f6d488"/>
+    <text x="1340" y="165" class="tly">1843</text>
+    <text x="1340" y="212" class="tl">Suraj Prakash</text>
+    <text x="1340" y="228" class="muted">Kavi Santokh Singh</text>
+  </g>
+
+  <!-- ===== Full-width card: Dasam Granth ===== -->
+  <rect x="70" y="262" width="1360" height="240" rx="14" class="card" stroke="#ffd966" stroke-width="1.8"/>
+  <text x="95" y="300" class="cT">ਸ੍ਰੀ ਦਸਮ ਗ੍ਰੰਥ ਸਾਹਿਬ · Sri Dasam Granth Sahib</text>
+  <text x="95" y="322" class="cS">The bani of Guru Gobind Singh Ji — the granth you already recite every day</text>
+  <g>
+    <text x="95" y="350" class="k">AUTHOR</text><text x="230" y="350" class="v">Guru Gobind Singh Ji</text>
+    <text x="95" y="370" class="k">LANGUAGE</text><text x="230" y="370" class="v">Braj, Punjabi &amp; Persian in Gurmukhi · 1,428 angs in the standard sarup</text>
+    <text x="95" y="390" class="k">ENTHRONED</text><text x="230" y="390" class="v">beside Guru Granth Sahib Ji at Takht Hazur Sahib, Takht Patna Sahib &amp; in the Nihang dals</text>
+  </g>
+  <text x="95" y="418" class="body">Inside: Jaap Sahib · Akal Ustat (“recognise all humanity as one”) · Bachittar Natak — the Guru’s own autobiography · Chandi Charitras &amp;</text>
+  <text x="95" y="436" class="body">Chandi di Var (the first pauri of Ardas) · Gyan Prabodh · Chaubis Avtar · Shabad Hazare · 33 Savaiye · Khalsa Mahima · Zafarnama.</text>
+  <text x="95" y="454" class="body">Your nitnem’s Jaap Sahib, Tav-Prasad Savaiye and Chaupai Sahib are Dasam bani — as are the banis of the amrit sanchar itself.</text>
+  <text x="95" y="482" class="tip">➜ Start here: Jaap Sahib with translation, then Bachittar Natak — the most gripping entry point in Sikh literature.</text>
+
+  <!-- ===== Card: Sarabloh ===== -->
+  <rect x="70" y="530" width="670" height="360" rx="14" class="card"/>
+  <text x="95" y="568" class="cT">ਸ੍ਰੀ ਸਰਬਲੋਹ ਗ੍ਰੰਥ · Sarabloh Granth</text>
+  <text x="95" y="590" class="cS">“The Granth of All-Steel” — also called Manglacharan Puran</text>
+  <g>
+    <text x="95" y="618" class="k">AUTHOR</text><text x="230" y="618" class="v">Guru Gobind Singh Ji, in the darbar at Nanded</text>
+    <text x="95" y="638" class="k">LANGUAGE</text><text x="230" y="638" class="v">Braj with Sanskritic vocabulary, Gurmukhi script</text>
+    <text x="95" y="658" class="k">FORM</text><text x="230" y="658" class="v">5 chapters; Chapter 1 alone = 753 verses in dozens of metres</text>
+    <text x="95" y="678" class="k">KEPT BY</text><text x="230" y="678" class="v">Nihang dals (Buddha Dal) &amp; Takht Hazur Sahib</text>
+  </g>
+  <line x1="95" y1="695" x2="715" y2="695" stroke="rgba(232,182,76,0.25)"/>
+  <text x="95" y="720" class="body">Inside: a vast cosmic epic — the battle of the devas against the demon Bhimnad —</text>
+  <text x="95" y="738" class="body">framing meditations on Akal Purakh as All-Steel (sarab-loh), the deathless power</text>
+  <text x="95" y="756" class="body">behind all forms. Home of the famous Khalsa Mahima: “ਖ਼ਾਲਸਾ ਮੇਰੋ ਰੂਪ ਹੈ ਖ਼ਾਸ —</text>
+  <text x="95" y="774" class="body">the Khalsa is my own special form.”</text>
+  <text x="95" y="800" class="body">Why it matters: the theological heart of the Khalsa’s warrior identity — shastar as</text>
+  <text x="95" y="818" class="body">a form of the Divine — and of the sarbloh bibek discipline of the Nihang Singhs.</text>
+  <text x="95" y="850" class="tip">➜ Start here: the Khalsa Mahima, then Chapter 1 with a satik (translation).</text>
+  <text x="95" y="872" class="muted">Entry effort: ●●●●○ (dense Braj–Sanskrit poetry — use a satik)</text>
+
+  <!-- ===== Card: Suraj Prakash ===== -->
+  <rect x="760" y="530" width="670" height="360" rx="14" class="card"/>
+  <text x="785" y="568" class="cT">ਸ੍ਰੀ ਗੁਰ ਪ੍ਰਤਾਪ ਸੂਰਜ ਗ੍ਰੰਥ · Suraj Prakash</text>
+  <text x="785" y="590" class="cS">“The Splendour of the Sun of the Gurus’ Glory”</text>
+  <g>
+    <text x="785" y="618" class="k">AUTHOR</text><text x="920" y="618" class="v">Kavi Santokh Singh (1787–1843), completed 1843</text>
+    <text x="785" y="638" class="k">LANGUAGE</text><text x="920" y="638" class="v">Braj in Gurmukhi script</text>
+    <text x="785" y="658" class="k">SIZE</text><text x="920" y="658" class="v">~51,800 verses (~60,000 with Nanak Prakash) — an ocean</text>
+    <text x="785" y="678" class="k">STRUCTURE</text><text x="920" y="678" class="v">12 rasis (zodiac) + 6 ruts (seasons) + 2 ayans; chapters = ansu (rays)</text>
+  </g>
+  <line x1="785" y1="695" x2="1405" y2="695" stroke="rgba(232,182,76,0.25)"/>
+  <text x="785" y="720" class="body">Inside: the full narrative of all ten Gurus and Baba Banda Singh Bahadur — the battles,</text>
+  <text x="785" y="738" class="body">the sakhis, the shaheedis — gathered from the earlier sources into one continuous epic.</text>
+  <text x="785" y="764" class="body">Why it matters: this is the text of daily katha in gurdwaras worldwide — including the</text>
+  <text x="785" y="782" class="body">nightly katha at Sri Harmandir Sahib. For nearly two centuries, most Sikhs have</text>
+  <text x="785" y="800" class="body">received their history through it. Almost every sakhi you heard growing up</text>
+  <text x="785" y="818" class="body">was routed through Suraj Prakash.</text>
+  <text x="785" y="850" class="tip">➜ Start here: don’t read it — listen. Daily Suraj Prakash katha is on every platform.</text>
+  <text x="785" y="872" class="muted">Entry effort: ●●●○○ via katha · ●●●●● reading the Braj (14-volume steek exists)</text>
+
+  <!-- ===== Card: Prem Sumarag ===== -->
+  <rect x="70" y="920" width="670" height="360" rx="14" class="card"/>
+  <text x="95" y="958" class="cT">ਪ੍ਰੇਮ ਸੁਮਾਰਗ ਗ੍ਰੰਥ · Prem Sumarag</text>
+  <text x="95" y="980" class="cS">“The True Path of Love” — the rahitnama of the ideal Khalsa society</text>
+  <g>
+    <text x="95" y="1008" class="k">ERA</text><text x="230" y="1008" class="v">the Khalsa’s classical age</text>
+    <text x="95" y="1028" class="k">LANGUAGE</text><text x="230" y="1028" class="v">Punjabi prose, Gurmukhi — far easier than the poetic granths</text>
+    <text x="95" y="1048" class="k">FORM</text><text x="230" y="1048" class="v">10 chapters, from personal rahit to statecraft</text>
+    <text x="95" y="1068" class="k">SPIRIT</text><text x="230" y="1068" class="v">a whole civilisation imagined under Akal Purakh’s sovereignty</text>
+  </g>
+  <line x1="95" y1="1085" x2="715" y2="1085" stroke="rgba(232,182,76,0.25)"/>
+  <text x="95" y="1110" class="body">Inside: a complete blueprint of Khalsa life — initiation, daily discipline, birth, naming,</text>
+  <text x="95" y="1128" class="body">marriage (anand rites), death; then economy, justice, and the model of a benevolent</text>
+  <text x="95" y="1146" class="body">Khalsa state. Strikingly forward on gender: women receive pahul, girls are educated,</text>
+  <text x="95" y="1164" class="body">and widows may remarry with honour.</text>
+  <text x="95" y="1190" class="body">Why it matters: it shows the Khalsa imagining a whole society — not just a code of</text>
+  <text x="95" y="1208" class="body">conduct but courts, markets and kingship under the Timeless One.</text>
+  <text x="95" y="1240" class="tip">➜ Start here: the life-cycle chapters (birth, anand karaj, death) — readable in an afternoon.</text>
+  <text x="95" y="1262" class="muted">Entry effort: ●●○○○ (prose; translations and studies available)</text>
+
+  <!-- ===== Card: Sau Sakhi ===== -->
+  <rect x="760" y="920" width="670" height="360" rx="14" class="card"/>
+  <text x="785" y="958" class="cT">ਸੌ ਸਾਖੀ · Sau Sakhi (Guru Ratan Mal)</text>
+  <text x="785" y="980" class="cS">“The Hundred Stories” — the words and prophecies of the Tenth Master</text>
+  <g>
+    <text x="785" y="1008" class="k">SOURCE</text><text x="920" y="1008" class="v">the words of Guru Gobind Singh Ji</text>
+    <text x="785" y="1028" class="k">NARRATED BY</text><text x="920" y="1028" class="v">Bhai Ram Kuar Ji, of the house of Baba Buddha Ji (later Bhai Gurbakhsh Singh)</text>
+    <text x="785" y="1048" class="k">SCRIBE</text><text x="920" y="1048" class="v">Bhai Sahib Singh</text>
+    <text x="785" y="1068" class="k">LANGUAGE</text><text x="920" y="1068" class="v">Braj prose with Punjabi verse · 100 sakhis</text>
+  </g>
+  <line x1="785" y1="1085" x2="1405" y2="1085" stroke="rgba(232,182,76,0.25)"/>
+  <text x="785" y="1110" class="body">Inside: one hundred sakhis of Guru Gobind Singh Ji — episodes, rahit teachings, and the</text>
+  <text x="785" y="1128" class="body">famous prophecies of the Khalsa’s coming sovereignty (raj karega khalsa).</text>
+  <text x="785" y="1154" class="body">Why it matters: through the darkest persecution this book was hope in manuscript</text>
+  <text x="785" y="1172" class="body">form — the shaheeds of the ghallugharas went to their deaths certain the Panth would</text>
+  <text x="785" y="1190" class="body">rise. It fired the Namdhari movement under Baba Ram Singh, and the British monitored</text>
+  <text x="785" y="1208" class="body">its prophecies — an empire, nervous about a book.</text>
+  <text x="785" y="1240" class="tip">➜ Start here: after the others — the prophecies land with more force once you know the history.</text>
+  <text x="785" y="1262" class="muted">Entry effort: ●●●○○</text>
+
+  <!-- ===== Gupt banis strip ===== -->
+  <rect x="70" y="1310" width="1360" height="140" rx="14" class="card" stroke="#f2b8c6" stroke-width="1.6"/>
+  <text x="95" y="1345" class="gupT">ਗੁਪਤ ਬਾਣੀਆਂ · The rare banis kept by the dals</text>
+  <text x="95" y="1372" class="body">ਉਗ੍ਰਦੰਤੀ Ugardanti — 6 chhands from the Patna Sahib sarup; given by the Guru so the weak find strength to fight tyranny; in Nihang &amp; Namdhari nitnem ·</text>
+  <text x="95" y="1392" class="body">ਸ੍ਰੀ ਭਗੌਤੀ ਅਸਤੋਤ੍ਰ Sri Bhagauti Astotra (Sri Sahib ji ki Ustati) — praise of the Divine-Sword, in the Buddha Dal’s puratan Khalsa Nitnem gutkas ·</text>
+  <text x="95" y="1412" class="body">ਬ੍ਰਹਮ ਕਵਚ Brahm Kavach — the protective “armour” bani of the Sarbloh tradition, recited by Nihang Singhs before battle ·</text>
+  <text x="95" y="1432" class="body">ਆਰਤੀ ਆਰਤਾ Arati-Arata — the full puratan evening prayer with Guru Gobind Singh Ji’s verses, sung nightly at Hazur Sahib and in the dals.</text>
+
+  <!-- ===== Learning path ===== -->
+  <text x="750" y="1495" text-anchor="middle" class="h2">ਰਾਹ · A Suggested Path In</text>
+  <g>
+    <rect x="70" y="1515" width="205" height="92" rx="10" class="card"/>
+    <text x="86" y="1543" class="stepT">1 · Listen</text>
+    <text x="86" y="1565" class="stepB">Sakhis &amp; Suraj Prakash katha —</text>
+    <text x="86" y="1581" class="stepB">the tradition is oral first.</text>
+
+    <path d="M283 1561 h24" stroke="#e8b64c" stroke-width="2"/><path d="M301 1555 l10 6 -10 6 z" fill="#e8b64c"/>
+
+    <rect x="319" y="1515" width="205" height="92" rx="10" class="card"/>
+    <text x="335" y="1543" class="stepT">2 · Short + translated</text>
+    <text x="335" y="1565" class="stepB">Das Gur Katha — all ten Gurus</text>
+    <text x="335" y="1581" class="stepB">by a court poet, 120 pages.</text>
+
+    <path d="M532 1561 h24" stroke="#e8b64c" stroke-width="2"/><path d="M550 1555 l10 6 -10 6 z" fill="#e8b64c"/>
+
+    <rect x="568" y="1515" width="205" height="92" rx="10" class="card"/>
+    <text x="584" y="1543" class="stepT">3 · The Guru’s voice</text>
+    <text x="584" y="1565" class="stepB">Dasam Granth: Jaap Sahib,</text>
+    <text x="584" y="1581" class="stepB">Bachittar Natak, Zafarnama.</text>
+
+    <path d="M781 1561 h24" stroke="#e8b64c" stroke-width="2"/><path d="M799 1555 l10 6 -10 6 z" fill="#e8b64c"/>
+
+    <rect x="817" y="1515" width="205" height="92" rx="10" class="card"/>
+    <text x="833" y="1543" class="stepT">4 · Live the code</text>
+    <text x="833" y="1565" class="stepB">Prem Sumarag — life-cycle &amp;</text>
+    <text x="833" y="1581" class="stepB">rahit chapters, plain prose.</text>
+
+    <path d="M1030 1561 h24" stroke="#e8b64c" stroke-width="2"/><path d="M1048 1555 l10 6 -10 6 z" fill="#e8b64c"/>
+
+    <rect x="1066" y="1515" width="205" height="92" rx="10" class="card"/>
+    <text x="1082" y="1543" class="stepT">5 · Go deep</text>
+    <text x="1082" y="1565" class="stepB">Sarabloh with satik — Khalsa</text>
+    <text x="1082" y="1581" class="stepB">Mahima first; the gupt banis.</text>
+
+    <path d="M1279 1561 h24" stroke="#e8b64c" stroke-width="2"/><path d="M1297 1555 l10 6 -10 6 z" fill="#e8b64c"/>
+
+    <rect x="1315" y="1515" width="115" height="92" rx="10" class="card"/>
+    <text x="1331" y="1543" class="stepT">6 · Destiny</text>
+    <text x="1331" y="1565" class="stepB">Sau Sakhi —</text>
+    <text x="1331" y="1581" class="stepB">the prophecies.</text>
+  </g>
+
+  <text x="750" y="1668" text-anchor="middle" class="muted">Gurbani is the ocean; these granths are the rivers of the Panth’s memory flowing around it. ਧੁਰ ਕੀ ਬਾਣੀ ਆਈ ਤਿਨਿ ਸਗਲੀ ਚਿੰਤ ਮਿਟਾਈ॥</text>
+</svg>

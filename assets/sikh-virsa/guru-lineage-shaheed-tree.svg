@@ -1,0 +1,290 @@
+<svg viewBox="0 0 960 3320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Family tree of the ten Gurus with the parivaar and the shaheed singhs and singhniyan of each era" style="max-width:100%;height:auto;display:block;margin:1.5em auto;">
+  <style>
+    .guru { fill:#fdf3e3; stroke:#b8862d; stroke-width:2.5; }
+    .guruSh { fill:#fdf3e3; stroke:#c2521f; stroke-width:3.5; }
+    .fam { fill:#f0f4e8; stroke:#a8bd8a; stroke-width:1.5; }
+    .shd { fill:#fbeeea; stroke:#d9a08e; stroke-width:1.5; }
+    .pnth { fill:#eef2f7; stroke:#7d94b5; stroke-width:2; }
+    .gname { font:700 16px system-ui,sans-serif; fill:#5c4a1e; }
+    .gsub { font:600 12.5px system-ui,sans-serif; fill:#8a5a2b; }
+    .gnote { font:italic 400 12px system-ui,sans-serif; fill:#6b5b45; }
+    .hd { font:700 13px system-ui,sans-serif; }
+    .it { font:400 12.5px system-ui,sans-serif; fill:#3d3227; }
+    .itb { font:600 12.5px system-ui,sans-serif; fill:#3d3227; }
+    .sh { font:400 12.5px system-ui,sans-serif; fill:#7a3013; }
+    .shb { font:700 12.5px system-ui,sans-serif; fill:#a03e17; }
+    .spine { stroke:#b8862d; stroke-width:5; fill:none; }
+    .tie { stroke:#a8bd8a; stroke-width:1.5; fill:none; }
+    .tieR { stroke:#d9a08e; stroke-width:1.5; fill:none; }
+    .chip { font:700 10.5px system-ui,sans-serif; fill:#fff; }
+    .lgd { font:400 12.5px system-ui,sans-serif; fill:#3d3227; }
+  </style>
+
+  <!-- legend -->
+  <rect x="20" y="14" width="920" height="56" rx="10" fill="#faf6ee" stroke="#d8cdb8"/>
+  <line x1="46" y1="42" x2="86" y2="42" class="spine"/>
+  <text class="lgd" x="94" y="46">the jot</text>
+  <rect x="160" y="30" width="24" height="24" rx="6" class="fam"/>
+  <text class="lgd" x="192" y="46">parivaar — women in bold</text>
+  <rect x="390" y="30" width="24" height="24" rx="6" class="shd"/>
+  <text class="lgd" x="422" y="46">shaheed singhs &amp; singhniyan of the era</text>
+  <rect x="710" y="30" width="24" height="24" rx="6" class="guruSh"/>
+  <text class="lgd" x="742" y="46">Guru Sahib — shaheed</text>
+
+  <!-- spine -->
+  <line x1="480" y1="150" x2="480" y2="2700" class="spine"/>
+
+  <!-- ══ 1. Guru Nanak Dev Ji ══ -->
+  <line x1="330" y1="205" x2="240" y2="205" class="tie"/>
+  <rect class="guru" x="330" y="150" width="300" height="110" rx="14"/>
+  <text class="gname" x="480" y="180" text-anchor="middle">ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ</text>
+  <text class="gsub" x="480" y="202" text-anchor="middle">Guru Nanak Dev Ji · 1469–1539</text>
+  <text class="gnote" x="480" y="224" text-anchor="middle">Kartarpur — naam, kirat, vand chhakna</text>
+  <text class="gnote" x="480" y="243" text-anchor="middle">jot given to Bhai Lehna, won by seva</text>
+  <rect class="fam" x="20" y="146" width="220" height="118" rx="12"/>
+  <text class="hd" x="34" y="170" fill="#5a7038">Parivaar</text>
+  <text class="itb" x="34" y="192">Bebe Nanaki — first Sikh</text>
+  <text class="itb" x="34" y="212">Mata Sulakkhani</text>
+  <text class="it" x="34" y="232">Baba Sri Chand</text>
+  <text class="it" x="34" y="252">Baba Lakhmi Das</text>
+
+  <!-- ══ 2. Guru Angad Dev Ji ══ -->
+  <line x1="330" y1="440" x2="240" y2="440" class="tie"/>
+  <rect class="guru" x="330" y="385" width="300" height="110" rx="14"/>
+  <text class="gname" x="480" y="415" text-anchor="middle">ਗੁਰੂ ਅੰਗਦ ਦੇਵ ਜੀ</text>
+  <text class="gsub" x="480" y="437" text-anchor="middle">Guru Angad Dev Ji · 1504–52 · Gurgaddi 1539</text>
+  <text class="gnote" x="480" y="459" text-anchor="middle">Gurmukhi shaped for the sangat; Khadur Sahib</text>
+  <text class="gnote" x="480" y="478" text-anchor="middle">jot to Baba Amar Das — a 73-year-old sevadar</text>
+  <rect class="fam" x="20" y="381" width="220" height="118" rx="12"/>
+  <text class="hd" x="34" y="405" fill="#5a7038">Parivaar</text>
+  <text class="itb" x="34" y="427">Mata Khivi — langar mata,</text>
+  <text class="it" x="34" y="445">named in Gurbani (Ang 967)</text>
+  <text class="itb" x="34" y="465">Bibi Amro — her paath drew</text>
+  <text class="it" x="34" y="483">Amar Das Ji to the Ghar</text>
+
+  <!-- ══ 3. Guru Amar Das Ji ══ -->
+  <line x1="330" y1="675" x2="240" y2="675" class="tie"/>
+  <rect class="guru" x="330" y="620" width="300" height="110" rx="14"/>
+  <text class="gname" x="480" y="650" text-anchor="middle">ਗੁਰੂ ਅਮਰਦਾਸ ਜੀ</text>
+  <text class="gsub" x="480" y="672" text-anchor="middle">Guru Amar Das Ji · 1479–1574 · Gurgaddi 1552</text>
+  <text class="gnote" x="480" y="694" text-anchor="middle">Goindval; pangat before darshan; sati &amp; purdah refused;</text>
+  <text class="gnote" x="480" y="713" text-anchor="middle">women appointed to lead sangats</text>
+  <rect class="fam" x="20" y="616" width="220" height="118" rx="12"/>
+  <text class="hd" x="34" y="640" fill="#5a7038">Parivaar</text>
+  <text class="itb" x="34" y="662">Bibi Bhani — daughter;</text>
+  <text class="it" x="34" y="680">wife of Guru Ram Das Ji,</text>
+  <text class="it" x="34" y="698">mother of Guru Arjan Dev Ji</text>
+  <text class="it" x="34" y="718">Baba Mohan · Baba Mohri</text>
+
+  <!-- ══ 4. Guru Ram Das Ji ══ -->
+  <line x1="330" y1="910" x2="240" y2="910" class="tie"/>
+  <rect class="guru" x="330" y="855" width="300" height="110" rx="14"/>
+  <text class="gname" x="480" y="885" text-anchor="middle">ਗੁਰੂ ਰਾਮਦਾਸ ਜੀ</text>
+  <text class="gsub" x="480" y="907" text-anchor="middle">Guru Ram Das Ji · 1534–81 · Gurgaddi 1574</text>
+  <text class="gnote" x="480" y="929" text-anchor="middle">son-in-law of Guru Amar Das Ji — jot met the seva</text>
+  <text class="gnote" x="480" y="948" text-anchor="middle">founded Ramdaspur — Sri Amritsar</text>
+  <rect class="fam" x="20" y="851" width="220" height="118" rx="12"/>
+  <text class="hd" x="34" y="875" fill="#5a7038">Parivaar</text>
+  <text class="itb" x="34" y="897">Bibi Bhani</text>
+  <text class="it" x="34" y="917">Prithi Chand · Mahadev</text>
+  <text class="it" x="34" y="937">(Guru) Arjan — youngest,</text>
+  <text class="it" x="34" y="955">chosen for humility</text>
+
+  <!-- ══ 5. Guru Arjan Dev Ji — SHAHEED ══ -->
+  <line x1="330" y1="1145" x2="240" y2="1145" class="tie"/>
+  <line x1="630" y1="1145" x2="720" y2="1145" class="tieR"/>
+  <rect class="guruSh" x="330" y="1090" width="300" height="110" rx="14"/>
+  <rect x="547" y="1078" width="70" height="22" rx="11" fill="#c2521f"/>
+  <text class="chip" x="582" y="1093" text-anchor="middle">ਸ਼ਹੀਦ 1606</text>
+  <text class="gname" x="480" y="1120" text-anchor="middle">ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ</text>
+  <text class="gsub" x="480" y="1142" text-anchor="middle">Guru Arjan Dev Ji · 1563–1606 · Gurgaddi 1581</text>
+  <text class="gnote" x="480" y="1164" text-anchor="middle">Adi Granth compiled; Harmandir Sahib raised</text>
+  <text class="gnote" x="480" y="1183" text-anchor="middle">Shaheedan de Sirtaj — tatti tavi, Lahore</text>
+  <rect class="fam" x="20" y="1086" width="220" height="100" rx="12"/>
+  <text class="hd" x="34" y="1110" fill="#5a7038">Parivaar</text>
+  <text class="itb" x="34" y="1132">Mata Ganga Ji</text>
+  <text class="it" x="34" y="1152">(Guru) Hargobind — son,</text>
+  <text class="it" x="34" y="1172">blessed by Baba Buddha Ji</text>
+  <rect class="shd" x="720" y="1086" width="220" height="118" rx="12"/>
+  <text class="hd" x="734" y="1110" fill="#a03e17">Shaheedi of the era</text>
+  <text class="shb" x="734" y="1132">The first shaheedi:</text>
+  <text class="sh" x="734" y="1152">seated on the hot iron plate,</text>
+  <text class="sh" x="734" y="1172">burning sand poured over —</text>
+  <text class="sh" x="734" y="1192">ਤੇਰਾ ਕੀਆ ਮੀਠਾ ਲਾਗੈ ॥</text>
+
+  <!-- ══ 6. Guru Hargobind Sahib Ji ══ -->
+  <line x1="330" y1="1380" x2="240" y2="1380" class="tie"/>
+  <line x1="630" y1="1380" x2="720" y2="1380" class="tieR"/>
+  <rect class="guru" x="330" y="1325" width="300" height="110" rx="14"/>
+  <text class="gname" x="480" y="1355" text-anchor="middle">ਗੁਰੂ ਹਰਿਗੋਬਿੰਦ ਸਾਹਿਬ ਜੀ</text>
+  <text class="gsub" x="480" y="1377" text-anchor="middle">Guru Hargobind Sahib Ji · 1595–1644 · Gurgaddi 1606</text>
+  <text class="gnote" x="480" y="1399" text-anchor="middle">Miri–Piri — two kirpans; Sri Akal Takht Sahib raised;</text>
+  <text class="gnote" x="480" y="1418" text-anchor="middle">the sangat becomes an army as well as a school</text>
+  <rect class="fam" x="20" y="1321" width="220" height="118" rx="12"/>
+  <text class="hd" x="34" y="1345" fill="#5a7038">Parivaar</text>
+  <text class="it" x="34" y="1367">Baba Gurditta → Guru Har Rai</text>
+  <text class="it" x="34" y="1387">Baba Atal Rai · Baba Ani Rai</text>
+  <text class="itb" x="34" y="1407">Bibi Viro</text>
+  <text class="it" x="34" y="1427">Tegh Bahadur — youngest son</text>
+  <rect class="shd" x="720" y="1321" width="220" height="118" rx="12"/>
+  <text class="hd" x="734" y="1345" fill="#a03e17">Shaheedi of the era</text>
+  <text class="shb" x="734" y="1367">The first battle-shaheeds:</text>
+  <text class="sh" x="734" y="1387">Singhs fell defending the</text>
+  <text class="sh" x="734" y="1407">darbar — Amritsar, Lahira,</text>
+  <text class="sh" x="734" y="1427">Kartarpur, Phagwara</text>
+
+  <!-- ══ 7. Guru Har Rai Ji ══ -->
+  <line x1="330" y1="1615" x2="240" y2="1615" class="tie"/>
+  <rect class="guru" x="330" y="1560" width="300" height="110" rx="14"/>
+  <text class="gname" x="480" y="1590" text-anchor="middle">ਗੁਰੂ ਹਰਿ ਰਾਇ ਜੀ</text>
+  <text class="gsub" x="480" y="1612" text-anchor="middle">Guru Har Rai Ji · 1630–61 · Gurgaddi 1644</text>
+  <text class="gnote" x="480" y="1634" text-anchor="middle">grandson of Guru Hargobind Sahib (son of Baba Gurditta)</text>
+  <text class="gnote" x="480" y="1653" text-anchor="middle">2,200 sowar kept ready; dawakhana; gentleness with strength</text>
+  <rect class="fam" x="20" y="1556" width="220" height="100" rx="12"/>
+  <text class="hd" x="34" y="1580" fill="#5a7038">Parivaar</text>
+  <text class="itb" x="34" y="1602">Bibi Rup Kaur — kept the</text>
+  <text class="it" x="34" y="1622">Guru's sakhis in her pothi</text>
+  <text class="it" x="34" y="1642">Ram Rai · (Guru) Har Krishan</text>
+
+  <!-- ══ 8. Guru Har Krishan Ji ══ -->
+  <line x1="330" y1="1850" x2="240" y2="1850" class="tie"/>
+  <rect class="guru" x="330" y="1795" width="300" height="110" rx="14"/>
+  <text class="gname" x="480" y="1825" text-anchor="middle">ਗੁਰੂ ਹਰਿਕ੍ਰਿਸ਼ਨ ਜੀ</text>
+  <text class="gsub" x="480" y="1847" text-anchor="middle">Guru Har Krishan Ji · 1656–64 · Gurgaddi 1661</text>
+  <text class="gnote" x="480" y="1869" text-anchor="middle">Bala Pritam — took Delhi's smallpox upon himself</text>
+  <text class="gnote" x="480" y="1888" text-anchor="middle">serving the sick; jyoti-jot at eight years</text>
+  <rect class="fam" x="20" y="1791" width="220" height="80" rx="12"/>
+  <text class="hd" x="34" y="1815" fill="#5a7038">Parivaar</text>
+  <text class="itb" x="34" y="1837">Mata Krishan Kaur —</text>
+  <text class="it" x="34" y="1857">mother of the Bala Pritam</text>
+
+  <!-- ══ 9. Guru Tegh Bahadur Ji — SHAHEED ══ -->
+  <line x1="330" y1="2085" x2="240" y2="2085" class="tie"/>
+  <line x1="630" y1="2085" x2="720" y2="2085" class="tieR"/>
+  <rect class="guruSh" x="330" y="2030" width="300" height="110" rx="14"/>
+  <rect x="547" y="2018" width="70" height="22" rx="11" fill="#c2521f"/>
+  <text class="chip" x="582" y="2033" text-anchor="middle">ਸ਼ਹੀਦ 1675</text>
+  <text class="gname" x="480" y="2060" text-anchor="middle">ਗੁਰੂ ਤੇਗ਼ ਬਹਾਦਰ ਜੀ</text>
+  <text class="gsub" x="480" y="2082" text-anchor="middle">Guru Tegh Bahadur Ji · 1621–75 · Gurgaddi 1664</text>
+  <text class="gnote" x="480" y="2104" text-anchor="middle">son of Guru Hargobind Sahib; Hind di Chadar —</text>
+  <text class="gnote" x="480" y="2123" text-anchor="middle">sis given for another people's tilak and janju</text>
+  <rect class="fam" x="20" y="2026" width="220" height="120" rx="12"/>
+  <text class="hd" x="34" y="2050" fill="#5a7038">Parivaar</text>
+  <text class="itb" x="34" y="2072">Mata Gujri Ji — wife</text>
+  <text class="itb" x="34" y="2092">Mata Nanaki Ji — mother</text>
+  <text class="it" x="34" y="2112">Gobind Rai — son, at nine</text>
+  <text class="it" x="34" y="2132">counselled the shaheedi</text>
+  <rect class="shd" x="720" y="2006" width="220" height="158" rx="12"/>
+  <text class="hd" x="734" y="2030" fill="#a03e17">Shaheed with him — Delhi</text>
+  <text class="shb" x="734" y="2052">Bhai Mati Das — sawn alive</text>
+  <text class="shb" x="734" y="2072">Bhai Dayala — boiled alive</text>
+  <text class="shb" x="734" y="2092">Bhai Sati Das — burned alive</text>
+  <text class="sh" x="734" y="2114">Chandni Chowk, 1675 —</text>
+  <text class="sh" x="734" y="2134">none wavered, none turned;</text>
+  <text class="sh" x="734" y="2154">Sis Ganj marks the place</text>
+
+  <!-- ══ 10. Guru Gobind Singh Ji ══ -->
+  <line x1="330" y1="2320" x2="240" y2="2320" class="tie"/>
+  <line x1="630" y1="2320" x2="720" y2="2320" class="tieR"/>
+  <rect class="guru" x="330" y="2265" width="300" height="110" rx="14"/>
+  <text class="gname" x="480" y="2295" text-anchor="middle">ਗੁਰੂ ਗੋਬਿੰਦ ਸਿੰਘ ਜੀ</text>
+  <text class="gsub" x="480" y="2317" text-anchor="middle">Guru Gobind Singh Ji · 1666–1708 · Gurgaddi 1675</text>
+  <text class="gnote" x="480" y="2339" text-anchor="middle">Vaisakhi 1699 — Khalsa; sarbans daan:</text>
+  <text class="gnote" x="480" y="2358" text-anchor="middle">the whole family given, the whole panth adopted</text>
+  <rect class="fam" x="20" y="2201" width="220" height="258" rx="12"/>
+  <text class="hd" x="34" y="2225" fill="#5a7038">Parivaar</text>
+  <text class="itb" x="34" y="2247">Mata Gujri Ji — mother;</text>
+  <text class="it" x="34" y="2265">shaheed in Sirhind's</text>
+  <text class="it" x="34" y="2283">Thanda Burj, Poh 1704</text>
+  <text class="itb" x="34" y="2303">Mata Jito Ji — patase</text>
+  <text class="it" x="34" y="2321">sweetened the amrit</text>
+  <text class="itb" x="34" y="2341">Mata Sundri Ji — led the</text>
+  <text class="it" x="34" y="2359">panth four decades after 1708</text>
+  <text class="itb" x="34" y="2379">Mata Sahib Kaur Ji —</text>
+  <text class="it" x="34" y="2397">Mother of the Khalsa</text>
+  <text class="itb" x="34" y="2417">Char Sahibzade — all shaheed:</text>
+  <text class="it" x="34" y="2435">Ajit · Jujhar · Zorawar · Fateh</text>
+  <rect class="shd" x="720" y="2181" width="220" height="278" rx="12"/>
+  <text class="hd" x="734" y="2205" fill="#a03e17">Shaheedi of the era</text>
+  <text class="shb" x="734" y="2227">Chamkaur, Poh 1704:</text>
+  <text class="sh" x="734" y="2247">Baba Ajit Singh (17) and</text>
+  <text class="sh" x="734" y="2267">Baba Jujhar Singh (13);</text>
+  <text class="sh" x="734" y="2287">Bhai Himmat Singh, Bhai</text>
+  <text class="sh" x="734" y="2307">Mohkam Singh, Bhai Sahib</text>
+  <text class="sh" x="734" y="2327">Singh of the Panj Piare</text>
+  <text class="shb" x="734" y="2349">Sirhind: Baba Zorawar Singh</text>
+  <text class="sh" x="734" y="2369">(8) and Baba Fateh Singh (5),</text>
+  <text class="sh" x="734" y="2389">bricked alive with dadi ji</text>
+  <text class="shb" x="734" y="2411">Khidrana 1705: Chali Mukte,</text>
+  <text class="sh" x="734" y="2431">Mai Bhago fighting at their</text>
+  <text class="sh" x="734" y="2451">head — she survived the field</text>
+  <line x1="830" y1="2459" x2="830" y2="2475" class="tieR"/>
+  <rect class="shd" x="720" y="2475" width="220" height="168" rx="12"/>
+  <text class="hd" x="734" y="2499" fill="#a03e17">Sarsa · the garhi · after</text>
+  <text class="shb" x="734" y="2521">Bhai Jiwan Singh (Jaita) —</text>
+  <text class="sh" x="734" y="2541">bearer of the Ninth Guru's</text>
+  <text class="sh" x="734" y="2561">sis; shaheed at Chamkaur</text>
+  <text class="shb" x="734" y="2583">Bhai Sangat Singh — the kalgi</text>
+  <text class="shb" x="734" y="2605">Bibi Harsharan Kaur —</text>
+  <text class="sh" x="734" y="2625">cremated the shaheeds; burnt</text>
+
+  <!-- ══ Guru Granth · Guru Panth ══ -->
+  <rect class="pnth" x="280" y="2700" width="400" height="130" rx="14"/>
+  <text class="gname" x="480" y="2732" text-anchor="middle" fill="#33506e">ਗੁਰੂ ਗ੍ਰੰਥ · ਗੁਰੂ ਪੰਥ</text>
+  <text class="gsub" x="480" y="2754" text-anchor="middle" fill="#33506e">Sri Guru Granth Sahib Ji · Guru Khalsa Panth</text>
+  <text class="gnote" x="480" y="2776" text-anchor="middle">Nanded, 1708 — the jot placed in the Shabad forever,</text>
+  <text class="gnote" x="480" y="2795" text-anchor="middle">the jugat entrusted to the Khalsa;</text>
+  <text class="gnote" x="480" y="2814" text-anchor="middle">Mata Sundri Ji guiding, Bhai Mani Singh its scribe</text>
+
+  <!-- ══ the shaheed century ══ -->
+  <line x1="480" y1="2830" x2="480" y2="2872" class="spine" stroke-dasharray="2 7"/>
+  <text class="hd" x="480" y="2897" text-anchor="middle" fill="#a03e17">ਸ਼ਹੀਦੀ ਪਹਿਰਾ — the pehra continues</text>
+
+  <rect class="shd" x="20" y="2922" width="295" height="130" rx="12"/>
+  <text class="shb" x="34" y="2946">Baba Banda Singh Bahadur</text>
+  <text class="sh" x="34" y="2966">and ~740 Singhs — Delhi, 1716;</text>
+  <text class="sh" x="34" y="2986">offered life for faith daily,</text>
+  <text class="sh" x="34" y="3006">not one accepted; his son</text>
+  <text class="sh" x="34" y="3026">martyred before his eyes</text>
+
+  <rect class="shd" x="333" y="2922" width="295" height="130" rx="12"/>
+  <text class="shb" x="347" y="2946">Bhai Mani Singh — 1734</text>
+  <text class="sh" x="347" y="2966">cut joint by joint at Lahore</text>
+  <text class="shb" x="347" y="2988">Bhai Taru Singh — 1745</text>
+  <text class="sh" x="347" y="3008">scalp taken rather than kes;</text>
+  <text class="sh" x="347" y="3028">lived twenty-two days more</text>
+
+  <rect class="shd" x="646" y="2922" width="294" height="130" rx="12"/>
+  <text class="shb" x="660" y="2946">Bhai Bota Singh &amp; Bhai Garja</text>
+  <text class="shb" x="660" y="2966">Singh — 1739</text>
+  <text class="shb" x="660" y="2988">Bhai Subeg Singh &amp; Bhai</text>
+  <text class="shb" x="660" y="3008">Shahbaz Singh — the charkhari,</text>
+  <text class="sh" x="660" y="3028">father and son together, 1745</text>
+
+  <rect class="shd" x="20" y="3068" width="295" height="150" rx="12" stroke-width="3"/>
+  <text class="shb" x="34" y="3092">The Singhniyan of Mir</text>
+  <text class="shb" x="34" y="3112">Mannu's jail — 1748–53</text>
+  <text class="sh" x="34" y="3134">sava-sava mann of grain ground</text>
+  <text class="sh" x="34" y="3154">daily; children cut and hung as</text>
+  <text class="sh" x="34" y="3174">garlands around their necks —</text>
+  <text class="sh" x="34" y="3194">ਧਰਮ ਨਹੀਂ ਹਾਰਿਆ — named in Ardas</text>
+
+  <rect class="shd" x="333" y="3068" width="295" height="150" rx="12"/>
+  <text class="shb" x="347" y="3092">Baba Deep Singh — 1757</text>
+  <text class="sh" x="347" y="3112">the vow of Damdama kept;</text>
+  <text class="sh" x="347" y="3132">fell within sight of Harmandir</text>
+  <text class="shb" x="347" y="3154">Baba Gurbaksh Singh — 1764</text>
+  <text class="sh" x="347" y="3174">thirty Singhs before the Akal</text>
+  <text class="sh" x="347" y="3194">Takht against thirty thousand</text>
+
+  <rect class="shd" x="646" y="3068" width="294" height="150" rx="12"/>
+  <text class="shb" x="660" y="3092">The Ghallugharas</text>
+  <text class="sh" x="660" y="3114">Chhota — Kahnuvan, 1746;</text>
+  <text class="sh" x="660" y="3134">Vadda — Kup-Rahira, 1762:</text>
+  <text class="sh" x="660" y="3154">tens of thousands of singhs,</text>
+  <text class="sh" x="660" y="3174">singhniyan and children — the</text>
+  <text class="sh" x="660" y="3194">panth marched on, singing</text>
+
+  <text class="gnote" x="480" y="3262" text-anchor="middle">ਜਿਨ੍ਹਾਂ ਸਿੰਘਾਂ ਸਿੰਘਣੀਆਂ ਨੇ ਧਰਮ ਹੇਤ ਸੀਸ ਦਿੱਤੇ...</text>
+  <text class="gnote" x="480" y="3284" text-anchor="middle">...ਤਿਨ੍ਹਾਂ ਦੀ ਕਮਾਈ ਦਾ ਧਿਆਨ ਧਰ ਕੇ ਬੋਲੋ ਜੀ ਵਾਹਿਗੁਰੂ ॥</text>
+</svg>
