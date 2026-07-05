@@ -64,6 +64,8 @@ never guessed at all — they only appear once printed.
   on a schedule.
 - **A web calendar**: [janpreet.github.io/nanakshahi-ical](https://janpreet.github.io/nanakshahi-ical/) —
   browse any year month by month, with confirmed/estimated badges on every event.
+- **An interactive explainer**: [How a Jantri Date Is Made](/sikhi/jantri-explained/) — watch the
+  sankranti and tithi computations described above derive real dates, live in your browser.
 - **A reusable engine**: the calendar logic now lives in its own package,
   [nanakshahi-jantri](https://github.com/janpreet/nanakshahi-jantri)
   (`npm install nanakshahi-jantri`), so you can build your own things on it — widgets, bots,

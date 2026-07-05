@@ -24,6 +24,7 @@ A growing collection of Sikhi resources I maintain or have written — puratan m
 ## Nanakshahi Calendar
 
 - **[Nanakshahi Calendar (iCal feed)](/nanakshahi)** — subscribe to gurpurabs and sangrands in your calendar app. [How it was built](/nanakshahi-rebuilt) · [original story](/nanakshahi-calendar).
+- **[How a Jantri Date Is Made](/sikhi/jantri-explained/)** — an interactive explainer: watch a sangrand and a tithi-based gurpurab being derived, live in your browser.
 - **[Nitnem feed](https://janpreet.github.io/nanakshahi-ical/)** — opt-in nitnem reminders with localized solar times.
 
 ---
