@@ -8,14 +8,14 @@ description: "Sikhi resources — puratan maryada, the Nanakshahi calendar, and 
 
 ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖ਼ਾਲਸਾ, ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਿਹ ॥
 
-A growing collection of Sikhi resources I maintain or have written — puratan maryada, tools, and things I believe are worth preserving and sharing with the world.
+This is my personal catalogue — notes I keep as I learn, kept here because sharing them makes the learning sweeter. Puratan maryada, itihas, tools, and things I believe are worth preserving. ਭੁੱਲ ਚੁੱਕ ਮਾਫ਼ — corrections always welcome.
 
 ## Itihas & virsa
 
-- **[Das Patshahian — the Journey of the Jot](/sikhi/lineage/)** — a family tree of the Guru Ghar: one jot, ten saroops, the parivaar around it, and the shaheed singhs and singhniyan of every era.
-- **[Shaheed Singhs & Singhniyan — the Pehra That Never Lifts](/sikhi/shaheed/)** — what shaheedi means in Sikhi, from the tatti tavi of 1606 to Mir Mannu's jail, and what the pehra asks of us.
-- **[Kaur: The Women Who Shaped the Panth](/sikhi/kaur/)** — preachers, generals, regents, martyrs. Not a parallel history — the history.
-- **[Beyond the Eleventh Guru: A Field Guide to the Puratan Granths](/sikhi/granths/)** — Dasam Granth, Sarabloh, Suraj Prakash, Prem Sumarag, Sau Sakhi and the gupt banis of the dals, with a map of where to begin.
+- **[Das Patshahian — the Journey of the Jot](/sikhi/lineage/)** — a family tree of the Guru Ghar: the jot, the parivaar around it, and the shaheeds of every era.
+- **[Shaheedi Pehra — the Shaheed Singhs & Singhniyan](/sikhi/shaheed/)** — what shaheedi means, and a catalogue of the shaheeds, 1606–1764.
+- **[Kaur: The Women of Sikh Itihas](/sikhi/kaur/)** — a catalogue of the women of the Panth, from Bebe Nanaki to Rani Jind Kaur.
+- **[The Puratan Granths — a Field Guide](/sikhi/granths/)** — short notes on Dasam Granth, Sarabloh, Suraj Prakash, Prem Sumarag, Sau Sakhi and the gupt banis, with a map.
 
 ## Maryada & practice
 
