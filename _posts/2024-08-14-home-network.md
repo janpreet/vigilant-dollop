@@ -4,7 +4,7 @@ title:  "Home Network Journey"
 date:   2024-08-14 20:15:29 -0500
 categories: tech
 tags: [home-lab, networking, self-hosted]
-description: "How I built and evolved my home network — VLANs, self-hosted services, hardware choices, and the lessons from getting it wrong first."
+description: "How I built and evolved my home network, VLANs, self-hosted services, hardware choices, and the lessons from getting it wrong first."
 comments: false
 permalink: /home-network
 ---

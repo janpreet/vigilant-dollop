@@ -4,7 +4,7 @@ title:  "From Kado to Rust: The Late-Night Coding Saga Continues"
 date:   2024-08-10 20:15:29 -0500
 categories: tech
 tags: [rust, open-source, devops]
-description: "Building a badge generator in Rust as a follow-up to Kado — more late-night coding, a new language, and lessons learned."
+description: "Building a badge generator in Rust as a follow-up to Kado, more late-night coding, a new language, and lessons learned."
 comments: false
 permalink: /rust-badge-generator
 ---

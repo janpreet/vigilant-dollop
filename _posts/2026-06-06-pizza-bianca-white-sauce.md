@@ -7,7 +7,7 @@ tags: [recipes, pizza, baking, sauce]
 description: "White pizza with a quick crème fraîche-style sauce made from heavy cream and yogurt. No cooking required."
 ---
 
-A white pizza (pizza bianca) built on a quick crème fraîche-style sauce made from heavy cream and yogurt — no cooking required.
+A white pizza (pizza bianca) built on a quick crème fraîche-style sauce made from heavy cream and yogurt, no cooking required.
 
 ## White Sauce
 
@@ -17,7 +17,7 @@ A white pizza (pizza bianca) built on a quick crème fraîche-style sauce made f
 - 1 tbsp plain whole-milk yogurt (thick, not watery)
 - Pinch of fine sea salt
 
-Mix together and rest 10 minutes. Use immediately — don't refrigerate before using.
+Mix together and rest 10 minutes. Use immediately, don't refrigerate before using.
 
 ### Better version
 
@@ -28,7 +28,7 @@ Mix together and rest 10 minutes. Use immediately — don't refrigerate before u
 
 Whisk until slightly thickened. Use immediately.
 
-**Amount per pizza:** 1.5 tbsp sauce per 250g dough ball. Spread in a thin smear — not a thick layer.
+**Amount per pizza:** 1.5 tbsp sauce per 250g dough ball. Spread in a thin smear, not a thick layer.
 
 ## Assemble and Bake
 
@@ -49,5 +49,5 @@ Whisk until slightly thickened. Use immediately.
 ## Notes
 
 - Use thick yogurt. Watery yogurt makes the sauce run and the crust soggy.
-- Don't build ahead — make the sauce right before using.
+- Don't build ahead, make the sauce right before using.
 - Less is more: too much sauce, even a thin one, steams rather than bakes.

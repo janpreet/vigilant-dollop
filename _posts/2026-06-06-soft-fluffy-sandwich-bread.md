@@ -23,7 +23,7 @@ Makes 1 standard loaf (9×5-inch pan)
 
 ### Activate yeast
 
-1. Combine lukewarm milk, sugar, and yeast in a large bowl. Stir and let sit 5–10 minutes until foamy. If it doesn't foam, the yeast is dead — start over.
+1. Combine lukewarm milk, sugar, and yeast in a large bowl. Stir and let sit 5–10 minutes until foamy. If it doesn't foam, the yeast is dead, start over.
 
 ### Mix and knead
 
@@ -49,7 +49,7 @@ Makes 1 standard loaf (9×5-inch pan)
 9. Preheat oven to 190°C / 375°F.
 10. Optional: brush top with egg wash (1 egg + 1 tbsp milk) for a glossy crust.
 11. Bake 28–32 minutes until deep golden brown. The internal temperature should read 93–96°C / 200–205°F.
-12. Turn out onto a wire rack and cool completely before slicing — at least 1 hour. Cutting too early compresses the crumb.
+12. Turn out onto a wire rack and cool completely before slicing, at least 1 hour. Cutting too early compresses the crumb.
 
 ## Notes
 

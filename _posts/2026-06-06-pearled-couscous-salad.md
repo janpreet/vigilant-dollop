@@ -36,7 +36,7 @@ Serves 4
 ### Cook couscous
 
 1. Bring a large pot of salted water to a boil. Add pearled couscous and cook 8–10 minutes until tender but with a slight bite. Drain and rinse under cold water.
-2. Spread on a sheet pan to dry and cool completely — about 15 minutes. Wet couscous will water down the dressing.
+2. Spread on a sheet pan to dry and cool completely, about 15 minutes. Wet couscous will water down the dressing.
 
 ### Make dressing
 
@@ -55,6 +55,6 @@ Serves 4
 
 ## Notes
 
-- **Make ahead:** Dresses well up to 24 hours in advance — the flavors deepen. Hold back the herbs and feta; add just before serving.
+- **Make ahead:** Dresses well up to 24 hours in advance, the flavors deepen. Hold back the herbs and feta; add just before serving.
 - **Add protein:** Grilled chicken or shrimp make this a complete meal.
 - **Variations:** Sun-dried tomatoes, roasted red pepper, or artichoke hearts all work in place of or alongside the fresh tomatoes.
