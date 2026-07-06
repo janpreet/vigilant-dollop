@@ -6,18 +6,18 @@ show_title: true
 parent: Sikhi
 parent_url: /sikhi/
 tags: [sikh, calendar, astronomy]
-description: "An interactive walkthrough of the two computations behind every Nanakshahi Jantri date — the sankranti that starts a solar month, and the tithi that fixes a gurpurab."
+description: "An interactive walkthrough of the two computations behind every Nanakshahi Jantri date, the sankranti that starts a solar month, and the tithi that fixes a gurpurab."
 ---
 
-Every date in the Nanakshahi Jantri comes out of one of two machines. **Sangrands** — the first day of each solar month — come from the sun alone: the moment its *sidereal* longitude crosses a 30° boundary. **Gurpurabs and lunar observances** come from the sun and moon together: the angle between them, cut into 30 slices called tithis. This page runs both machines live, in your browser, using the same conventions as [the feed you can subscribe to](/nanakshahi) — calibrated against the printed Jantri from Amritsar. ([How the feed was rebuilt.](/nanakshahi-rebuilt))
+Every date in the Nanakshahi Jantri comes out of one of two machines. **Sangrands**, the first day of each solar month, come from the sun alone: the moment its *sidereal* longitude crosses a 30° boundary. **Gurpurabs and lunar observances** come from the sun and moon together: the angle between them, cut into 30 slices called tithis. This page runs both machines live, in your browser, using the same conventions as [the feed you can subscribe to](/nanakshahi), calibrated against the printed Jantri from Amritsar. ([How the feed was rebuilt.](/nanakshahi-rebuilt))
 
 <div class="jx-today" id="jx-today" aria-live="polite"></div>
 
-## Machine 1 — the sidereal sun and the sangrand
+## Machine 1, the sidereal sun and the sangrand
 
-The Jantri's solar year is **sidereal**: the sun's position is measured against the fixed stars, not against the seasons. The two zero-points drift apart by about 50″ a year — the accumulated gap, called the **ayanamsa**, is now just over 24°. That is why Vaisakhi falls around 13–14 April rather than at the March equinox: the sidereal Mesha boundary sits 24° "later" along the ecliptic than the tropical one.
+The Jantri's solar year is **sidereal**: the sun's position is measured against the fixed stars, not against the seasons. The two zero-points drift apart by about 50″ a year, the accumulated gap, called the **ayanamsa**, is now just over 24°. That is why Vaisakhi falls around 13–14 April rather than at the March equinox: the sidereal Mesha boundary sits 24° "later" along the ecliptic than the tropical one.
 
-A **sankranti** is the instant the sun's sidereal longitude crosses a multiple of 30° — entering a new rashi. The Jantri's rule, forced by 11 of the 36 sangrands in the pinned years, is *sunrise-to-sunrise*: the new month begins on the day (Amritsar sunrise to next Amritsar sunrise) that contains the sankranti moment. A sankranti at 3 a.m. belongs to the *previous* civil day.
+A **sankranti** is the instant the sun's sidereal longitude crosses a multiple of 30°, entering a new rashi. The Jantri's rule, forced by 11 of the 36 sangrands in the pinned years, is *sunrise-to-sunrise*: the new month begins on the day (Amritsar sunrise to next Amritsar sunrise) that contains the sankranti moment. A sankranti at 3 a.m. belongs to the *previous* civil day.
 
 Pick a month and year, and watch the derivation:
 
@@ -33,13 +33,13 @@ Pick a month and year, and watch the derivation:
   <div id="s-strip"></div>
 </div>
 
-## Machine 2 — the tithi and the gurpurab
+## Machine 2, the tithi and the gurpurab
 
-A **tithi** is one-thirtieth of the moon's monthly lap around the sun: each time the moon pulls another 12° ahead (in ecliptic longitude), a new tithi begins. Tithis 1–15 are the bright half (*sudi*), ending at **purnmashi** (full moon, 168°–180°); tithis 16–30 are the dark half (*vadi*), ending at **massia** (new moon). Because the moon's speed varies, a tithi lasts anywhere from ~20 to ~26 hours — it is a phase angle, not a day.
+A **tithi** is one-thirtieth of the moon's monthly lap around the sun: each time the moon pulls another 12° ahead (in ecliptic longitude), a new tithi begins. Tithis 1–15 are the bright half (*sudi*), ending at **purnmashi** (full moon, 168°–180°); tithis 16–30 are the dark half (*vadi*), ending at **massia** (new moon). Because the moon's speed varies, a tithi lasts anywhere from ~20 to ~26 hours, it is a phase angle, not a day.
 
 Two conventions pin a tithi to a civil date:
 
-**Which lunar month?** Lunar months run new moon to new moon (*amanta*), and a month is named by the sankranti it contains — the month holding the Mesha sankranti is Chet, and so on. A rare month containing *no* sankranti is **adhik** (intercalary) and hosts no gurpurabs — the Jantri prints it as ਵਾ:ਜੇਠ and skips it.
+**Which lunar month?** Lunar months run new moon to new moon (*amanta*), and a month is named by the sankranti it contains, the month holding the Mesha sankranti is Chet, and so on. A rare month containing *no* sankranti is **adhik** (intercalary) and hosts no gurpurabs, the Jantri prints it as ਵਾ:ਜੇਠ and skips it.
 
 **Which day?** The **udaya rule**: the event falls on the day whose *sunrise at Amritsar* lands inside the target tithi. If the moon moves fast enough that a tithi begins and ends between two sunrises (*kshaya*, skipped), the event takes the day the tithi actually ran; if a tithi covers two sunrises (*vridhi*), the first day wins.
 
@@ -58,15 +58,15 @@ Pick a gurpurab and year:
   <div id="t-scan"></div>
 </div>
 
-Notice what this means: **a gurpurab keeps its tithi, not its Gregorian date — and not even its Nanakshahi date.** Parkash Guru Nanak Dev Ji is always Katak purnmashi, but that full moon can land in solar Katak one year and solar Maghar the next. The date moves in *every* calendar except the lunar one it is defined in.
+Notice what this means: **a gurpurab keeps its tithi, not its Gregorian date, and not even its Nanakshahi date.** Parkash Guru Nanak Dev Ji is always Katak purnmashi, but that full moon can land in solar Katak one year and solar Maghar the next. The date moves in *every* calendar except the lunar one it is defined in.
 
 ## What this page doesn't show
 
-Two festival dates use time-window rules instead of sunrise: **Bandi Chhor Divas** takes the evening (*pradosh*) the massia tithi covers, and the Jantri's **Dussehra** uses an afternoon (*aparahna*) window. And a handful of observances are moved by the Jantri's compilers for practical reasons no formula predicts — the feed never guesses those; they appear only once printed.
+Two festival dates use time-window rules instead of sunrise: **Bandi Chhor Divas** takes the evening (*pradosh*) the massia tithi covers, and the Jantri's **Dussehra** uses an afternoon (*aparahna*) window. And a handful of observances are moved by the Jantri's compilers for practical reasons no formula predicts, the feed never guesses those; they appear only once printed.
 
 ## Accuracy, honestly
 
-The math on this page is a compact in-browser ephemeris (Meeus-style series, good to about an arcminute), running the same calibrated conventions as the real engine: Lahiri-type ayanamsa (23.8532° at J2000 + 50.28796″/yr), Amritsar sunrise, sunrise-to-sunrise sangrands, udaya tithis. Checked against the pinned printed-Jantri data it reproduces all 26 sangrands and all 25 massia/purnmashi of NS 557–558, and the tithi gurpurabs above. Dates carrying a <span class="jx-badge jx-ok">✓ printed Jantri</span> badge match the published Jantri; anything else is marked <span class="jx-badge jx-est">≈ computed</span> — same honesty policy as the feed. For anything you plan around, trust [the feed](/nanakshahi), which uses a full ephemeris and pinned data — or better, the Jantri itself. The full engine is open source: [nanakshahi-jantri](https://github.com/janpreet/nanakshahi-jantri).
+The math on this page is a compact in-browser ephemeris (Meeus-style series, good to about an arcminute), running the same calibrated conventions as the real engine: Lahiri-type ayanamsa (23.8532° at J2000 + 50.28796″/yr), Amritsar sunrise, sunrise-to-sunrise sangrands, udaya tithis. Checked against the pinned printed-Jantri data it reproduces all 26 sangrands and all 25 massia/purnmashi of NS 557–558, and the tithi gurpurabs above. Dates carrying a <span class="jx-badge jx-ok">✓ printed Jantri</span> badge match the published Jantri; anything else is marked <span class="jx-badge jx-est">≈ computed</span>, same honesty policy as the feed. For anything you plan around, trust [the feed](/nanakshahi), which uses a full ephemeris and pinned data, or better, the Jantri itself. The full engine is open source: [nanakshahi-jantri](https://github.com/janpreet/nanakshahi-jantri).
 
 <style>
 .jx-today { background:#fdf3e3; border:1px solid #e0b878; border-radius:12px; padding:.7em 1em; margin:1.2em 0; font-size:.95em; color:#3d3227; }
@@ -350,7 +350,7 @@ function drawStrip(el, sankMs){
   s += '<text x="' + kx.toFixed(1) + '" y="115" text-anchor="middle" font-size="11" font-weight="700" fill="#9a6b1f" font-family="system-ui,sans-serif">sankranti</text>';
   s += '</svg></div>';
   var note = '';
-  if (owner !== civil) note = '<div class="jx-note">The sankranti falls after midnight but <em>before sunrise</em> — so it belongs to the previous sunrise-to-sunrise day, ' + fmtDate(owner) + '.</div>';
+  if (owner !== civil) note = '<div class="jx-note">The sankranti falls after midnight but <em>before sunrise</em>, so it belongs to the previous sunrise-to-sunrise day, ' + fmtDate(owner) + '.</div>';
   el.innerHTML = s + note;
 }
 // ============ tithi dial (machine 2) ============
@@ -382,7 +382,7 @@ function drawTithiDial(el, ms){
   s += '<circle cx="' + mp[0].toFixed(1) + '" cy="' + mp[1].toFixed(1) + '" r="7" fill="#6a7a8c" stroke="#44505e" stroke-width="1.5"/>';
   s += '<text x="' + mp[0].toFixed(1) + '" y="' + (mp[1]-11).toFixed(1) + '" text-anchor="middle" font-size="10" fill="#44505e" font-family="system-ui,sans-serif">☾</text>';
   s += '<text x="160" y="150" text-anchor="middle" font-size="12" fill="#3d3227" font-family="system-ui,sans-serif">elongation ' + e.toFixed(1) + '°</text>';
-  s += '<text x="160" y="168" text-anchor="middle" font-size="13" font-weight="700" fill="#4a7024" font-family="system-ui,sans-serif">tithi ' + ti + (ti === 15 ? ' — purnmashi' : (ti === 30 ? ' — massia' : (ti <= 15 ? ' (sudi ' + ti + ')' : ' (vadi ' + (ti-15) + ')'))) + '</text>';
+  s += '<text x="160" y="168" text-anchor="middle" font-size="13" font-weight="700" fill="#4a7024" font-family="system-ui,sans-serif">tithi ' + ti + (ti === 15 ? ', purnmashi' : (ti === 30 ? ', massia' : (ti <= 15 ? ' (sudi ' + ti + ')' : ' (vadi ' + (ti-15) + ')'))) + '</text>';
   s += '<text x="160" y="186" text-anchor="middle" font-size="10" fill="#8a5a2b" font-family="system-ui,sans-serif">at Amritsar sunrise, result day</text>';
   s += '</svg>';
   el.innerHTML = s;
@@ -399,7 +399,7 @@ function drawAnchor(el, m, monthName){
   s += '<line x1="' + X(m.sank).toFixed(1) + '" y1="20" x2="' + X(m.sank).toFixed(1) + '" y2="64" stroke="#9a6b1f" stroke-width="2.5"/>';
   s += '<text x="' + X(m.sank).toFixed(1) + '" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#9a6b1f" font-family="system-ui,sans-serif">' + m.sankMonth + ' sankranti</text>';
   s += '</svg></div>';
-  var note = '<div class="jx-note">The new-moon month containing the <strong>' + m.sankMonth + ' sankranti</strong> is amanta <strong>' + monthName + '</strong> — the lunar month is named one step behind the solar month its sankranti begins.'
+  var note = '<div class="jx-note">The new-moon month containing the <strong>' + m.sankMonth + ' sankranti</strong> is amanta <strong>' + monthName + '</strong>, the lunar month is named one step behind the solar month its sankranti begins.'
     + (m.adhikBefore ? ' The month before it contained <em>no</em> sankranti: an <strong>adhik</strong> month (the Jantri prints ਵਾ:' + MONTHS_PA[MONTHS.indexOf(monthName)] + '), skipped for all events.' : '') + '</div>';
   el.innerHTML = s + note;
 }
@@ -416,7 +416,7 @@ function drawScan(el, res){
   }
   s += '</div>';
   s += '<div class="jx-note">Scanning forward from the new moon: the event takes the first day whose <em>sunrise</em> falls in the target tithi'
-    + (res.kshaya ? ' — here the tithi was <strong>kshaya</strong> (it began and ended between two sunrises), so the event takes the day the tithi actually ran.' : ' (udaya rule).') + '</div>';
+    + (res.kshaya ? ', here the tithi was <strong>kshaya</strong> (it began and ended between two sunrises), so the event takes the day the tithi actually ran.' : ' (udaya rule).') + '</div>';
   el.innerHTML = s;
 }
 // ============ wiring ============
@@ -430,7 +430,7 @@ MONTHS.forEach(function(m, i){
 });
 EVENTS.forEach(function(e){
   var o = document.createElement('option');
-  o.value = e.id; o.textContent = e.name + ' — ' + e.tithi;
+  o.value = e.id; o.textContent = e.name + ', ' + e.tithi;
   tEvent.appendChild(o);
 });
 function runSangrand(){
@@ -467,11 +467,11 @@ function runTithi(){
     '<ol>' +
     '<li><strong>Definition:</strong> ' + ev.name + ' = <strong>' + ev.tithi + '</strong> (' + ev.pa + ').</li>' +
     '<li><strong>Find the lunar month</strong> (timeline above): amanta ' + ev.month + ' of NS ' + ns + '.</li>' +
-    '<li><strong>Target tithi:</strong> ' + (ev.n === 15 ? 'purnmashi — elongation 168°–180°' : 'sudi ' + ev.n + ' — elongation ' + ((ev.n-1)*12) + '°–' + (ev.n*12) + '°') + '.</li>' +
+    '<li><strong>Target tithi:</strong> ' + (ev.n === 15 ? 'purnmashi, elongation 168°–180°' : 'sudi ' + ev.n + ', elongation ' + ((ev.n-1)*12) + '°–' + (ev.n*12) + '°') + '.</li>' +
     '<li><strong>Udaya scan</strong> (below): first Amritsar sunrise inside that tithi.</li>' +
     '</ol>' +
     '<div class="jx-result"><strong>' + fmtDate(res.day) + '</strong> = ' + nsd.day + ' ' + nsd.month + ' NS ' + nsd.nsYear + ' ' + badge(pinned) +
-    (wanders ? '<br><span class="jx-note">A ' + ev.month + ' tithi landing in solar <strong>' + nsd.month + '</strong> — the date moves in every calendar except the lunar one.</span>' : '') +
+    (wanders ? '<br><span class="jx-note">A ' + ev.month + ' tithi landing in solar <strong>' + nsd.month + '</strong>, the date moves in every calendar except the lunar one.</span>' : '') +
     '</div>';
 }
 sMonth.addEventListener('change', runSangrand);
@@ -482,7 +482,7 @@ tYear.addEventListener('change', runTithi);
 try {
   var today = istISO(Date.now());
   var nd = nsDateOf(today), tt = srTithi(today);
-  $('jx-today').innerHTML = '☀ Today, <strong>' + fmtDate(today) + '</strong>, is <strong>' + nd.day + ' ' + nd.month + ' NS ' + nd.nsYear + '</strong> (' + nd.monthPa + ') — computed live by this page. Sunrise tithi at Amritsar: <strong>' + tt + (tt === 15 ? ' (purnmashi)' : tt === 30 ? ' (massia)' : '') + '</strong>.';
+  $('jx-today').innerHTML = '☀ Today, <strong>' + fmtDate(today) + '</strong>, is <strong>' + nd.day + ' ' + nd.month + ' NS ' + nd.nsYear + '</strong> (' + nd.monthPa + '), computed live by this page. Sunrise tithi at Amritsar: <strong>' + tt + (tt === 15 ? ' (purnmashi)' : tt === 30 ? ' (massia)' : '') + '</strong>.';
 } catch (e) { $('jx-today').style.display = 'none'; }
 runSangrand();
 runTithi();
