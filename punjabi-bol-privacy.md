@@ -45,4 +45,4 @@ updated first and the change called out in the app's store release notes.
 
 ## Contact
 
-Questions? Email <a href="mailto:janpreetsinghgill@gmail.com">janpreetsinghgill@gmail.com</a>.
+Questions? Email <a href="mailto:dev@janpreet">dev@janpreet.com</a>.
