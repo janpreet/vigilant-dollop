@@ -7,47 +7,40 @@ tags: [recipes, sourdough, bread, baking]
 description: "Open-crumb sourdough boule baked in a Dutch oven. Bulk ferment, overnight cold proof, and a scored crust."
 ---
 
+![Baked sourdough boule with a scored crust](/assets/2026-06-06-sourdough-boule/crust.jpg)
+
 ## Ingredients
 
-Makes 1 loaf (~900g)
+Makes 1 loaf
 
-- 450g bread flour
-- 50g whole wheat flour
-- 350g water, room temperature (70% hydration)
-- 10g fine sea salt
-- 100g active sourdough starter (100% hydration, fed 4–8 hours prior)
+- Water, 360g
+- Peaked sourdough starter, 113g
+- Kosher salt, 10g
+- Whole wheat flour, 30g
+- White bread flour, 450g
 
 ## Method
 
-### Day 1, Mix and bulk fermentation
+Mix the water and starter together in a bowl until combined. Add the flours and salt and mix again with a wooden spoon or a Danish dough whisk until all the flour is worked in. Scrape down the sides, cover, and let it rest for 30 minutes.
 
-1. Combine flours in a large bowl. Add 325g of the water (reserve 25g) and mix until no dry flour remains. Cover and rest 30–45 minutes.
-2. Mix starter with the reserved 25g water in a small bowl, then add to the dough. Incorporate by folding and squeezing until fully combined. Add salt and work it in the same way. The dough will feel slightly tacky.
-3. Perform 4 sets of stretch-and-folds over 2 hours, every 30 minutes: wet your hand, grab one side of the dough, stretch up, fold over the center, rotate 90° and repeat 4 times per set.
-4. After the last fold, cover the bowl and allow bulk fermentation at room temperature (24–26°C / 75–78°F) until the dough has grown 50–75% in volume and has visible bubbles on the surface and sides. This typically takes 4–6 hours depending on room temperature and starter strength.
+After 30 minutes, do your first set of stretch and folds. Cover it and repeat 3 more times at 30 minute intervals, 4 sets total.
 
-### Shape
+After the fourth and final set, cover the dough and leave it at room temperature until it's risen by about 75%. That takes about 5 hours in my kitchen, but it varies a lot depending on how active your starter is and how warm your kitchen runs.
 
-5. Gently turn the dough onto an unfloured work surface. Fold the edges toward the center to build tension, then flip the dough seam-side down. Using both hands, drag the dough toward you with cupped palms to tighten the surface. Repeat 2–3 times until the dough is a taut round ball.
-6. Rest uncovered for 20–30 minutes (bench rest).
-7. Final shape: flip the dough seam-side up. Fold the bottom third up, left side in, right side in, then roll tightly toward you. Pinch the seam. Place seam-side up in a well-floured banneton (or a bowl lined with a floured cloth).
+When the dough is done rising, turn it out onto a floured surface and shape it. For a batard, gently stretch it into a rectangle. Starting from the short end closest to you, roll it up into a log, popping any big bubbles as you go. Dust the top with flour and flip it so the floured side is down and the short end faces you again. Roll it up tight. Pinch the ends to pop any large bubbles, seal the edges, and drag the dough across the work surface to build some tension. For a boule, just shape it into a round.
 
-### Cold proof
+Dust the top of the loaf with flour.
 
-8. Cover with plastic wrap or a shower cap and refrigerate 12–16 hours (overnight). Cold proofing slows fermentation, develops flavor, and makes the dough easier to score.
+Lift the loaf and flip it, floured side down, into a floured banneton. Stitch the dough if you want a bit more tension.
 
-### Bake
+Cover and refrigerate for 12 hours, up to 24 if it's covered well so it doesn't dry out.
 
-9. Place a Dutch oven (at least 5-quart / 4.7L) in the oven and preheat to 260°C / 500°F for 45–60 minutes.
-10. Cut a sheet of parchment to fit your Dutch oven. Tip the cold dough seam-side down onto the parchment.
-11. Score the top with a lame or sharp razor blade at a 30–45° angle, one decisive slash about 1cm deep. Do not saw back and forth.
-12. Lift the dough by the parchment into the hot Dutch oven. Cover with the lid and bake 20 minutes (the steam trapped inside creates an open crumb and thin crust).
-13. Remove the lid, reduce oven to 230°C / 450°F, and continue baking 20–25 minutes until the crust is deep mahogany and the internal temperature reads 96–99°C / 205–210°F.
-14. Transfer to a wire rack and cool at least 1 hour before cutting. The crumb continues to set as it cools, cutting too early produces a gummy interior.
+When you're ready to bake, don't take the dough out of the fridge until the oven is fully preheated. Preheat to 475°F with the Dutch oven inside for 1 hour. Once it's ready, pull the dough out and turn it onto a piece of parchment paper. Score it, one quick cut along the top, don't drag it down the sides. That's the simplest score and the one that's given me the best oven spring. If you want a more elaborate scoring pattern, freeze the dough for about 30 minutes first.
 
-## Notes
+Lift the dough by the parchment and lower it carefully into the hot Dutch oven. Cover with the lid and bake at 475°F for 30 minutes.
 
-- **Starter readiness:** Use starter that has roughly doubled after feeding and passes the float test (a teaspoon dropped in water floats). An underactive starter means weak oven spring.
-- **Bulk fermentation endpoint:** Look for bubbles on the surface and sides, a slightly domed top, and a jiggle in the center when you shake the bowl. Temperature matters, at 24°C it takes ~5 hours; at 21°C it can take 7–8 hours.
-- **Dutch oven:** Creates the steam environment a deck oven provides in a bakery. A combo cooker (Lodge or similar) also works. No Dutch oven, place a tray of boiling water on the lower rack for the first 20 minutes and bake the loaf directly on a preheated steel or stone.
-- **Troubleshooting dense crumb:** Most likely cause is under-fermented bulk or inactive starter. Extend bulk until you see clear volume gain and bubble activity.
+After 30 minutes, remove the lid, drop the oven to 425°F, and bake another 30 minutes. Tent it loosely with foil if you don't want the crust too dark.
+
+When it's done, take it out and let it cool at least 2 hours before slicing.
+
+![Sliced sourdough boule showing the open crumb](/assets/2026-06-06-sourdough-boule/crumb.jpg)
