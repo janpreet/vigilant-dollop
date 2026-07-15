@@ -32,10 +32,12 @@ Here is what is actually going on.
   one nobody installs on purpose**, and on a fresh CI box it may not be permanently installed at all.
 - CI tooling creates a **brand new throwaway keychain per build** and imports the identity into it.
   The intermediate comes along for the ride. Nothing persistent holds it.
-- Trust evaluation does not reliably use a certificate that only exists in a keychain that is a few
-  seconds old. So whether signing works depends on **how long your build ran before it signed**.
-  Slow build, chain resolves. Fast build with a warm cache, `MissingIntermediate`.
-- **Fix:** install WWDR G3 into the **login keychain**, which is persistent and always searched.
+- **Observed:** whether signing succeeds tracks **how long the build ran before it signed**. Slow
+  build, chain resolves. Fast build with a warm cache, `MissingIntermediate`.
+- **Best explanation, and this is inference rather than documented behaviour:** trust evaluation does
+  not immediately recognise an intermediate that only exists in a keychain created seconds earlier.
+- **Fix:** install WWDR G3 into the **login keychain**, which is persistent and always searched. The
+  fix stands regardless of which mechanism is really behind the timing.
 - `errSecInternalComponent` tells you nothing. The real error is in the unified log:
   `Trust evaluate failure: [leaf MissingIntermediate]`.
 
@@ -94,13 +96,48 @@ The difference is **how long each build ran before it reached codesign**:
 | Keychain age at signing | ~80 seconds | ~20 seconds |
 | Result | signs fine | `MissingIntermediate` |
 
-Trust evaluation had not picked up the intermediate from a keychain that new. Give it a slow build
-and it works. Give it a fast, cache-warm build and it fails. Every "it fails when builds are close
-together" and "the second one always breaks" correlation is a shadow of that one variable.
+Every "it fails when builds are close together" and "the second one always breaks" correlation is a
+shadow of that one variable.
 
-The proof is blunt: I explicitly installed G3 **into the per-build keychain**, confirmed in the log
-that it landed, and the build still failed with `MissingIntermediate` about twenty seconds later.
-The certificate was present. It just was not usable from there yet.
+Because it is easy to read the next part as established fact, let me split what I measured from what
+I concluded.
+
+### Observed
+
+- The intermediate was not persistently installed anywhere on the machine.
+- CI created a new keychain per build, and the identity (carrying the intermediate) was imported
+  into it.
+- Builds that compiled for ~80 seconds before signing succeeded.
+- Builds that reached codesign ~20 seconds after their keychain was created failed with
+  `MissingIntermediate`.
+- Installing G3 explicitly **into the per-build keychain** did not help. The log confirmed it landed,
+  and the build still failed with `MissingIntermediate` about twenty seconds later. So the
+  certificate being *present* was not sufficient.
+- Installing G3 into the **login keychain** stopped the failures, including a fast build signing four
+  seconds after the previous one finished.
+
+### Hypothesis
+
+The explanation that fits all of the above: **trust evaluation does not immediately recognise an
+intermediate that only exists in a keychain created seconds earlier.**
+
+That is inference, not documented behaviour. Apple does not state anywhere that certificates in young
+keychains are unusable, and the same observations are consistent with other mechanisms I did not rule
+out:
+
+- trustd cache timing
+- keychain search list propagation
+- securityd IPC or certificate database indexing delay
+- on-demand (AIA) intermediate retrieval timing
+- something specific to how the signing tool imports the identity
+
+Several of those are difficult to separate from the outside. The experiment that would sharpen it:
+take a failing case and repeat the signing step alone, with no compilation, once immediately and once
+after a `sleep 60`, changing nothing else. If the sleep alone flips it, keychain age (or something
+that tracks it) is the variable. If it does not, the mechanism is elsewhere and only the fix survives.
+
+What I can say without hedging: build duration predicted success, presence of the certificate did
+not, and moving the intermediate somewhere persistent removed the problem.
 
 ## Reading the real error
 
@@ -205,5 +242,17 @@ files a timing pattern under "solved" and stops looking. If you cannot name the 
 pattern, not a diagnosis.
 
 **Ephemeral keychains quietly assume immediacy.** Creating a throwaway keychain per build is good
-hygiene, and it silently assumes everything you put in it is usable right away. It is not. Anything
-needed for chain building belongs somewhere persistent.
+hygiene, and it silently assumes everything you put in it is usable right away. On this machine it
+was not. Anything needed for chain building belongs somewhere persistent.
+
+## References
+
+- [Apple PKI / certificate authority](https://www.apple.com/certificateauthority/), where the WWDR
+  intermediates are published for download.
+- [Technical Note TN2206: macOS Code Signing In Depth](https://developer.apple.com/library/archive/technotes/tn2206/_index.html),
+  archived but still the best single description of how signing and chain validation fit together.
+- [SecTrust](https://developer.apple.com/documentation/security/sectrust), the trust evaluation API
+  underneath what codesign is doing when it builds and validates the chain.
+
+Worth noting that none of these document the timing behaviour above, which is exactly why I have
+labelled it a hypothesis rather than a fact.
