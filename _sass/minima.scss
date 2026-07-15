@@ -1,43 +1,6 @@
 @charset "utf-8";
 
-// Legacy Sass variables (maintained for mixin compatibility)
-$base-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !default;
-$base-font-size:   16px !default;
-$base-font-weight: 400 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
-$base-line-height: 1.75 !default;
-
-$spacing-unit:     32px !default;
-
-$text-color:       #1f2328 !default;
-$background-color: #ffffff !default;
-$brand-color:      #84aa9e !default;
-
-$grey-color:       #656d76 !default;
-$grey-color-light: #eaeef2 !default;
-$grey-color-dark:  #1f2328 !default;
-
-$table-text-align: left !default;
-
-// Width of the content area
-$content-width:    860px !default;
-
-$on-palm:          640px !default;
-$on-laptop:        900px !default;
-
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
-}
-
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
-}
-
-// Import partials
-@import
-  "minima/base",
-  "minima/layout",
-  "minima/syntax-highlighting"
-;
+@use "minima/variables" as *;
+@use "minima/base";
+@use "minima/layout";
+@use "minima/syntax-highlighting";
