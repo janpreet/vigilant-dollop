@@ -31,7 +31,7 @@ Here is what is actually going on.
 - The root ships with macOS. The leaf arrives with your signing identity. The **intermediate is the
   one nobody installs on purpose**, and on a fresh CI box it may not be permanently installed at all.
 - CI tooling creates a **brand new throwaway keychain per build** and imports the identity into it.
-  The intermediate comes along for the ride. Nothing persistent holds it.
+  The intermediate often comes along for the ride. Nothing persistent is guaranteed to hold it.
 - **Observed:** whether signing succeeds tracks **how long the build ran before it signed**. Slow
   build, chain resolves. Fast build with a warm cache, `MissingIntermediate`.
 - **Best explanation, and this is inference rather than documented behaviour:** trust evaluation does
@@ -40,6 +40,32 @@ Here is what is actually going on.
   fix stands regardless of which mechanism is really behind the timing.
 - `errSecInternalComponent` tells you nothing. The real error is in the unified log:
   `Trust evaluate failure: [leaf MissingIntermediate]`.
+
+In one picture:
+
+```text
+BROKEN: the intermediate only lives in the throwaway keychain
+
+  per-build keychain  (created seconds ago)
+    Apple Distribution  (leaf)
+    WWDR G3             (intermediate)   <-- present, but not used at evaluation time
+  system trust store
+    Apple Root CA       (root)
+
+  trust evaluation  ->  MissingIntermediate  ->  errSecInternalComponent
+
+
+FIXED: the intermediate lives somewhere persistent
+
+  login keychain      (persistent, always searched)
+    WWDR G3             (intermediate)
+  per-build keychain  (created seconds ago)
+    Apple Distribution  (leaf)
+  system trust store
+    Apple Root CA       (root)
+
+  trust evaluation  ->  leaf -> WWDR G3 -> Apple Root CA  ->  signed
+```
 
 ## What codesign is actually trying to do
 
@@ -76,10 +102,11 @@ There it is. G3, in the chain, on a machine where G3 was not installed.
 
 The explanation is that the intermediate was arriving **transiently**. Modern CI signing (fastlane
 match and friends) creates a fresh, disposable keychain for each build and imports the signing
-identity into it. A `.p12` normally carries the chain along with the key, so the intermediate lands
-in that throwaway keychain. macOS can also fetch missing intermediates on demand over the network.
-Either way, the intermediate existed only for the life of that build, in a keychain that was born
-seconds earlier.
+identity into it. A `.p12` often carries the chain along with the key, though not always, so the
+intermediate usually lands in that throwaway keychain. macOS can also retrieve a missing intermediate
+on demand, depending on network availability and on the certificate carrying the metadata that says
+where to fetch it, so that path is not guaranteed either. Either way, the intermediate existed only
+for the life of that build, in a keychain that was born seconds earlier.
 
 ## Why it looked random
 
@@ -243,7 +270,8 @@ pattern, not a diagnosis.
 
 **Ephemeral keychains quietly assume immediacy.** Creating a throwaway keychain per build is good
 hygiene, and it silently assumes everything you put in it is usable right away. On this machine it
-was not. Anything needed for chain building belongs somewhere persistent.
+was not. In practice, for CI runners, anything needed for chain building is safest in a persistent
+keychain.
 
 ## References
 
