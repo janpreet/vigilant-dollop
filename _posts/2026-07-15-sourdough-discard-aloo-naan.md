@@ -7,7 +7,7 @@ tags: [recipes, sourdough, bread, naan, stuffed, vegetarian]
 description: "Stuffed potato naan made with sourdough discard instead of throwing it away. Enriched dough, a dry choor choor aloo filling, baked hot."
 ---
 
-I had a jar of sourdough discard sitting in the fridge and didn't want it to go to waste, so instead of another loaf, it went into naan. This is an enriched, yeasted dough, so the discard isn't doing any leavening here, it's there for flavor and a bit of tang. The instant yeast and baking powder do the actual lifting.
+This week's starter feeding left me with discard, and instead of tossing it, it went into naan. This is an enriched, yeasted dough, so the discard isn't doing any leavening here, it's there for flavor and a bit of tang. The instant yeast and baking powder do the actual lifting.
 
 ![Finished sourdough discard naan, char-spotted and sesame-topped](/assets/2026-07-15-sourdough-discard-aloo-naan/finished-naan.jpg)
 

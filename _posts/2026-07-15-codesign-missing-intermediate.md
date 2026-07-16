@@ -78,8 +78,9 @@ Signing is not "use this certificate". It is "build a valid chain from this cert
 root the system trusts". Three links:
 
 1. **Leaf**: your `Apple Distribution` certificate. Comes from your signing setup on every build.
-2. **Intermediate**: `Apple Worldwide Developer Relations Certification Authority`, currently **G3**.
-   This is the link that gets forgotten.
+2. **Intermediate**: `Apple Worldwide Developer Relations Certification Authority`, currently **G3**
+   (generation 3, Apple's third issuance of this intermediate; the one before it is the expired
+   certificate you'll run into further down). This is the link that gets forgotten.
 3. **Root**: `Apple Root CA`. Ships with macOS in the system trust store. Never your problem.
 
 Break the middle link and the chain cannot reach the root. codesign reports that as
