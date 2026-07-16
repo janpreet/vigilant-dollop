@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sourdough Discard Aloo Naan"
-date: 2026-07-15
+date: 2026-07-15 20:55:00 -0400
 categories: cooking
 tags: [recipes, sourdough, bread, naan, stuffed, vegetarian]
 description: "Stuffed potato naan made with sourdough discard instead of throwing it away. Enriched dough, a dry choor choor aloo filling, baked hot."

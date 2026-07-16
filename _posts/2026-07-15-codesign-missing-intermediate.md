@@ -26,16 +26,17 @@ Here is what is actually going on.
 
 ## TL;DR
 
-- To sign, macOS builds a chain: **your Apple Distribution cert (leaf) to Apple's WWDR G3
-  (intermediate) to Apple Root CA (root)**.
+- To sign, macOS builds a chain: **your Apple Distribution cert (leaf) to Apple's WWDR (Worldwide
+  Developer Relations) G3 intermediate to Apple Root CA (root)**.
 - The root ships with macOS. The leaf arrives with your signing identity. The **intermediate is the
   one nobody installs on purpose**, and on a fresh CI box it may not be permanently installed at all.
 - CI tooling creates a **brand new throwaway keychain per build** and imports the identity into it.
   The intermediate often comes along for the ride. Nothing persistent is guaranteed to hold it.
-- **Observed:** whether signing succeeds tracks **how long the build ran before it signed**. Slow
-  build, chain resolves. Fast build with a warm cache, `MissingIntermediate`.
-- **Best explanation, and this is inference rather than documented behaviour:** trust evaluation does
-  not immediately recognise an intermediate that only exists in a keychain created seconds earlier.
+- **Observed:** slower builds consistently signed successfully, while fast builds with a warm cache
+  consistently failed with `MissingIntermediate`. The variable that tracked it was **how long the
+  build ran before it signed**.
+- **Working hypothesis:** trust evaluation does not immediately recognise an intermediate that only
+  exists in a keychain created seconds earlier. This is inference, not documented behaviour.
 - **Fix:** install WWDR G3 into the **login keychain**, which is persistent and always searched. The
   fix stands regardless of which mechanism is really behind the timing.
 - `errSecInternalComponent` tells you nothing. The real error is in the unified log:
@@ -66,6 +67,10 @@ FIXED: the intermediate lives somewhere persistent
 
   trust evaluation  ->  leaf -> WWDR G3 -> Apple Root CA  ->  signed
 ```
+
+Everything below supports one practical recommendation: install WWDR G3 into a persistent keychain.
+The fix is experimentally verified. The explanation for *why* the failures were intermittent is my
+best-supported hypothesis, and I have tried to keep the two clearly apart.
 
 ## What codesign is actually trying to do
 
@@ -105,7 +110,7 @@ match and friends) creates a fresh, disposable keychain for each build and impor
 identity into it. A `.p12` often carries the chain along with the key, though not always, so the
 intermediate usually lands in that throwaway keychain. macOS can also retrieve a missing intermediate
 on demand, depending on network availability and on the certificate carrying the metadata that says
-where to fetch it, so that path is not guaranteed either. Either way, the intermediate existed only
+where to fetch it, so that path is not guaranteed either. In my setup, the intermediate existed only
 for the life of that build, in a keychain that was born seconds earlier.
 
 ## Why it looked random
