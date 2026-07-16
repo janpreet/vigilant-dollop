@@ -78,7 +78,13 @@ Let the sealed balls rest, seam side down, for 5 minutes.
 
 **5. Roll and bake**
 
-With a light hand, roll each ball out into a 6 to 7 inch oval, so you don't tear the seal or push the filling out unevenly. Bake in a regular oven at 500°F for 5 minutes, then switch to the broiler for 1 to 2 minutes to get the char spots.
+With a light hand, roll each ball out into a 6 to 7 inch oval, so you don't tear the seal or push the filling out unevenly. If you want toppings, brush the top lightly with water and sprinkle on white and black sesame seeds, or nigella seeds, before baking.
+
+Bake in a regular oven at 500°F for 5 minutes.
+
+![Naan baking on a steel in a regular oven](/assets/2026-07-15-sourdough-discard-aloo-naan/oven-bake.jpg)
+
+Then switch to the broiler for 1 to 2 minutes to get the char spots.
 
 ![Naan puffing up under the broiler](/assets/2026-07-15-sourdough-discard-aloo-naan/baking.jpg)
 
