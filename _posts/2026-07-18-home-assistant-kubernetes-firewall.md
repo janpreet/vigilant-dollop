@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Home Assistant Was Unreachable, and My Own Kubernetes Node Was the Firewall"
-date:   2026-07-18 23:10:00 -0400
+date:   2026-07-18 23:00:30 -0400
 categories: tech
 tags: [home-lab, kubernetes, proxmox, networking, home-assistant, self-hosted]
 description: "Home Assistant was reachable from its own VLAN but not from my main network, even though the firewall rule for it looked fine. The real cause was hiding two layers deeper, in a Kubernetes component I'd forgotten was even in the path."
