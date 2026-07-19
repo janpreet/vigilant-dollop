@@ -21,17 +21,18 @@ specifically, and only from outside its own subnet.
 
 ## Ruling out the obvious suspects, one at a time
 
-First guess: some kind of VLAN isolation on the router, since the VM's network was genuinely
-named something like "locked down." I went into the dashboard expecting to flip an isolation
-toggle and be done in five minutes. There wasn't one to flip. Worse, I could reach the other
-hosts on that same VLAN just fine, so whatever was happening wasn't "this network can't talk to
-that network."
+First guess: some kind of VLAN isolation. I run a [Firewalla](https://firewalla.com) as my
+router, and this VM's network is literally called "Lockdown," so an isolation toggle felt like
+the obvious answer, flip it, done in five minutes. There wasn't one to flip. Worse, I could
+reach the other hosts already living on Lockdown just fine from the same laptop, so whatever was
+happening wasn't "this network can't talk to that network."
 
-Second guess: it's a brand new device, maybe it landed in some quarantine bucket, or maybe the
-router's behavioral protection feature hadn't learned it yet and was blocking anything
-unfamiliar. Checked the device page. Not quarantined. Read the actual vendor documentation on
-that learning feature because I didn't want to guess: it explicitly doesn't block anything during
-its learning phase, and even if it did, it only affects internet-bound traffic, not another
+Second guess: it's a brand new device, and Firewalla has a real feature for exactly that. New
+devices get dropped into a Quarantine group until you clear them, and there's a separate
+behavioral protection feature that limits what a device can do until it's been watched for a
+while. Checked the device page: not in Quarantine. Read Firewalla's own documentation on that
+behavioral feature because I didn't want to guess: it explicitly applies no blocking at all
+during its learning phase, and even once active it only governs internet-bound traffic, not another
 device on my own LAN reaching it. Ruled that out too.
 
 At this point I'd spent longer reading dashboards than actually testing packets, which is
