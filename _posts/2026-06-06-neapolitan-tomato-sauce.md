@@ -1,22 +1,36 @@
 ---
-layout: post
+layout: recipe
 title: "No-Cook Neapolitan Tomato Sauce"
 date: 2026-06-06
 categories: cooking
 tags: [recipes, pizza, sauce]
 description: "Authentic no-cook Neapolitan pizza sauce, whole peeled tomatoes crushed by hand, salt, olive oil, basil. Nothing else."
+recipe:
+  servings: 4
+  serving_label: "pizzas' worth of sauce"
+  groups:
+    - ingredients:
+        - amount: 1
+          unit: can
+          item: "whole peeled tomatoes (400g), packed in juice, San Marzano or equivalent sweet variety"
+        - amount: 1
+          unit: tsp
+          item: fine sea salt
+          note: "(start with less, adjust)"
+          key: fine sea salt
+        - amount: 1
+          unit: tbsp
+          item: extra-virgin olive oil
+          key: extra-virgin olive oil
+        - amount: 2
+          amount_max: 3
+          unit: leaf
+          item: "fresh basil leaves, torn (optional)"
 ---
 
 The authentic Neapolitan method: crush whole peeled tomatoes by hand, season, done. No cooking, no blending, no garlic, no oregano.
 
-## Ingredients
-
-Makes enough for 4–5 pizzas
-
-- 1 can (400g) whole peeled tomatoes, packed in juice, San Marzano or equivalent sweet variety
-- 1 tsp fine sea salt (start with less, adjust)
-- 1 tbsp extra-virgin olive oil
-- 2–3 fresh basil leaves, torn (optional)
+{% include recipe-card.html %}
 
 ## Method
 

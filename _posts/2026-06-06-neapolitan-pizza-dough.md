@@ -1,20 +1,37 @@
 ---
-layout: post
+layout: recipe
 title: "Neapolitan Pizza Dough (Home Oven)"
 date: 2026-06-06
 categories: cooking
 tags: [recipes, pizza, baking, bread]
 description: "Cold-fermented Neapolitan-style pizza dough for a home oven with a pizza steel. Includes a whole wheat variant."
+recipe:
+  servings: 4
+  serving_label: "dough balls (250g each, 12-inch pizzas)"
+  groups:
+    - ingredients:
+        - amount: 500
+          unit: g
+          item: bread flour
+          note: "(or 00 flour)"
+          key: bread flour
+        - amount: 325
+          unit: g
+          item: cold water
+          note: "(65% hydration)"
+          key: water
+        - amount: 10
+          unit: g
+          item: fine sea salt
+          key: fine sea salt
+        - amount: 3
+          unit: g
+          item: active dry yeast
+          note: "(or 2g instant yeast)"
+          key: active dry yeast
 ---
 
-## Ingredients
-
-Makes 4 × 250g dough balls (12-inch pizzas)
-
-- 500g bread flour (or 00 flour)
-- 325g cold water (65% hydration)
-- 10g fine sea salt
-- 3g active dry yeast (or 2g instant yeast)
+{% include recipe-card.html %}
 
 ## Method
 

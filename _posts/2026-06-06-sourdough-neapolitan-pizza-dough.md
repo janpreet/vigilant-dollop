@@ -1,20 +1,35 @@
 ---
-layout: post
+layout: recipe
 title: "Sourdough Neapolitan Pizza Dough"
 date: 2026-06-06
 categories: cooking
 tags: [recipes, pizza, sourdough, baking]
 description: "Neapolitan-style pizza dough made entirely with sourdough starter, no commercial yeast. 24 to 72 hour cold ferment."
+recipe:
+  servings: 4
+  serving_label: "pizzas (250 to 260g each)"
+  groups:
+    - ingredients:
+        - amount: 560
+          unit: g
+          item: bread flour
+          key: bread flour
+        - amount: 120
+          unit: g
+          item: active sourdough starter
+          note: "(100% hydration, peaked)"
+          key: sourdough starter
+        - amount: 355
+          unit: g
+          item: cold water
+          key: water
+        - amount: 16
+          unit: g
+          item: salt
+          key: salt
 ---
 
-## Ingredients
-
-Makes 4 pizzas, about 250 to 260g each
-
-- Bread flour, 560g
-- Active sourdough starter (100% hydration, peaked), 120g
-- Cold water, 355g
-- Salt, 16g
+{% include recipe-card.html %}
 
 Effective total hydration is about 66%. That's the sweet spot for a home oven, airy but still manageable.
 

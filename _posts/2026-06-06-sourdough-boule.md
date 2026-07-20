@@ -1,23 +1,40 @@
 ---
-layout: post
+layout: recipe
 title: "Sourdough Boule"
 date: 2026-06-06
 categories: cooking
 tags: [recipes, sourdough, bread, baking]
 description: "Open-crumb sourdough boule baked in a Dutch oven. Bulk ferment, overnight cold proof, and a scored crust."
+recipe:
+  servings: 1
+  serving_label: "loaf"
+  groups:
+    - ingredients:
+        - amount: 360
+          unit: g
+          item: water
+          key: water
+        - amount: 113
+          unit: g
+          item: peaked sourdough starter
+          key: sourdough starter
+        - amount: 10
+          unit: g
+          item: kosher salt
+          key: kosher salt
+        - amount: 30
+          unit: g
+          item: whole wheat flour
+          key: whole wheat flour
+        - amount: 450
+          unit: g
+          item: white bread flour
+          key: bread flour
 ---
 
 ![Baked sourdough boule with a scored crust](/assets/2026-06-06-sourdough-boule/crust.jpg)
 
-## Ingredients
-
-Makes 1 loaf
-
-- Water, 360g
-- Peaked sourdough starter, 113g
-- Kosher salt, 10g
-- Whole wheat flour, 30g
-- White bread flour, 450g
+{% include recipe-card.html %}
 
 ## Method
 

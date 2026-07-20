@@ -1,23 +1,47 @@
 ---
-layout: post
+layout: recipe
 title: "Soft Fluffy Sandwich Bread"
 date: 2026-06-06
 categories: cooking
 tags: [recipes, bread, baking]
 description: "A soft, enriched sandwich loaf made with bread flour, milk, butter, and egg. Stays tender for days."
+recipe:
+  servings: 1
+  serving_label: "loaf (9×5-inch pan)"
+  groups:
+    - ingredients:
+        - amount: 375
+          unit: g
+          item: bread flour
+          key: bread flour
+        - amount: 240
+          unit: ml
+          item: whole milk
+          note: "lukewarm (45°C / 110°F)"
+          key: whole milk
+        - amount: 7
+          unit: g
+          item: active dry yeast
+          note: "(1 standard packet)"
+          key: active dry yeast
+        - amount: 25
+          unit: g
+          item: sugar
+          key: sugar
+        - amount: 8
+          unit: g
+          item: fine sea salt
+          key: fine sea salt
+        - amount: 40
+          unit: g
+          item: unsalted butter, softened
+          key: unsalted butter
+        - amount: 1
+          unit: whole
+          item: egg, room temperature
 ---
 
-## Ingredients
-
-Makes 1 standard loaf (9×5-inch pan)
-
-- 375g bread flour
-- 240ml whole milk, lukewarm (45°C / 110°F)
-- 7g active dry yeast (1 standard packet)
-- 25g sugar
-- 8g fine sea salt
-- 40g unsalted butter, softened
-- 1 egg, room temperature
+{% include recipe-card.html %}
 
 ## Method
 

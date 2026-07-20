@@ -1,25 +1,65 @@
 ---
-layout: post
+layout: recipe
 title: "Eggless Fresh Pasta"
 date: 2026-07-14
 categories: cooking
 tags: [recipes, pasta, eggless, vegetarian]
 description: "A simple eggless dough for a pasta machine, plus a restaurant-style Alfredo to toss it in."
+recipe:
+  servings: 4
+  groups:
+    - name: "Eggless Fresh Pasta"
+      ingredients:
+        - amount: 300
+          unit: g
+          item: all-purpose flour
+          key: all-purpose flour
+        - amount: 150
+          unit: g
+          item: warm water
+          key: water
+        - amount: 1
+          unit: tbsp
+          item: olive oil
+          key: olive oil
+        - amount: 0.5
+          unit: tsp
+          item: salt
+          key: salt
+        - amount: 1
+          unit: tsp
+          item: fine semolina
+          note: "(optional, for texture)"
+          key: semolina
+    - name: "Alfredo (Restaurant Style)"
+      ingredients:
+        - amount: 4
+          unit: tbsp
+          item: butter
+          key: butter
+        - amount: 2
+          unit: clove
+          item: garlic, finely minced
+        - amount: 1
+          unit: cup
+          item: heavy cream
+          key: heavy cream
+        - amount: 1
+          unit: cup
+          item: parmesan, freshly grated
+          key: parmesan
+        - text: "Salt, if needed"
+        - text: "Black pepper"
+        - text: "Nutmeg, a pinch (optional)"
 ---
 
 Fresh pasta doesn't need eggs to work. The dough is a little different from a classic egg dough, but it rolls beautifully through a pasta machine and cooks up just as tender.
 
 ![Fresh pasta hanging to dry on a wooden drying rack](/assets/2026-07-14-eggless-fresh-pasta/drying.jpg)
 
-## Eggless Fresh Pasta (4 servings)
+## Eggless Fresh Pasta
 
-### Ingredients
-
-- All-purpose flour, 300 g
-- Warm water, 150 g
-- Olive oil, 1 tbsp
-- Salt, ½ tsp
-- Fine semolina, 1 tsp (optional, for texture)
+{% include recipe-card.html group="Eggless Fresh Pasta" %}
 
 If you have 00 flour, it works even better. Bread flour also works, just expect a slightly chewier result.
 
@@ -61,17 +101,9 @@ Boil the fresh eggless pasta in salted water for 3 to 5 minutes, depending on th
 
 ## Alfredo (Restaurant Style)
 
+{% include recipe-card.html group="Alfredo (Restaurant Style)" %}
+
 This is the American-style Alfredo, creamy the way you'd get it at Olive Garden.
-
-### Ingredients
-
-- Butter, 4 tbsp
-- Garlic, 2 cloves, finely minced
-- Heavy cream, 1 cup
-- Parmesan, freshly grated, 1 cup
-- Salt, if needed
-- Black pepper
-- Nutmeg, a pinch (optional)
 
 ### Method
 

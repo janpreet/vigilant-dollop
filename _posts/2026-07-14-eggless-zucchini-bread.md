@@ -1,42 +1,85 @@
 ---
-layout: post
+layout: recipe
 title: "Moist Eggless Zucchini Bread"
 date: 2026-07-14
 categories: cooking
 tags: [recipes, baking, eggless, vegetarian]
 description: "A one-loaf eggless zucchini bread. No eggs, no fuss, and the zucchini keeps it moist for days."
+recipe:
+  servings: 1
+  serving_label: "loaf (8½ × 4½ inch pan)"
+  groups:
+    - name: Dry
+      ingredients:
+        - amount: 250
+          unit: g
+          item: bread flour or maida
+          key: bread flour
+        - amount: 1.5
+          unit: tsp
+          item: baking powder
+          key: baking powder
+        - amount: 0.5
+          unit: tsp
+          item: baking soda
+          key: baking soda
+        - amount: 0.5
+          unit: tsp
+          item: salt
+          key: salt
+        - amount: 1
+          unit: tsp
+          item: cinnamon
+          note: "(optional, but recommended)"
+        - amount: 0.25
+          unit: tsp
+          item: nutmeg
+          note: "(optional)"
+    - name: Wet
+      ingredients:
+        - amount: 150
+          unit: g
+          item: brown sugar
+          note: "(packed)"
+          key: brown sugar
+        - amount: 110
+          unit: g
+          item: neutral oil
+          note: "(canola or vegetable)"
+          key: neutral oil
+        - amount: 60
+          unit: g
+          item: milk
+          key: milk
+        - amount: 2
+          unit: tsp
+          item: vanilla
+          note: "(alcohol-free is what we use)"
+        - amount: 1
+          unit: tsp
+          item: apple cider vinegar or white vinegar
+        - amount: 220
+          amount_max: 250
+          unit: g
+          item: finely grated zucchini
+          note: "(about 2 medium zucchini)"
+    - name: "Optional additions"
+      ingredients:
+        - amount: 0.5
+          unit: cup
+          item: chopped walnuts or pecans
+          key: walnuts
+        - amount: 0.5
+          unit: cup
+          item: chocolate chips
+          key: chocolate chips
 ---
 
 Zucchini bread is one of those recipes that sounds like a compromise and isn't. The grated zucchini disappears into the crumb and leaves behind moisture, which is exactly what an eggless loaf needs. A little vinegar with the baking soda does the lift. Brown sugar and cinnamon do the rest.
 
 ![Baked loaf of eggless zucchini bread in the pan](/assets/2026-07-14-eggless-zucchini-bread/loaf.jpg)
 
-## Ingredients
-
-Makes 1 loaf, 8½ × 4½ inch pan
-
-**Dry**
-
-- Bread flour or maida, 250 g (2 cups)
-- Baking powder, 1½ tsp
-- Baking soda, ½ tsp
-- Salt, ½ tsp
-- Cinnamon, 1 tsp (optional, but recommended)
-- Nutmeg, ¼ tsp (optional)
-
-**Wet**
-
-- Brown sugar, 150 g (¾ cup, packed)
-- Neutral oil (canola or vegetable), 110 g (½ cup)
-- Milk, 60 g (¼ cup)
-- Vanilla (alcohol-free is what we use), 2 tsp
-- Apple cider vinegar or white vinegar, 1 tsp
-- Finely grated zucchini, 220 to 250 g (about 2 medium zucchini)
-
-**Optional additions**
-
-- Chopped walnuts or pecans, ½ cup
-- Chocolate chips, ½ cup
+{% include recipe-card.html %}
 
 ## About the zucchini
 

@@ -1,35 +1,66 @@
 ---
-layout: post
+layout: recipe
 title: "Pearled Couscous Salad with Chickpeas"
 date: 2026-06-06
 categories: cooking
 tags: [recipes, salad, vegetarian]
 description: "Pearled couscous with chickpeas, cucumber, cherry tomatoes, olives, feta, and a lemon-Dijon dressing. Good warm or cold."
+recipe:
+  servings: 4
+  groups:
+    - name: Salad
+      ingredients:
+        - amount: 250
+          unit: g
+          item: pearled (Israeli) couscous
+          key: pearled couscous
+        - amount: 1
+          unit: can
+          item: "chickpeas (400g), drained and rinsed"
+        - amount: 1
+          unit: whole
+          item: English cucumber, diced small
+        - amount: 200
+          unit: g
+          item: cherry tomatoes, halved
+        - amount: 1
+          unit: whole
+          item: small red onion, finely diced
+        - amount: 80
+          unit: g
+          item: kalamata olives, pitted and halved
+          key: kalamata olives
+        - amount: 100
+          unit: g
+          item: feta cheese, crumbled
+          key: feta cheese
+        - text: "Large handful fresh parsley, roughly chopped"
+        - text: "Large handful fresh mint, roughly chopped"
+    - name: Dressing
+      ingredients:
+        - amount: 60
+          unit: ml
+          item: extra-virgin olive oil
+          key: extra-virgin olive oil
+        - amount: 3
+          unit: tbsp
+          item: fresh lemon juice
+        - amount: 1
+          unit: tsp
+          item: lemon zest
+        - amount: 1
+          unit: clove
+          item: garlic, minced
+        - amount: 1
+          unit: tsp
+          item: Dijon mustard
+        - amount: 1
+          unit: tsp
+          item: honey
+        - text: "Salt and pepper to taste"
 ---
 
-## Ingredients
-
-Serves 4
-
-**Salad**
-- 250g pearled (Israeli) couscous
-- 400g can chickpeas, drained and rinsed
-- 1 English cucumber, diced small
-- 200g cherry tomatoes, halved
-- 1 small red onion, finely diced
-- 80g kalamata olives, pitted and halved
-- 100g feta cheese, crumbled
-- Large handful fresh parsley, roughly chopped
-- Large handful fresh mint, roughly chopped
-
-**Dressing**
-- 60ml extra-virgin olive oil
-- 3 tbsp fresh lemon juice
-- 1 tsp lemon zest
-- 1 garlic clove, minced
-- 1 tsp Dijon mustard
-- 1 tsp honey
-- Salt and pepper to taste
+{% include recipe-card.html %}
 
 ## Method
 

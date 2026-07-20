@@ -1,32 +1,54 @@
 ---
-layout: post
+layout: recipe
 title: "Pizza Bianca with Quick White Sauce"
 date: 2026-06-06
 categories: cooking
 tags: [recipes, pizza, baking, sauce]
 description: "White pizza with a quick crème fraîche-style sauce made from heavy cream and yogurt. No cooking required."
+recipe:
+  groups:
+    - name: "Quick version (5 min)"
+      servings: 1
+      serving_label: "batch"
+      ingredients:
+        - amount: 3
+          unit: tbsp
+          item: heavy cream
+          key: heavy cream
+        - amount: 1
+          unit: tbsp
+          item: plain whole-milk yogurt
+          note: "(thick, not watery)"
+          key: plain whole-milk yogurt
+        - text: "Pinch of fine sea salt"
+    - name: "Better version"
+      servings: 1
+      serving_label: "batch"
+      ingredients:
+        - amount: 4
+          unit: tbsp
+          item: heavy cream
+          key: heavy cream
+        - amount: 1
+          unit: tbsp
+          item: plain whole-milk yogurt
+          key: plain whole-milk yogurt
+        - amount: 1
+          unit: tbsp
+          item: extra-virgin olive oil
+          key: extra-virgin olive oil
+        - text: "Pinch of fine sea salt"
 ---
 
 A white pizza (pizza bianca) built on a quick crème fraîche-style sauce made from heavy cream and yogurt, no cooking required.
 
 ## White Sauce
 
-### Quick version (5 min)
+{% include recipe-card.html %}
 
-- 3 tbsp heavy cream
-- 1 tbsp plain whole-milk yogurt (thick, not watery)
-- Pinch of fine sea salt
+**Quick version:** mix together and rest 10 minutes. Use immediately, don't refrigerate before using.
 
-Mix together and rest 10 minutes. Use immediately, don't refrigerate before using.
-
-### Better version
-
-- 4 tbsp heavy cream
-- 1 tbsp plain whole-milk yogurt
-- 1 tbsp extra-virgin olive oil
-- Pinch of fine sea salt
-
-Whisk until slightly thickened. Use immediately.
+**Better version:** whisk until slightly thickened. Use immediately.
 
 **Amount per pizza:** 1.5 tbsp sauce per 250g dough ball. Spread in a thin smear, not a thick layer.
 

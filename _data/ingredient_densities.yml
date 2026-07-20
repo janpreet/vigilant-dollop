@@ -1,0 +1,59 @@
+# Grams per US cup (236.588 ml), used to give recipe ingredients listed by
+# weight a "~X cups" estimate when a reader switches to imperial units.
+# These are averages, not lab values, actual density varies by brand and
+# how packed/sifted the ingredient is, which is why the recipe UI always
+# prefixes this figure with "~".
+#
+# Keys are matched against each ingredient's `key` field in a post's front
+# matter (falls back to `item` if `key` is omitted), lowercased. Add an
+# entry here once and every recipe that references it benefits.
+
+bread flour: 120
+all-purpose flour: 125
+maida: 125
+whole wheat flour: 130
+"00 flour": 120
+semolina: 167
+pearled couscous: 190
+
+granulated sugar: 200
+sugar: 200
+brown sugar: 220
+powdered sugar: 120
+
+fine sea salt: 273
+kosher salt: 240
+salt: 260
+
+active dry yeast: 150
+instant yeast: 150
+milk powder: 128
+baking powder: 192
+baking soda: 220
+
+unsalted butter: 227
+butter: 227
+olive oil: 216
+extra-virgin olive oil: 216
+neutral oil: 218
+vegetable oil: 218
+canola oil: 218
+
+whole milk: 245
+milk: 245
+water: 237
+heavy cream: 240
+plain whole-milk yogurt: 245
+yogurt: 245
+dahi: 245
+sourdough discard: 240
+sourdough starter: 240
+
+grated parmesan: 100
+parmesan: 100
+feta cheese: 150
+kalamata olives: 145
+chickpeas: 164
+chopped walnuts: 120
+walnuts: 120
+chocolate chips: 170

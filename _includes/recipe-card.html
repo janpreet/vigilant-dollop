@@ -1,0 +1,60 @@
+{%- comment -%}
+  Renders one recipe ingredient card from page.recipe. Pass `group="Name"`
+  to render only that named group (for posts with multiple dishes at
+  different points in the body); omit it to render every group together.
+{%- endcomment -%}
+{%- assign r = page.recipe -%}
+{%- if include.group -%}
+  {%- assign target_groups = r.groups | where: "name", include.group -%}
+{%- else -%}
+  {%- assign target_groups = r.groups -%}
+{%- endif -%}
+{%- assign has_shared = false -%}
+{%- for group in target_groups -%}
+  {%- unless group.servings -%}{%- assign has_shared = true -%}{%- endunless -%}
+{%- endfor -%}
+<div class="recipe" data-unit-system="{{ r.unit_default | default: 'metric' }}">
+  <div class="recipe-controls">
+    <div class="unit-toggle" role="group" aria-label="Unit system">
+      <button type="button" class="unit-toggle-btn" data-unit="metric">Metric</button>
+      <button type="button" class="unit-toggle-btn" data-unit="us">Imperial</button>
+    </div>
+    {%- if has_shared -%}
+    <div class="servings-stepper" data-servings-source="shared" data-base-servings="{{ r.servings }}" data-current-servings="{{ r.servings }}">
+      <button type="button" class="servings-btn" data-step="-1" aria-label="Decrease {{ r.serving_label | default: 'servings' }}">–</button>
+      <span class="servings-value">{{ r.servings }}</span>
+      <span class="servings-label">{{ r.serving_label | default: "servings" }}</span>
+      <button type="button" class="servings-btn" data-step="1" aria-label="Increase {{ r.serving_label | default: 'servings' }}">+</button>
+    </div>
+    {%- endif -%}
+  </div>
+
+  {%- for group in target_groups -%}
+  <div class="recipe-group" data-servings-source="{% if group.servings %}own{% else %}shared{% endif %}" data-base-servings="{{ group.servings | default: r.servings }}" data-current-servings="{{ group.servings | default: r.servings }}">
+    {%- if group.name and target_groups.size > 1 -%}
+    <h3 class="recipe-group-name">
+      {{ group.name }}
+      {%- if group.servings -%}
+      <span class="servings-stepper servings-stepper-inline" data-servings-source="own" data-base-servings="{{ group.servings }}" data-current-servings="{{ group.servings }}">
+        <button type="button" class="servings-btn" data-step="-1" aria-label="Decrease">–</button>
+        <span class="servings-value">{{ group.servings }}</span>
+        <span class="servings-label">{{ group.serving_label | default: "batch" }}</span>
+        <button type="button" class="servings-btn" data-step="1" aria-label="Increase">+</button>
+      </span>
+      {%- endif -%}
+    </h3>
+    {%- endif -%}
+    <ul class="recipe-ingredients">
+      {%- for ing in group.ingredients -%}
+        {%- if ing.text -%}
+        <li class="recipe-ingredient-text">{{ ing.text }}</li>
+        {%- else -%}
+        <li class="recipe-ingredient" data-amount="{{ ing.amount }}"{% if ing.amount_max %} data-amount-max="{{ ing.amount_max }}"{% endif %} data-unit="{{ ing.unit }}" data-key="{{ ing.key | default: ing.item }}">
+          <span class="ri-amount"></span><span class="ri-unit"></span> <span class="ri-item">{{ ing.item }}</span>{% if ing.note %} <span class="ri-note-static">{{ ing.note }}</span>{% endif %}<span class="ri-note"></span>
+        </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+  {%- endfor -%}
+</div>
