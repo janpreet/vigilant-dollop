@@ -10,6 +10,10 @@ description: "Sikhi resources, puratan maryada, the Nanakshahi calendar, and thi
 
 This is my personal catalogue, notes I keep as I learn, kept here because sharing them makes the learning sweeter. Puratan maryada, itihas, tools, and things I believe are worth preserving. ਭੁੱਲ ਚੁੱਕ ਮਾਫ਼, corrections always welcome.
 
+A note: this part of the site is more personal than the rest. I catalogue what I learn here mostly for future me, and for other Sikh readers doing the same kind of digging.
+
+New here and don't understand Punjabi? A quick glossary: **puratan** = pre-colonial/traditional practice, as opposed to standardized 20th-century versions; **panth** = the Sikh community; **jot** = the Guru's spiritual authority, passed from Guru Nanak through nine successors and into the Guru Granth Sahib; **maryada** = a code of daily practice; **shaheed** = martyr. Everything below builds on those five words.
+
 ## Itihas & virsa
 
 - **[Das Patshahian, the Journey of the Jot](/sikhi/lineage/)**, a family tree of the Guru Ghar: the jot, the parivaar around it, and the shaheeds of every era.
