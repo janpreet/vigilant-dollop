@@ -1,0 +1,232 @@
+<div class="pitampura-run">
+  <p class="eyebrow">Detour</p>
+  <p class="pitampura-run-intro">You've scrolled this far, so here's a long auto loop through the roads I grew up on in Northwest and North Delhi, Rithala to Majnu ka Tila and back, the same stretches I've actually walked. Watch for stray kites and speed breakers.</p>
+  <pre id="pitampura-run" tabindex="0" aria-label="Pitampura Run, a small keyboard game. Press up arrow, space, or tap to jump."></pre>
+  <p class="pitampura-run-hint">↑ / space / tap to jump</p>
+</div>
+
+<script>
+  (function () {
+    var el = document.getElementById('pitampura-run');
+    if (!el) return;
+
+    var W = 64, H = 17;
+    var B = 13;            // player bottom row
+    var PX = 5;            // player x
+    var SCALE = 3;         // metres per column
+    var CYCLE = Math.round(5300 / SCALE);
+
+    var PLAYER = [' __', '|__\\', 'o--o'];
+    var TOWER = [
+      '      !',
+      '      |',
+      '     /^\\',
+      '    [===]',
+      '    [===]',
+      '     | |',
+      '     | |',
+      '     | |',
+      '    /| |\\',
+      '   / | | \\',
+      '  /__|_|__\\'
+    ];
+    var OBSTACLES = [
+      { art: ['<>~~'], w: 4, h: 1, reason: 'a stray kite drifted down into your path' },
+      { art: ['(o)'], w: 3, h: 1, reason: 'a gully-cricket six bounced into the road' },
+      { art: ['[#]', '[#]'], w: 3, h: 2, reason: 'a metro pillar site had the lane half shut' },
+      { art: ['^^^^'], w: 4, h: 1, reason: 'an unmarked speed breaker launched you skyward' },
+      { art: ['ooo', ' | '], w: 3, h: 2, reason: 'a fistful of balloons got loose from the balloon-wala' }
+    ];
+    var LANDMARKS = [
+      { m: 120, name: 'RITHALA' },
+      { m: 350, name: 'NANGLOI' },
+      { m: 580, name: 'PEERAGARHI' },
+      { m: 810, name: 'PASCHIM VIHAR' },
+      { m: 1040, name: 'ROHINI WEST' },
+      { m: 1270, name: 'METRO WALK · ADVENTURE ISLAND' },
+      { m: 1500, name: 'JAPANESE PARK' },
+      { m: 1730, name: 'ROHINI EAST' },
+      { m: 1960, name: 'PITAM PURA · TP BLOCK' },
+      { m: 2190, name: 'KOHAT ENCLAVE' },
+      { m: 2420, name: 'NETAJI SUBHASH PLACE' },
+      { m: 2650, name: 'SHALIMAR BAGH' },
+      { m: 2880, name: 'ASHOK VIHAR' },
+      { m: 3110, name: 'INDERLOK' },
+      { m: 3340, name: 'ROSHANARA GARDEN' },
+      { m: 3570, name: 'DELHI UNIVERSITY · NORTH CAMPUS' },
+      { m: 3800, name: 'KAMLA NAGAR' },
+      { m: 4030, name: 'MUKHERJEE NAGAR' },
+      { m: 4260, name: 'MODEL TOWN' },
+      { m: 4490, name: 'ADARSH NAGAR' },
+      { m: 4720, name: 'AZADPUR MANDI' },
+      { m: 4950, name: 'MAJNU KA TILA' }
+    ];
+    var TOWER_COL = Math.round(1960 / SCALE) + 16;
+
+    var state = 'idle', dist = 0, speed = 0, y = 0, vy = 0;
+    var obstacles = [], nextAt = 0, crashReason = '', timer = null;
+    var best = 0;
+    try { best = parseInt(localStorage.getItem('pitampuraRunBest'), 10) || 0; } catch (e) {}
+
+    function grid() {
+      var g = [];
+      for (var r = 0; r < H; r++) g.push(new Array(W + 1).join(' ').split(''));
+      return g;
+    }
+    function put(g, x, y0, s, opaque) {
+      x = Math.round(x);
+      for (var i = 0; i < s.length; i++) {
+        var cx = x + i;
+        if (cx < 0 || cx >= W || y0 < 0 || y0 >= H) continue;
+        if (s[i] !== ' ' || opaque) g[y0][cx] = s[i];
+      }
+    }
+    function putArt(g, x, bottom, art) {
+      for (var i = 0; i < art.length; i++) put(g, x, bottom - art.length + 1 + i, art[i]);
+    }
+    function center(g, row, s) { put(g, Math.floor((W - s.length) / 2), row, s, true); }
+    function metres() { return Math.floor(dist * SCALE); }
+
+    function road(g) {
+      put(g, 0, 14, new Array(W + 1).join('='));
+      var dashes = '';
+      for (var i = 0; i < W; i++) dashes += ((i + Math.floor(dist)) % 6) < 2 ? '-' : ' ';
+      put(g, 0, 15, dashes, true);
+    }
+
+    function scenery(g) {
+      // TV tower, drawn first so everything else passes in front of it
+      var tx = ((TOWER_COL - dist) % CYCLE + CYCLE) % CYCLE;
+      if (tx < W + 12) putArt(g, tx, 13, TOWER);
+      for (var i = 0; i < LANDMARKS.length; i++) {
+        var col = Math.round(LANDMARKS[i].m / SCALE);
+        var sx = ((col - dist) % CYCLE + CYCLE) % CYCLE;
+        if (sx > W + 24) continue;
+        var label = '[' + LANDMARKS[i].name + ']';
+        put(g, sx - Math.floor(label.length / 2), 9, label);
+        for (var r = 10; r <= 13; r++) put(g, sx, r, '|');
+      }
+    }
+
+    function hud(g) {
+      put(g, 1, 0, 'PITAMPURA RUN', true);
+      var right = metres() + 'm · best ' + best + 'm';
+      put(g, W - right.length - 1, 0, right, true);
+    }
+
+    function render() {
+      var g = grid();
+      if (state === 'idle') {
+        center(g, 1, 'P I T A M P U R A   R U N');
+        putArt(g, Math.floor((W - 11) / 2), 13, TOWER);
+        road(g);
+        center(g, 16, 'press ↑ / space / tap to start');
+        el.textContent = g.map(function (r) { return r.join(''); }).join('\n');
+        return;
+      }
+      road(g);
+      scenery(g);
+      for (var i = 0; i < obstacles.length; i++) {
+        putArt(g, obstacles[i].x - dist, B, obstacles[i].art);
+      }
+      putArt(g, PX, B + Math.round(y), PLAYER);
+      hud(g);
+      if (state === 'over') {
+        center(g, 5, '  BAS!  ');
+        center(g, 7, crashReason + ' at ' + metres() + 'm');
+        center(g, 9, '↑ to ride again');
+      }
+      el.textContent = g.map(function (r) { return r.join(''); }).join('\n');
+    }
+
+    function tick() {
+      dist += speed;
+      speed = Math.min(0.85, speed + 0.00025);
+      if (y < 0 || vy < 0) {
+        y += vy;
+        vy += 0.074;
+        if (y >= 0) { y = 0; vy = 0; }
+      }
+      if (dist >= nextAt) {
+        var o = OBSTACLES[Math.floor(Math.random() * OBSTACLES.length)];
+        obstacles.push({ x: Math.round(dist + W + 2), art: o.art, w: o.w, h: o.h, reason: o.reason });
+        nextAt = dist + 26 + speed * 24 + Math.random() * 34;
+      }
+      while (obstacles.length && obstacles[0].x - dist < -6) obstacles.shift();
+
+      var pTop = B + Math.round(y) - 2, pBot = B + Math.round(y);
+      for (var i = 0; i < obstacles.length; i++) {
+        var sx = obstacles[i].x - dist;
+        if (sx < PX + 3 && sx + obstacles[i].w > PX && pBot >= B - obstacles[i].h + 1) {
+          crash(obstacles[i].reason);
+          break;
+        }
+      }
+      render();
+    }
+
+    function crash(reason) {
+      state = 'over';
+      crashReason = reason;
+      if (metres() > best) {
+        best = metres();
+        try { localStorage.setItem('pitampuraRunBest', best); } catch (e) {}
+      }
+      clearInterval(timer);
+      timer = null;
+    }
+
+    function start() {
+      state = 'run';
+      dist = 0; speed = 0.38; y = 0; vy = 0;
+      obstacles = []; nextAt = 40;
+      timer = setInterval(tick, 33);
+      render();
+    }
+
+    function action() {
+      if (state === 'run') {
+        if (y === 0) vy = -1.05;
+      } else {
+        start();
+      }
+    }
+
+    el.addEventListener('keydown', function (e) {
+      if (e.code === 'ArrowUp' || e.code === 'Space' || e.code === 'KeyW' || e.code === 'Enter') {
+        e.preventDefault();
+        action();
+      }
+    });
+    el.addEventListener('pointerdown', function (e) {
+      e.preventDefault();
+      el.focus({ preventScroll: true });
+      action();
+    });
+
+    var probe = document.createElement('span');
+    probe.style.cssText = 'position:absolute;visibility:hidden;white-space:pre;font-family:' + getComputedStyle(el).fontFamily + ';';
+    var SAMPLE = 40;
+    probe.textContent = new Array(SAMPLE + 1).join('0');
+    document.body.appendChild(probe);
+
+    function fitWidth() {
+      var style = getComputedStyle(el);
+      var usable = el.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      probe.style.fontSize = style.fontSize;
+      var charWidth = probe.getBoundingClientRect().width / SAMPLE;
+      if (usable > 0 && charWidth > 0) {
+        W = Math.max(64, Math.floor(usable / charWidth));
+      }
+    }
+
+    fitWidth();
+    render();
+
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () { fitWidth(); render(); }, 100);
+    });
+  })();
+</script>

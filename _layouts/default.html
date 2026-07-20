@@ -5,15 +5,19 @@
 
   <body>
 
-    {%- include header.html -%}
+    <div class="site-shell">
+      {%- include sidebar.html -%}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
+      <div class="site-main">
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+            {{ content }}
+          </div>
+        </main>
+
+        {%- include footer.html -%}
       </div>
-    </main>
-
-    {%- include footer.html -%}
+    </div>
 
     <!-- LLM toggle, fixed right side, always visible -->
     <button id="llm-toggle" class="llm-toggle" aria-label="Toggle machine-readable view">

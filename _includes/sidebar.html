@@ -1,0 +1,167 @@
+<input type="checkbox" id="sidebar-trigger" class="sidebar-trigger" />
+
+<div class="mobile-topbar">
+  <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+  <label for="sidebar-trigger" class="sidebar-toggle" aria-label="Toggle menu">
+    <svg viewBox="0 0 18 15" width="18" height="15"><path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/></svg>
+  </label>
+</div>
+
+<label for="sidebar-trigger" class="sidebar-scrim" aria-hidden="true"></label>
+
+<aside class="sidebar" aria-label="Primary">
+  <div class="sidebar-inner">
+    <a class="site-title sidebar-brand" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <p class="eyebrow sidebar-eyebrow">The Log</p>
+
+    <div class="sidebar-utility">
+      <button id="search-toggle" class="search-toggle" aria-label="Search (⌘K)">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span>Search</span>
+      </button>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    {%- if page_paths -%}
+    <nav class="sidebar-nav" aria-label="Site">
+      {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+          {%- assign is_active = false -%}
+          {%- if page.url contains my_page.permalink or (page.url == "/" and my_page.permalink == null) -%}
+            {%- assign is_active = true -%}
+          {%- endif -%}
+          <a class="sidebar-link{% if is_active %} active{% endif %}" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+    </nav>
+    {%- endif -%}
+
+    {%- if site.posts.size > 0 -%}
+      {%- assign tech_count = 0 -%}
+      {%- assign cooking_count = 0 -%}
+      {%- for post in site.posts -%}
+        {%- if post.categories contains 'tech' -%}
+          {%- assign tech_count = tech_count | plus: 1 -%}
+        {%- elsif post.categories contains 'cooking' -%}
+          {%- assign cooking_count = cooking_count | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- capture tag_sizes %}{% for tag in site.tags %}{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}|{% endfor %}{% endcapture -%}
+      {%- assign sorted_tags = tag_sizes | split: '|' | sort | reverse -%}
+      {%- assign home_url = "/" | relative_url -%}
+
+      <div class="sidebar-browse">
+        <p class="eyebrow">Browse</p>
+        <div class="feed-scroll">
+          <div class="feed-tabs" id="feed" role="group" aria-label="Filter posts">
+            <a class="feed-tab" data-filter="all" href="{{ home_url }}" aria-pressed="false">All <span class="tab-count">{{ site.posts.size }}</span></a>
+            <a class="feed-tab feed-tab-tech" data-filter="tech" href="{{ home_url }}?filter=tech" aria-pressed="false"><span class="feed-tab-dot"></span>Tech <span class="tab-count">{{ tech_count }}</span></a>
+            <a class="feed-tab feed-tab-cooking" data-filter="cooking" href="{{ home_url }}?filter=cooking" aria-pressed="false"><span class="feed-tab-dot"></span>Cooking <span class="tab-count">{{ cooking_count }}</span></a>
+          </div>
+
+          <div class="feed-tags" aria-label="Filter by tag">
+            {%- for entry in sorted_tags -%}
+              {%- assign tag_name = entry | split: '#' | last -%}
+              {%- assign tag_count = entry | split: '#' | first | minus: 1000 -%}
+              {%- assign tag_slug = tag_name | slugify -%}
+              {%- assign hue = forloop.index0 | modulo: 6 -%}
+              {%- if tag_name != '' -%}
+              <a class="feed-tab feed-tag" data-tag="{{ tag_slug }}" href="{{ home_url }}?tag={{ tag_slug }}" aria-pressed="false"><span class="feed-tab-dot" style="background-color: var(--tag-hue-{{ hue }})"></span>{{ tag_name }} <span class="tab-count">{{ tag_count }}</span></a>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</aside>
+
+<script>
+  (function() {
+    var themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme') || 'dark';
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    }
+  })();
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var tabs = document.querySelectorAll('.feed-tab[data-filter]');
+    var tagBtns = document.querySelectorAll('.feed-tag');
+    var items = document.querySelectorAll('.post-item');
+
+    // Sidebar renders on every page, but the post list to filter only
+    // exists on the home page — elsewhere the links just navigate there.
+    if (items.length === 0) return;
+
+    function apply(catFilter, tagFilter) {
+      tabs.forEach(function (t) {
+        var on = !tagFilter && t.dataset.filter === catFilter;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      tagBtns.forEach(function (b) {
+        var on = b.dataset.tag === tagFilter;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      items.forEach(function (item) {
+        var show = tagFilter
+          ? (' ' + (item.dataset.tags || '') + ' ').indexOf(' ' + tagFilter + ' ') !== -1
+          : (catFilter === 'all' || item.dataset.cat === catFilter);
+        item.style.display = show ? '' : 'none';
+      });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function (e) {
+        e.preventDefault();
+        apply(tab.dataset.filter, null);
+        history.replaceState(null, '', tab.dataset.filter === 'all' ? location.pathname : '?filter=' + tab.dataset.filter);
+      });
+    });
+    tagBtns.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var isActive = btn.classList.contains('active');
+        apply('all', isActive ? null : btn.dataset.tag);
+        history.replaceState(null, '', isActive ? location.pathname : '?tag=' + btn.dataset.tag);
+      });
+    });
+
+    var params = new URLSearchParams(location.search);
+    var tagParam = params.get('tag');
+    var filterParam = params.get('filter');
+    if (tagParam) {
+      apply('all', tagParam);
+    } else {
+      apply(filterParam || 'all', null);
+    }
+  });
+</script>

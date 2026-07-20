@@ -8,44 +8,13 @@ layout: default
   {%- endif -%}
 
   <section class="home-intro">
-    <p class="home-intro-text">{{ site.description }}</p>
-    <p class="home-intro-links">
-      <a href="https://github.com/janpreet">GitHub</a>
-      <span aria-hidden="true">·</span>
-      <a href="https://janpreet.github.io/nanakshahi-ical/">Nanakshahi calendar</a>
-    </p>
+    <h1 class="hero-title">SRE by day, baker &amp; tinkerer by <em>night</em>.</h1>
+    <p class="hero-sub">Writing about infrastructure, Kubernetes, Terraform, home networking, Rust, and sourdough.</p>
   </section>
 
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    {%- assign tech_count = 0 -%}
-    {%- assign cooking_count = 0 -%}
-    {%- for post in site.posts -%}
-      {%- if post.categories contains 'tech' -%}
-        {%- assign tech_count = tech_count | plus: 1 -%}
-      {%- elsif post.categories contains 'cooking' -%}
-        {%- assign cooking_count = cooking_count | plus: 1 -%}
-      {%- endif -%}
-    {%- endfor -%}
-
-    {%- capture tag_sizes %}{% for tag in site.tags %}{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}|{% endfor %}{% endcapture -%}
-    {%- assign sorted_tags = tag_sizes | split: '|' | sort | reverse -%}
-    <div class="feed-tabs" role="group" aria-label="Filter posts">
-      <button class="feed-tab active" data-filter="all" aria-pressed="true">All <span class="tab-count">{{ site.posts.size }}</span></button>
-      <div class="feed-tags" aria-label="Filter by category or tag">
-        <button class="feed-tab" data-filter="tech" aria-pressed="false">Tech <span class="tab-count">{{ tech_count }}</span></button>
-        <button class="feed-tab" data-filter="cooking" aria-pressed="false">Cooking <span class="tab-count">{{ cooking_count }}</span></button>
-        {%- for entry in sorted_tags -%}
-          {%- assign tag_name = entry | split: '#' | last -%}
-          {%- assign tag_count = entry | split: '#' | first | minus: 1000 -%}
-          {%- if tag_name != '' -%}
-          <button class="feed-tab feed-tag" data-tag="{{ tag_name | slugify }}" aria-pressed="false">{{ tag_name }} <span class="tab-count">{{ tag_count }}</span></button>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
-    </div>
-
     <ul class="post-list">
       {%- for post in site.posts -%}
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -85,59 +54,3 @@ layout: default
   {%- endif -%}
 
 </div>
-
-<script>
-  (function () {
-    var tabs = document.querySelectorAll('.feed-tab[data-filter]');
-    var tagBtns = document.querySelectorAll('.feed-tag');
-    var items = document.querySelectorAll('.post-item');
-
-    function apply(catFilter, tagFilter) {
-      tabs.forEach(function (t) {
-        var on = !tagFilter && t.dataset.filter === catFilter;
-        t.classList.toggle('active', on);
-        t.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      tagBtns.forEach(function (b) {
-        var on = b.dataset.tag === tagFilter;
-        b.classList.toggle('active', on);
-        b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      items.forEach(function (item) {
-        var show = tagFilter
-          ? (' ' + (item.dataset.tags || '') + ' ').indexOf(' ' + tagFilter + ' ') !== -1
-          : (catFilter === 'all' || item.dataset.cat === catFilter);
-        item.style.display = show ? '' : 'none';
-      });
-    }
-
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () { apply(tab.dataset.filter, null); });
-    });
-    tagBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        // clicking the active tag again returns to All
-        apply('all', btn.classList.contains('active') ? null : btn.dataset.tag);
-      });
-    });
-
-    // desktop: vertical wheel scrolls the strip horizontally (native swipe on touch);
-    // edge fades appear only on the side that actually has more to show
-    var strip = document.querySelector('.feed-tags');
-    if (strip) {
-      strip.addEventListener('wheel', function (e) {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-          strip.scrollLeft += e.deltaY;
-          e.preventDefault();
-        }
-      }, { passive: false });
-      function edges() {
-        strip.classList.toggle('fade-l', strip.scrollLeft > 4);
-        strip.classList.toggle('fade-r', strip.scrollLeft < strip.scrollWidth - strip.clientWidth - 4);
-      }
-      strip.addEventListener('scroll', edges, { passive: true });
-      window.addEventListener('resize', edges);
-      edges();
-    }
-  })();
-</script>

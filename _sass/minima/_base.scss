@@ -2,67 +2,67 @@
  * CSS Custom Properties for theming
  */
 :root {
-  --bg: #0d1210;
-  --bg-surface: #151b18;
-  --bg-hover: #1d2521;
-  --border: #2c3630;
-  --text: #e6edf3;
-  --text-muted: #8b949e;
-  --accent: #84aa9e;
-  --accent-dim: #5d8a7e;
-  --accent-hover: #a3c4b9;
-  --chip-warm: #c08d4f;
-  --tag-hue-0: #84aa9e;
-  --tag-hue-1: #c08d4f;
-  --tag-hue-2: #8aa3c4;
-  --tag-hue-3: #b394bd;
-  --tag-hue-4: #c4938a;
-  --tag-hue-5: #a9b37e;
-  --code-bg: #151b18;
-  --selection: rgba(132, 170, 158, 0.2);
+  --bg: #18130f;
+  --bg-surface: #211a14;
+  --bg-hover: #2a221a;
+  --border: #3a2f24;
+  --text: #f1e9dc;
+  --text-muted: #a89887;
+  --accent: #d97a45;
+  --accent-dim: #a85a2e;
+  --accent-hover: #f0955c;
+  --chip-warm: #d4a94a;
+  --tag-hue-0: #d97a45;
+  --tag-hue-1: #d4a94a;
+  --tag-hue-2: #7d93a8;
+  --tag-hue-3: #c16d78;
+  --tag-hue-4: #7c9450;
+  --tag-hue-5: #a98a63;
+  --code-bg: #211a14;
+  --selection: rgba(217, 122, 69, 0.22);
 }
 
 [data-theme="light"] {
-  --bg: #ffffff;
-  --bg-surface: #f6f8fa;
-  --bg-hover: #eaeef2;
-  --border: #d0d7de;
-  --text: #1f2328;
-  --text-muted: #656d76;
-  --accent: #2e7d6e;
-  --accent-dim: #1a5c50;
-  --accent-hover: #1a5c50;
-  --chip-warm: #8a5a1f;
-  --tag-hue-0: #2e7d6e;
-  --tag-hue-1: #8a5a1f;
-  --tag-hue-2: #3b608c;
-  --tag-hue-3: #7c4f87;
-  --tag-hue-4: #96524a;
-  --tag-hue-5: #61702f;
-  --code-bg: #f6f8fa;
-  --selection: rgba(46, 125, 110, 0.15);
+  --bg: #f7f1e6;
+  --bg-surface: #efe6d3;
+  --bg-hover: #e6dac0;
+  --border: #d9c9a8;
+  --text: #2a2117;
+  --text-muted: #6c5e4b;
+  --accent: #96411c;
+  --accent-dim: #8a3f22;
+  --accent-hover: #8a3f22;
+  --chip-warm: #7c5113;
+  --tag-hue-0: #96411c;
+  --tag-hue-1: #7c5113;
+  --tag-hue-2: #3f5b74;
+  --tag-hue-3: #8a3b4a;
+  --tag-hue-4: #4f6030;
+  --tag-hue-5: #6e5a3e;
+  --code-bg: #efe6d3;
+  --selection: rgba(177, 80, 42, 0.15);
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --bg: #ffffff;
-    --bg-surface: #f6f8fa;
-    --bg-hover: #eaeef2;
-    --border: #d0d7de;
-    --text: #1f2328;
-    --text-muted: #656d76;
-    --accent: #2e7d6e;
-    --accent-dim: #1a5c50;
-    --accent-hover: #1a5c50;
-    --chip-warm: #8a5a1f;
-    --tag-hue-0: #2e7d6e;
-    --tag-hue-1: #8a5a1f;
-    --tag-hue-2: #3b608c;
-    --tag-hue-3: #7c4f87;
-    --tag-hue-4: #96524a;
-    --tag-hue-5: #61702f;
-    --code-bg: #f6f8fa;
-    --selection: rgba(46, 125, 110, 0.15);
+    --bg: #f7f1e6;
+    --bg-surface: #efe6d3;
+    --bg-hover: #e6dac0;
+    --border: #d9c9a8;
+    --text: #2a2117;
+    --text-muted: #6c5e4b;
+    --accent: #96411c;
+    --accent-dim: #8a3f22;
+    --accent-hover: #8a3f22;
+    --chip-warm: #7c5113;
+    --tag-hue-0: #96411c;
+    --tag-hue-1: #7c5113;
+    --tag-hue-2: #3f5b74;
+    --tag-hue-3: #8a3b4a;
+    --tag-hue-4: #4f6030;
+    --tag-hue-5: #6e5a3e;
+    --code-bg: #efe6d3;
+    --selection: rgba(177, 80, 42, 0.15);
   }
 }
 
@@ -98,7 +98,6 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  padding-top: 60px; // fixed header height
 }
 
 ::selection {
@@ -158,9 +157,25 @@ li {
 }
 
 /**
+ * Eyebrow label — sits above a heading, names the section
+ */
+.eyebrow {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+/**
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  font-optical-sizing: auto;
   font-weight: 600;
 }
 

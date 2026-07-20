@@ -11,6 +11,11 @@ layout: default
   </nav>
 
   <header class="post-header">
+    {%- if page.categories contains 'tech' -%}
+      <p class="eyebrow">Tech</p>
+    {%- elsif page.categories contains 'cooking' -%}
+      <p class="eyebrow">Cooking</p>
+    {%- endif -%}
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <div class="post-meta-row">
       <time class="dt-published post-meta" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">

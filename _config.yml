@@ -27,9 +27,7 @@ header_pages:
   - index.md
   - about.md
   - sikhi.md
-  - contact.md
-  - resume.md
-  
+
 permalink: pretty  
 redirect_from:
   json: false
