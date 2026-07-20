@@ -54,10 +54,10 @@ The measures, ਰੱਤੀ, ਮਾਸਾ, ਤੋਲਾ, ਛਟਾਂਕ, are the
   <rect class="grp" x="20" y="16" width="350" height="150" fill="#fdf3e3" stroke="#e0b878"/>
   <text class="hd" x="40" y="44" fill="#9a6b1f">① Rare essences</text>
   <text class="qty" x="40" y="64">measured in ratti &amp; masa, pinches</text>
-  <text class="it" x="40" y="88">ਕਸਤੂਰੀ kasturi* · ਕੇਸਰ saffron</text>
-  <text class="it" x="40" y="110">ਮੁਸ਼ਕਪੂਰ musk camphor · ਸੁੱਚੇ ਮੋਤੀ pearl*</text>
-  <text class="it" x="40" y="132">ਮੁਸ਼ਕ ਅੰਬਰ ambergris*</text>
-  <text class="it" x="40" y="154" font-style="italic">*use ethical substitutes, see note</text>
+  <text class="it" x="40" y="88">ਕਸਤੂਰੀ ਭਿੰਡੀ kasturi bhindi† · ਕੇਸਰ saffron</text>
+  <text class="it" x="40" y="110">ਮੁਸ਼ਕਪੂਰ musk camphor · ਸੁੱਚੇ ਮੋਤੀ pearl‡</text>
+  <text class="it" x="40" y="132">ਬਦਲਵਾਂ ਮੁਸ਼ਕ ਅੰਬਰ musk amber accord†</text>
+  <text class="it" x="40" y="154" font-style="italic">†see note on puratan vs. today's ingredients</text>
 
   <!-- Group 2: woods and roots -->
   <rect class="grp" x="390" y="16" width="350" height="230" fill="#f0f4e8" stroke="#a8bd8a"/>
@@ -131,10 +131,10 @@ The measures, ਰੱਤੀ, ਮਾਸਾ, ਤੋਲਾ, ਛਟਾਂਕ, are the
 
 | ਸਮੱਗਰੀ | English | Measure as written | Approx. |
 |---|---|---|---|
-| ਕਸਤੂਰੀ | Kasturi (deer musk)* | ੨ ਰੱਤੀ | ~0.24 g |
+| ਕਸਤੂਰੀ ਭਿੰਡੀ | Kasturi bhindi (muskroot seeds)† | ੨ ਰੱਤੀ | ~0.24 g |
 | ਕੇਸਰ | Saffron | ੪ ਮਾਸੇ | ~3.9 g |
 | ਮੁਸ਼ਕਪੂਰ | Mushakpur (musk camphor) | ੩ ਮਾਸੇ | ~2.9 g |
-| ਸੁੱਚੇ ਮੋਤੀ | Real pearl (powdered)* | — | a pinch |
+| ਸੁੱਚੇ ਮੋਤੀ | Real pearl (powdered)‡ | — | a pinch |
 | ਗੋਕਾ ਘਿਉ | Cow's ghee | ੩ ਛਟਾਂਕ | ~175 g |
 | ਦੇਸੀ ਖੰਡ | Desi khand (raw sugar) | ੨ ਛਟਾਂਕ | ~117 g |
 | ਜਾਵਿਤ੍ਰੀ | Mace | ੧ ਤੋਲਾ | ~11.7 g |
@@ -164,13 +164,15 @@ The measures, ਰੱਤੀ, ਮਾਸਾ, ਤੋਲਾ, ਛਟਾਂਕ, are the
 | ਹਾਊ ਬੇਰ | Hauber (juniper berries) | — | small amount |
 | ਫੁਲ ਧਾਵੇ | Dhawa flowers (*Woodfordia fruticosa*) | — | small amount |
 | ਲੋਹਬਾਨ | Loban (benzoin resin) | — | small amount |
-| ਮੁਸ਼ਕ ਅੰਬਰ | Musk amber (ambergris)* | — | small amount |
+| ਬਦਲਵਾਂ ਮੁਸ਼ਕ ਅੰਬਰ | Musk amber accord (plant-based ambergris substitute)† | — | small amount |
 | ਕਚੂਰ ਊਦ | Kachur (zedoary) with oud | — | small amount |
 | ਦਾਲਚੀਨੀ | Cinnamon | — | small amount |
 
 Reading the original list: everything from ਜਾਵਿਤ੍ਰੀ to ਵੱਡੀ ਅਲੈਚੀ is marked **ਸਭ ੧-੧ ਤੋਲਾ** (one tola each); the group from ਖੋਪਾ to ਨਾਗਰ ਮੋਥਾ is **੨-੨ ਤੋਲੇ** (two tolas each); the final group carries no measure and is added in small quantities for fragrance.
 
-\* **A note on kasturi, ambergris and pearl:** true deer musk comes from the endangered musk deer, trade is banned under CITES and India's Wildlife Protection Act, and natural ambergris is likewise restricted in many countries. These appear because the recipe is old; today sevadars use ethical substitutes (kasturi bhindi / muskroot seeds, plant-based musk accords) without any loss of maryada. The seva lives in the sucham and the bhavna, not in a rare ingredient. Don't let a missing item stop you, a dhoop of sandalwood, loban, khas and ghee made with sucham is complete seva.
+† **Kasturi and musk amber:** the puratan recipe called for true deer musk, banned under CITES and India's Wildlife Protection Act since the musk deer is endangered, and natural ambergris, likewise restricted in many countries. What's listed above is the sevadar substitute in common use today, kasturi bhindi (muskroot seeds) and a plant-based musk amber accord, which fill the same role in the samagri without any loss of maryada. The seva lives in the sucham and the bhavna, not in a rare ingredient.
+
+‡ **Real pearl:** included in the puratan recipe as a rare, auspicious addition, not because of any legal restriction. It's genuinely optional, don't let a missing item stop you, a dhoop of sandalwood, loban, khas and ghee made with sucham is complete seva.
 
 ## Making and burning dhoop
 

@@ -15,7 +15,7 @@ recipe:
       ingredients:
         - amount: 0.24
           unit: g
-          item: "ਕਸਤੂਰੀ kasturi (deer musk)*"
+          item: "ਕਸਤੂਰੀ ਭਿੰਡੀ kasturi bhindi (muskroot seeds)†"
           note: "(2 ratti)"
         - amount: 3.9
           unit: g
@@ -25,8 +25,8 @@ recipe:
           unit: g
           item: "ਮੁਸ਼ਕਪੂਰ mushakpur (musk camphor)"
           note: "(3 masa)"
-        - text: "ਸੁੱਚੇ ਮੋਤੀ real pearl (powdered)*, a pinch"
-        - text: "ਮੁਸ਼ਕ ਅੰਬਰ musk amber (ambergris)*, small amount"
+        - text: "ਸੁੱਚੇ ਮੋਤੀ real pearl (powdered)‡, a pinch"
+        - text: "ਬਦਲਵਾਂ ਮੁਸ਼ਕ ਅੰਬਰ musk amber accord (plant-based ambergris substitute)†, small amount"
     - name: "Woods, roots & barks"
       ingredients:
         - amount: 11.7
@@ -146,7 +146,9 @@ The full puratan samagri from **[Dhoop, Jot & Shastar Maryada at Home](/sikhi/dh
 
 {% include recipe-card.html %}
 
-\* **A note on kasturi, ambergris and pearl:** true deer musk comes from the endangered musk deer, trade is banned under CITES and India's Wildlife Protection Act, and natural ambergris is likewise restricted in many countries. These appear because the recipe is old; today sevadars use ethical substitutes (kasturi bhindi / muskroot seeds, plant-based musk accords) without any loss of maryada. The seva lives in the sucham and the bhavna, not in a rare ingredient. Don't let a missing item stop you, a dhoop of sandalwood, loban, khas and ghee made with sucham is complete seva.
+† **Kasturi and musk amber:** the puratan recipe called for true deer musk, banned under CITES and India's Wildlife Protection Act since the musk deer is endangered, and natural ambergris, likewise restricted in many countries. What's listed above is the sevadar substitute in common use today, kasturi bhindi (muskroot seeds) and a plant-based musk amber accord, which fill the same role in the samagri without any loss of maryada. The seva lives in the sucham and the bhavna, not in a rare ingredient.
+
+‡ **Real pearl:** included in the puratan recipe as a rare, auspicious addition, not because of any legal restriction. It's genuinely optional, don't let a missing item stop you, a dhoop of sandalwood, loban, khas and ghee made with sucham is complete seva.
 
 ## Method
 
