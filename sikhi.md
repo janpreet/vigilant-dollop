@@ -16,20 +16,54 @@ New here and don't understand Punjabi? A quick glossary: **puratan** = pre-colon
 
 ## Itihas & virsa
 
-- **[Das Patshahian, the Journey of the Jot](/sikhi/lineage/)**, a family tree of the Guru Ghar: the jot, the parivaar around it, and the shaheeds of every era.
-- **[Shaheedi Pehra, the Shaheed Singhs & Singhniyan](/sikhi/shaheed/)**, what shaheedi means, and a catalogue of the shaheeds, 1606–1764.
-- **[Kaur: The Women of Sikh Itihas](/sikhi/kaur/)**, a catalogue of the women of the Panth, from Bebe Nanaki to Rani Jind Kaur.
-- **[The Puratan Granths, a Field Guide](/sikhi/granths/)**, short notes on Dasam Granth, Sarabloh, Suraj Prakash, Prem Sumarag, Sau Sakhi and the gupt banis, with a map.
+<ul class="ref-card-list">
+  <li class="ref-card">
+    <a class="post-link" href="/sikhi/lineage/">Das Patshahian, the Journey of the Jot</a>
+    <p class="post-excerpt">A family tree of the Guru Ghar: the jot, the parivaar around it, and the shaheeds of every era.</p>
+  </li>
+  <li class="ref-card">
+    <a class="post-link" href="/sikhi/shaheed/">Shaheedi Pehra, the Shaheed Singhs & Singhniyan</a>
+    <p class="post-excerpt">What shaheedi means, and a catalogue of the shaheeds, 1606–1764.</p>
+  </li>
+  <li class="ref-card">
+    <a class="post-link" href="/sikhi/kaur/">Kaur: The Women of Sikh Itihas</a>
+    <p class="post-excerpt">A catalogue of the women of the Panth, from Bebe Nanaki to Rani Jind Kaur.</p>
+  </li>
+  <li class="ref-card">
+    <a class="post-link" href="/sikhi/granths/">The Puratan Granths, a Field Guide</a>
+    <p class="post-excerpt">Short notes on Dasam Granth, Sarabloh, Suraj Prakash, Prem Sumarag, Sau Sakhi and the gupt banis, with a map.</p>
+  </li>
+</ul>
 
 ## Maryada & practice
 
-- **[Dhoop, Jot & Shastar Maryada at Home](/sikhi/dhoop/)**, a home-practice guide: preparing dhoop from a puratan samagri, keeping the jot, daily shastar prakash and seva of Maharaj's saroop, and the Dasehra Mahatam maryada.
+<ul class="ref-card-list">
+  <li class="ref-card">
+    <a class="post-link" href="/sikhi/dhoop/">Dhoop, Jot & Shastar Maryada at Home</a>
+    <p class="post-excerpt">A home-practice guide: preparing dhoop from a puratan samagri, keeping the jot, daily shastar prakash and seva of Maharaj's saroop, and the Dasehra Mahatam maryada.</p>
+  </li>
+  <li class="ref-card">
+    <a class="post-link" href="/sikhi/dhoop-recipe/">Dhoop Samagri, a Scalable Recipe</a>
+    <p class="post-excerpt">The samagri above as a live ingredient card: adjust batch size and switch between metric and imperial units.</p>
+  </li>
+</ul>
 
 ## Nanakshahi Calendar
 
-- **[Nanakshahi Calendar (iCal feed)](/nanakshahi)**, subscribe to gurpurabs and sangrands in your calendar app. [How it was built](/nanakshahi-rebuilt) · [original story](/nanakshahi-calendar).
-- **[How a Jantri Date Is Made](/sikhi/jantri-explained/)**, an interactive explainer: watch a sangrand and a tithi-based gurpurab being derived, live in your browser.
-- **[Nitnem feed](https://janpreet.github.io/nanakshahi-ical/)**, opt-in nitnem reminders with localized solar times.
+<ul class="ref-card-list">
+  <li class="ref-card">
+    <a class="post-link" href="/sikhi/nanakshahi/">Nanakshahi Calendar, Browse & Nitnem Times</a>
+    <p class="post-excerpt">Browse gurpurabs and sangrands by year, and see today's localized nitnem times, right here on the site.</p>
+  </li>
+  <li class="ref-card">
+    <a class="post-link" href="/nanakshahi">Subscribe (iCal feed)</a>
+    <p class="post-excerpt">Add gurpurabs and sangrands directly to your calendar app. <a href="/nanakshahi-rebuilt">How it was built</a> · <a href="/nanakshahi-calendar">original story</a>.</p>
+  </li>
+  <li class="ref-card">
+    <a class="post-link" href="/sikhi/jantri-explained/">How a Jantri Date Is Made</a>
+    <p class="post-excerpt">An interactive explainer: watch a sangrand and a tithi-based gurpurab being derived, live in your browser.</p>
+  </li>
+</ul>
 
 ---
 

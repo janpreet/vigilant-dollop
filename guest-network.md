@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Guest network- Terms of use
+title: Guest Network — Terms of Use
 permalink: /guest-network
+show_title: true
 ---
 
 Welcome to our home network! We're happy to share our Wi-Fi connection with our guests, but we ask that you please read and agree to the following terms of use before connecting:

@@ -66,33 +66,33 @@ Two festival dates use time-window rules instead of sunrise: **Bandi Chhor Divas
 
 ## Accuracy, honestly
 
-The math on this page is a compact in-browser ephemeris (Meeus-style series, good to about an arcminute), running the same calibrated conventions as the real engine: Lahiri-type ayanamsa (23.8532° at J2000 + 50.28796″/yr), Amritsar sunrise, sunrise-to-sunrise sangrands, udaya tithis. Checked against the pinned printed-Jantri data it reproduces all 26 sangrands and all 25 massia/purnmashi of NS 557–558, and the tithi gurpurabs above. Dates carrying a <span class="jx-badge jx-ok">✓ printed Jantri</span> badge match the published Jantri; anything else is marked <span class="jx-badge jx-est">≈ computed</span>, same honesty policy as the feed. For anything you plan around, trust [the feed](/nanakshahi), which uses a full ephemeris and pinned data, or better, the Jantri itself. The full engine is open source: [nanakshahi-jantri](https://github.com/janpreet/nanakshahi-jantri).
+The math on this page is a compact in-browser ephemeris (Meeus-style series, good to about an arcminute), running the same calibrated conventions as the real engine: Lahiri-type ayanamsa (23.8532° at J2000 + 50.28796″/yr), Amritsar sunrise, sunrise-to-sunrise sangrands, udaya tithis. Checked against the pinned printed-Jantri data, the full engine reproduces all 36 sangrands and all 25 massia/purnmashi across its three bundled pinned years (NS 549, 557, 558); this page's own badges above check the 24 sangrands and 6 tithi gurpurabs pinned for NS 557–558. Dates carrying a <span class="jx-badge jx-ok">✓ printed Jantri</span> badge match the published Jantri; anything else is marked <span class="jx-badge jx-est">≈ computed</span>, same honesty policy as the feed. For anything you plan around, trust [the feed](/nanakshahi), which uses a full ephemeris and pinned data, or better, the Jantri itself. The full engine is open source: [nanakshahi-jantri](https://github.com/janpreet/nanakshahi-jantri).
 
 <style>
-.jx-today { background:#fdf3e3; border:1px solid #e0b878; border-radius:12px; padding:.7em 1em; margin:1.2em 0; font-size:.95em; color:#3d3227; }
-.jx-panel { background:#fffaf2; border:1px solid #e0b878; border-radius:12px; padding:1em; margin:1.2em 0 2em; }
+.jx-today { background:var(--bg-surface); border:1px solid var(--border); border-radius:12px; padding:.7em 1em; margin:1.2em 0; font-size:.95em; color:var(--text); }
+.jx-panel { background:var(--bg-surface); border:1px solid var(--border); border-radius:12px; padding:1em; margin:1.2em 0 2em; }
 .jx-controls { display:flex; gap:1.2em; flex-wrap:wrap; margin-bottom:.8em; }
-.jx-controls label { font-size:.9em; font-weight:600; color:#8a5a2b; }
-.jx-controls select, .jx-controls input { font:inherit; padding:.25em .5em; border:1px solid #e0b878; border-radius:8px; background:#fff; color:#3d3227; margin-left:.35em; }
+.jx-controls label { font-size:.9em; font-weight:600; color:var(--accent-dim); }
+.jx-controls select, .jx-controls input { font:inherit; padding:.25em .5em; border:1px solid var(--border); border-radius:8px; background:var(--bg); color:var(--text); margin-left:.35em; }
 .jx-controls input { width:5.5em; }
 .jx-flex { display:flex; gap:1.2em; flex-wrap:wrap; align-items:flex-start; }
 .jx-dial { flex:0 0 300px; max-width:100%; }
 .jx-dial svg { width:100%; height:auto; display:block; }
-.jx-steps { flex:1 1 260px; font-size:.92em; color:#3d3227; }
+.jx-steps { flex:1 1 260px; font-size:.92em; color:var(--text); }
 .jx-steps ol { margin:0; padding-left:1.3em; }
 .jx-steps li { margin-bottom:.55em; }
 .jx-steps .jx-num { font-variant-numeric:tabular-nums; }
-.jx-result { font-size:1.05em; background:#fdf3e3; border-left:4px solid #9a6b1f; padding:.5em .8em; border-radius:0 8px 8px 0; margin-top:.6em; }
+.jx-result { font-size:1.05em; background:var(--bg-surface); border-left:4px solid var(--chip-warm); padding:.5em .8em; border-radius:0 8px 8px 0; margin-top:.6em; }
 .jx-badge { display:inline-block; font-size:.78em; font-weight:700; padding:.1em .55em; border-radius:999px; vertical-align:middle; }
-.jx-ok { background:#e8f2df; color:#4a7024; border:1px solid #b5cf98; }
-.jx-est { background:#fdf3e3; color:#9a6b1f; border:1px solid #e0b878; }
+.jx-ok { background:color-mix(in srgb, var(--tag-hue-4) 18%, transparent); color:var(--tag-hue-4); border:1px solid var(--tag-hue-4); }
+.jx-est { background:var(--bg-surface); color:var(--chip-warm); border:1px solid var(--border); }
 .jx-scan { display:flex; gap:.4em; flex-wrap:wrap; margin-top:.9em; }
-.jx-chip { border:1px solid #e0b878; border-radius:10px; padding:.35em .55em; font-size:.82em; text-align:center; color:#3d3227; background:#fff; min-width:4.6em; }
+.jx-chip { border:1px solid var(--border); border-radius:10px; padding:.35em .55em; font-size:.82em; text-align:center; color:var(--text); background:var(--bg); min-width:4.6em; }
 .jx-chip .d { font-weight:700; display:block; }
-.jx-chip .t { color:#8a5a2b; }
-.jx-chip.hit { background:#e8f2df; border-color:#7ba05b; box-shadow:0 0 0 2px #b5cf98; }
-.jx-chip.ksh { background:#fbe9e0; border-color:#d29a7a; }
-.jx-note { font-size:.85em; color:#8a5a2b; margin-top:.6em; }
+.jx-chip .t { color:var(--accent-dim); }
+.jx-chip.hit { background:color-mix(in srgb, var(--tag-hue-4) 18%, transparent); border-color:var(--tag-hue-4); box-shadow:0 0 0 2px var(--tag-hue-4); }
+.jx-chip.ksh { background:color-mix(in srgb, var(--tag-hue-3) 18%, transparent); border-color:var(--tag-hue-3); }
+.jx-note { font-size:.85em; color:var(--accent-dim); margin-top:.6em; }
 .jx-strip svg { width:100%; height:auto; display:block; margin-top:.9em; }
 @media (max-width:640px){ .jx-dial{flex-basis:100%;} }
 </style>
@@ -101,8 +101,9 @@ The math on this page is a compact in-browser ephemeris (Meeus-style series, goo
 (function () {
 'use strict';
 // ============ core astronomy (browser port of nanakshahi-jantri conventions;
-// verified against pinned Jantri NS 557/558: 26/26 sangrands, 25/25 massia-
-// purnmashi, 6/6 tithi gurpurabs) ============
+// this page's own pinned data covers NS 557/558: 24/24 sangrands, 6/6 tithi
+// gurpurabs. massia/purnmashi (25/25) is validated in the full engine across
+// its three bundled pinned years, NS 549/557/558, not reproduced here) ========
 var RAD = Math.PI / 180, IST = 330 * 60000;
 var LOC = { lat: 31.62, lon: 74.8765 };
 var MONTHS = ['Chet','Vaisakh','Jeth','Harh','Sawan','Bhadon','Assu','Katak','Maghar','Poh','Magh','Phagan'];
@@ -291,30 +292,30 @@ function drawZodiac(el, sankMs, targetLon){
       + ' A' + R1 + ',' + R1 + ' 0 0 0 ' + p1[0].toFixed(1) + ',' + p1[1].toFixed(1)
       + ' L' + q1[0].toFixed(1) + ',' + q1[1].toFixed(1)
       + ' A' + R2 + ',' + R2 + ' 0 0 1 ' + q0[0].toFixed(1) + ',' + q0[1].toFixed(1) + ' Z"'
-      + ' fill="' + (hit ? '#fdf3e3' : (i % 2 ? '#fffaf2' : '#faf1e0')) + '" stroke="#e0b878" stroke-width="1"/>';
+      + ' fill="' + (hit ? 'var(--bg-surface)' : (i % 2 ? 'var(--bg-surface)' : 'var(--bg-hover)')) + '" stroke="var(--border)" stroke-width="1"/>';
     var lm = pt(cx, cy, a0 + 15, (R1+R2)/2);
-    s += '<text x="' + lm[0].toFixed(1) + '" y="' + (lm[1]+4).toFixed(1) + '" text-anchor="middle" font-size="12" fill="#8a5a2b" font-family="system-ui,sans-serif">' + RASHI_PA[i] + '</text>';
+    s += '<text x="' + lm[0].toFixed(1) + '" y="' + (lm[1]+4).toFixed(1) + '" text-anchor="middle" font-size="12" fill="var(--accent-dim)" font-family="system-ui,sans-serif">' + RASHI_PA[i] + '</text>';
   }
   // target boundary
   var b0 = pt(cx, cy, targetLon, R2 - 6), b1 = pt(cx, cy, targetLon, R1 + 6);
-  s += '<line x1="' + b0[0].toFixed(1) + '" y1="' + b0[1].toFixed(1) + '" x2="' + b1[0].toFixed(1) + '" y2="' + b1[1].toFixed(1) + '" stroke="#9a6b1f" stroke-width="3"/>';
+  s += '<line x1="' + b0[0].toFixed(1) + '" y1="' + b0[1].toFixed(1) + '" x2="' + b1[0].toFixed(1) + '" y2="' + b1[1].toFixed(1) + '" stroke="var(--chip-warm)" stroke-width="3"/>';
   var bl = pt(cx, cy, targetLon, R1 + 16);
-  s += '<text x="' + bl[0].toFixed(1) + '" y="' + (bl[1]+4).toFixed(1) + '" text-anchor="middle" font-size="11" font-weight="700" fill="#9a6b1f" font-family="system-ui,sans-serif">' + targetLon + '°</text>';
+  s += '<text x="' + bl[0].toFixed(1) + '" y="' + (bl[1]+4).toFixed(1) + '" text-anchor="middle" font-size="11" font-weight="700" fill="var(--chip-warm)" font-family="system-ui,sans-serif">' + targetLon + '°</text>';
   // sun trail: -3d, -2d, -1d, moment
   var k;
   for (k = 3; k >= 1; k--){
     var lonK = sidSun(sankMs - k*86400000), pk = pt(cx, cy, lonK, (R1+R2)/2 - 26);
-    s += '<circle cx="' + pk[0].toFixed(1) + '" cy="' + pk[1].toFixed(1) + '" r="' + (4 - k*0.7) + '" fill="#e0b878"/>';
+    s += '<circle cx="' + pk[0].toFixed(1) + '" cy="' + pk[1].toFixed(1) + '" r="' + (4 - k*0.7) + '" fill="var(--border)"/>';
   }
   var ps = pt(cx, cy, sidSun(sankMs), (R1+R2)/2 - 26);
-  s += '<circle cx="' + ps[0].toFixed(1) + '" cy="' + ps[1].toFixed(1) + '" r="7" fill="#d97b29" stroke="#9a6b1f" stroke-width="1.5"/>';
+  s += '<circle cx="' + ps[0].toFixed(1) + '" cy="' + ps[1].toFixed(1) + '" r="7" fill="var(--accent)" stroke="var(--chip-warm)" stroke-width="1.5"/>';
   // tropical zero tick (ayanamsa gap): sidereal position of tropical 0 = 360 - ayanamsa
   var ay = ayan(sankMs), tz = pt(cx, cy, n360(-ay), R1 + 6), tz2 = pt(cx, cy, n360(-ay), R1 - 4);
-  s += '<line x1="' + tz2[0].toFixed(1) + '" y1="' + tz2[1].toFixed(1) + '" x2="' + tz[0].toFixed(1) + '" y2="' + tz[1].toFixed(1) + '" stroke="#b0483a" stroke-width="2.5"/>';
+  s += '<line x1="' + tz2[0].toFixed(1) + '" y1="' + tz2[1].toFixed(1) + '" x2="' + tz[0].toFixed(1) + '" y2="' + tz[1].toFixed(1) + '" stroke="var(--tag-hue-3)" stroke-width="2.5"/>';
   var tzl = pt(cx, cy, n360(-ay), R1 + 24);
-  s += '<text x="' + tzl[0].toFixed(1) + '" y="' + (tzl[1]+4).toFixed(1) + '" text-anchor="middle" font-size="10" fill="#b0483a" font-family="system-ui,sans-serif">tropical 0°</text>';
-  s += '<text x="160" y="156" text-anchor="middle" font-size="11" fill="#8a5a2b" font-family="system-ui,sans-serif">sidereal ring</text>';
-  s += '<text x="160" y="172" text-anchor="middle" font-size="11" fill="#8a5a2b" font-family="system-ui,sans-serif">ayanamsa ' + ay.toFixed(2) + '°</text>';
+  s += '<text x="' + tzl[0].toFixed(1) + '" y="' + (tzl[1]+4).toFixed(1) + '" text-anchor="middle" font-size="10" fill="var(--tag-hue-3)" font-family="system-ui,sans-serif">tropical 0°</text>';
+  s += '<text x="160" y="156" text-anchor="middle" font-size="11" fill="var(--accent-dim)" font-family="system-ui,sans-serif">sidereal ring</text>';
+  s += '<text x="160" y="172" text-anchor="middle" font-size="11" fill="var(--accent-dim)" font-family="system-ui,sans-serif">ayanamsa ' + ay.toFixed(2) + '°</text>';
   s += '</svg>';
   el.innerHTML = s;
 }
@@ -333,21 +334,21 @@ function drawStrip(el, sankMs){
     if (sankMs >= all[i] && sankMs < all[i+1]){ band0 = all[i]; band1 = all[i+1]; }
   }
   if (band0 !== null){
-    s += '<rect x="' + X(band0).toFixed(1) + '" y="30" width="' + (X(band1)-X(band0)).toFixed(1) + '" height="52" fill="#e8f2df" stroke="#7ba05b" stroke-width="1.5" rx="6"/>';
+    s += '<rect x="' + X(band0).toFixed(1) + '" y="30" width="' + (X(band1)-X(band0)).toFixed(1) + '" height="52" fill="color-mix(in srgb, var(--tag-hue-4) 18%, transparent)" stroke="var(--tag-hue-4)" stroke-width="1.5" rx="6"/>';
   }
   for (i = 0; i <= 3; i++){
     var mx = X(t0 + i*86400000);
-    s += '<line x1="' + mx.toFixed(1) + '" y1="26" x2="' + mx.toFixed(1) + '" y2="86" stroke="#d9c4a0" stroke-width="1" stroke-dasharray="3,3"/>';
-    if (i < 3) s += '<text x="' + (X(t0 + i*86400000 + 43200000)).toFixed(1) + '" y="20" text-anchor="middle" font-size="12" fill="#3d3227" font-family="system-ui,sans-serif"' + (days[i] === owner ? ' font-weight="700"' : '') + '>' + fmtDate(days[i]) + '</text>';
+    s += '<line x1="' + mx.toFixed(1) + '" y1="26" x2="' + mx.toFixed(1) + '" y2="86" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,3"/>';
+    if (i < 3) s += '<text x="' + (X(t0 + i*86400000 + 43200000)).toFixed(1) + '" y="20" text-anchor="middle" font-size="12" fill="var(--text)" font-family="system-ui,sans-serif"' + (days[i] === owner ? ' font-weight="700"' : '') + '>' + fmtDate(days[i]) + '</text>';
   }
   for (i = 0; i < all.length; i++){
     var sx = X(all[i]);
-    s += '<line x1="' + sx.toFixed(1) + '" y1="30" x2="' + sx.toFixed(1) + '" y2="82" stroke="#d97b29" stroke-width="2"/>';
-    s += '<text x="' + sx.toFixed(1) + '" y="100" text-anchor="middle" font-size="10" fill="#d97b29" font-family="system-ui,sans-serif">☀ sunrise</text>';
+    s += '<line x1="' + sx.toFixed(1) + '" y1="30" x2="' + sx.toFixed(1) + '" y2="82" stroke="var(--accent)" stroke-width="2"/>';
+    s += '<text x="' + sx.toFixed(1) + '" y="100" text-anchor="middle" font-size="10" fill="var(--accent)" font-family="system-ui,sans-serif">☀ sunrise</text>';
   }
   var kx = X(sankMs);
-  s += '<circle cx="' + kx.toFixed(1) + '" cy="56" r="7" fill="#9a6b1f"/>';
-  s += '<text x="' + kx.toFixed(1) + '" y="115" text-anchor="middle" font-size="11" font-weight="700" fill="#9a6b1f" font-family="system-ui,sans-serif">sankranti</text>';
+  s += '<circle cx="' + kx.toFixed(1) + '" cy="56" r="7" fill="var(--chip-warm)"/>';
+  s += '<text x="' + kx.toFixed(1) + '" y="115" text-anchor="middle" font-size="11" font-weight="700" fill="var(--chip-warm)" font-family="system-ui,sans-serif">sankranti</text>';
   s += '</svg></div>';
   var note = '';
   if (owner !== civil) note = '<div class="jx-note">The sankranti falls after midnight but <em>before sunrise</em>, so it belongs to the previous sunrise-to-sunrise day, ' + fmtDate(owner) + '.</div>';
@@ -360,30 +361,30 @@ function drawTithiDial(el, ms){
   s += '<svg viewBox="0 0 320 320" role="img" aria-label="Sun-moon elongation dial showing the tithi">';
   for (i = 0; i < 30; i++){
     var a0 = sl + i*12, p0 = pt(cx,cy,a0,R1), p1 = pt(cx,cy,a0+12,R1), q0 = pt(cx,cy,a0,R2), q1 = pt(cx,cy,a0+12,R2);
-    var fill = (i < 15) ? '#fffaf2' : '#f0e4cf';
-    if (i === ti - 1) fill = '#e8f2df';
+    var fill = (i < 15) ? 'var(--bg-surface)' : 'var(--bg-hover)';
+    if (i === ti - 1) fill = 'color-mix(in srgb, var(--tag-hue-4) 18%, transparent)';
     s += '<path d="M' + q0[0].toFixed(1) + ',' + q0[1].toFixed(1) + ' L' + p0[0].toFixed(1) + ',' + p0[1].toFixed(1)
       + ' A' + R1 + ',' + R1 + ' 0 0 0 ' + p1[0].toFixed(1) + ',' + p1[1].toFixed(1)
       + ' L' + q1[0].toFixed(1) + ',' + q1[1].toFixed(1)
-      + ' A' + R2 + ',' + R2 + ' 0 0 1 ' + q0[0].toFixed(1) + ',' + q0[1].toFixed(1) + ' Z" fill="' + fill + '" stroke="#e0b878" stroke-width="0.8"/>';
+      + ' A' + R2 + ',' + R2 + ' 0 0 1 ' + q0[0].toFixed(1) + ',' + q0[1].toFixed(1) + ' Z" fill="' + fill + '" stroke="var(--border)" stroke-width="0.8"/>';
     if ((i+1) % 5 === 0 || i === 14 || i === 29){
       var lm = pt(cx,cy,a0+6,(R1+R2)/2);
-      s += '<text x="' + lm[0].toFixed(1) + '" y="' + (lm[1]+3.5).toFixed(1) + '" text-anchor="middle" font-size="10" fill="#8a5a2b" font-family="system-ui,sans-serif">' + (i+1) + '</text>';
+      s += '<text x="' + lm[0].toFixed(1) + '" y="' + (lm[1]+3.5).toFixed(1) + '" text-anchor="middle" font-size="10" fill="var(--accent-dim)" font-family="system-ui,sans-serif">' + (i+1) + '</text>';
     }
   }
   // elongation arc
   var ea0 = pt(cx,cy,sl,R2-18), ea1 = pt(cx,cy,sl+e,R2-18);
   var large = e > 180 ? 1 : 0;
-  s += '<path d="M' + ea0[0].toFixed(1) + ',' + ea0[1].toFixed(1) + ' A' + (R2-18) + ',' + (R2-18) + ' 0 ' + large + ' 0 ' + ea1[0].toFixed(1) + ',' + ea1[1].toFixed(1) + '" fill="none" stroke="#9a6b1f" stroke-width="2.5" stroke-dasharray="5,4"/>';
+  s += '<path d="M' + ea0[0].toFixed(1) + ',' + ea0[1].toFixed(1) + ' A' + (R2-18) + ',' + (R2-18) + ' 0 ' + large + ' 0 ' + ea1[0].toFixed(1) + ',' + ea1[1].toFixed(1) + '" fill="none" stroke="var(--chip-warm)" stroke-width="2.5" stroke-dasharray="5,4"/>';
   var sp = pt(cx,cy,sl,R2-18);
-  s += '<circle cx="' + sp[0].toFixed(1) + '" cy="' + sp[1].toFixed(1) + '" r="8" fill="#d97b29" stroke="#9a6b1f" stroke-width="1.5"/>';
-  s += '<text x="' + sp[0].toFixed(1) + '" y="' + (sp[1]-12).toFixed(1) + '" text-anchor="middle" font-size="10" fill="#9a6b1f" font-family="system-ui,sans-serif">☀</text>';
+  s += '<circle cx="' + sp[0].toFixed(1) + '" cy="' + sp[1].toFixed(1) + '" r="8" fill="var(--accent)" stroke="var(--chip-warm)" stroke-width="1.5"/>';
+  s += '<text x="' + sp[0].toFixed(1) + '" y="' + (sp[1]-12).toFixed(1) + '" text-anchor="middle" font-size="10" fill="var(--chip-warm)" font-family="system-ui,sans-serif">☀</text>';
   var mp = pt(cx,cy,sl+e,R2-18);
-  s += '<circle cx="' + mp[0].toFixed(1) + '" cy="' + mp[1].toFixed(1) + '" r="7" fill="#6a7a8c" stroke="#44505e" stroke-width="1.5"/>';
-  s += '<text x="' + mp[0].toFixed(1) + '" y="' + (mp[1]-11).toFixed(1) + '" text-anchor="middle" font-size="10" fill="#44505e" font-family="system-ui,sans-serif">☾</text>';
-  s += '<text x="160" y="150" text-anchor="middle" font-size="12" fill="#3d3227" font-family="system-ui,sans-serif">elongation ' + e.toFixed(1) + '°</text>';
-  s += '<text x="160" y="168" text-anchor="middle" font-size="13" font-weight="700" fill="#4a7024" font-family="system-ui,sans-serif">tithi ' + ti + (ti === 15 ? ', purnmashi' : (ti === 30 ? ', massia' : (ti <= 15 ? ' (sudi ' + ti + ')' : ' (vadi ' + (ti-15) + ')'))) + '</text>';
-  s += '<text x="160" y="186" text-anchor="middle" font-size="10" fill="#8a5a2b" font-family="system-ui,sans-serif">at Amritsar sunrise, result day</text>';
+  s += '<circle cx="' + mp[0].toFixed(1) + '" cy="' + mp[1].toFixed(1) + '" r="7" fill="var(--tag-hue-2)" stroke="var(--tag-hue-2)" stroke-width="1.5"/>';
+  s += '<text x="' + mp[0].toFixed(1) + '" y="' + (mp[1]-11).toFixed(1) + '" text-anchor="middle" font-size="10" fill="var(--tag-hue-2)" font-family="system-ui,sans-serif">☾</text>';
+  s += '<text x="160" y="150" text-anchor="middle" font-size="12" fill="var(--text)" font-family="system-ui,sans-serif">elongation ' + e.toFixed(1) + '°</text>';
+  s += '<text x="160" y="168" text-anchor="middle" font-size="13" font-weight="700" fill="var(--tag-hue-4)" font-family="system-ui,sans-serif">tithi ' + ti + (ti === 15 ? ', purnmashi' : (ti === 30 ? ', massia' : (ti <= 15 ? ' (sudi ' + ti + ')' : ' (vadi ' + (ti-15) + ')'))) + '</text>';
+  s += '<text x="160" y="186" text-anchor="middle" font-size="10" fill="var(--accent-dim)" font-family="system-ui,sans-serif">at Amritsar sunrise, result day</text>';
   s += '</svg>';
   el.innerHTML = s;
 }
@@ -392,12 +393,12 @@ function drawAnchor(el, m, monthName){
   var W = 700, H = 96, t0 = m.start - 2.5*86400000, t1 = m.end + 2.5*86400000;
   function X(ms){ return 20 + (ms - t0)/(t1 - t0)*(W - 40); }
   var s = '<div class="jx-strip"><svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Lunar month anchored by its sankranti">';
-  s += '<rect x="' + X(m.start).toFixed(1) + '" y="34" width="' + (X(m.end)-X(m.start)).toFixed(1) + '" height="30" fill="#fdf3e3" stroke="#e0b878" rx="6"/>';
-  s += '<text x="' + X((m.start+m.end)/2).toFixed(1) + '" y="54" text-anchor="middle" font-size="12" font-weight="700" fill="#8a5a2b" font-family="system-ui,sans-serif">amanta ' + monthName + '</text>';
-  s += '<circle cx="' + X(m.start).toFixed(1) + '" cy="49" r="6" fill="#44505e"/><text x="' + X(m.start).toFixed(1) + '" y="80" text-anchor="middle" font-size="10" fill="#44505e" font-family="system-ui,sans-serif">new moon ' + fmtDate(istISO(m.start)) + '</text>';
-  s += '<circle cx="' + X(m.end).toFixed(1) + '" cy="49" r="6" fill="#44505e"/><text x="' + X(m.end).toFixed(1) + '" y="80" text-anchor="middle" font-size="10" fill="#44505e" font-family="system-ui,sans-serif">new moon ' + fmtDate(istISO(m.end)) + '</text>';
-  s += '<line x1="' + X(m.sank).toFixed(1) + '" y1="20" x2="' + X(m.sank).toFixed(1) + '" y2="64" stroke="#9a6b1f" stroke-width="2.5"/>';
-  s += '<text x="' + X(m.sank).toFixed(1) + '" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#9a6b1f" font-family="system-ui,sans-serif">' + m.sankMonth + ' sankranti</text>';
+  s += '<rect x="' + X(m.start).toFixed(1) + '" y="34" width="' + (X(m.end)-X(m.start)).toFixed(1) + '" height="30" fill="var(--bg-surface)" stroke="var(--border)" rx="6"/>';
+  s += '<text x="' + X((m.start+m.end)/2).toFixed(1) + '" y="54" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent-dim)" font-family="system-ui,sans-serif">amanta ' + monthName + '</text>';
+  s += '<circle cx="' + X(m.start).toFixed(1) + '" cy="49" r="6" fill="var(--tag-hue-2)"/><text x="' + X(m.start).toFixed(1) + '" y="80" text-anchor="middle" font-size="10" fill="var(--tag-hue-2)" font-family="system-ui,sans-serif">new moon ' + fmtDate(istISO(m.start)) + '</text>';
+  s += '<circle cx="' + X(m.end).toFixed(1) + '" cy="49" r="6" fill="var(--tag-hue-2)"/><text x="' + X(m.end).toFixed(1) + '" y="80" text-anchor="middle" font-size="10" fill="var(--tag-hue-2)" font-family="system-ui,sans-serif">new moon ' + fmtDate(istISO(m.end)) + '</text>';
+  s += '<line x1="' + X(m.sank).toFixed(1) + '" y1="20" x2="' + X(m.sank).toFixed(1) + '" y2="64" stroke="var(--chip-warm)" stroke-width="2.5"/>';
+  s += '<text x="' + X(m.sank).toFixed(1) + '" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="var(--chip-warm)" font-family="system-ui,sans-serif">' + m.sankMonth + ' sankranti</text>';
   s += '</svg></div>';
   var note = '<div class="jx-note">The new-moon month containing the <strong>' + m.sankMonth + ' sankranti</strong> is amanta <strong>' + monthName + '</strong>, the lunar month is named one step behind the solar month its sankranti begins.'
     + (m.adhikBefore ? ' The month before it contained <em>no</em> sankranti: an <strong>adhik</strong> month (the Jantri prints ਵਾ:' + MONTHS_PA[MONTHS.indexOf(monthName)] + '), skipped for all events.' : '') + '</div>';

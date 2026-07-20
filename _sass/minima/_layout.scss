@@ -1328,6 +1328,45 @@ body.search-open {
   }
 }
 
+/**
+ * Reference card list: same card language as .post-item (border, surface,
+ * hover lift) for curated link lists that aren't dated posts, e.g. the
+ * Sikhi hub.
+ */
+.ref-card-list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+
+  > li.ref-card {
+    padding: 20px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--bg-surface);
+    transition: border-color 0.2s ease, transform 0.15s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .post-link {
+      @include relative-font-size(1.15);
+      margin-bottom: 4px;
+    }
+
+    .post-excerpt {
+      margin-bottom: 0;
+      max-width: 68ch;
+    }
+  }
+}
+
 
 /**
  * Deterministic tag hues: each tag name hashes to one of six muted hues

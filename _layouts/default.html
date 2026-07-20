@@ -43,6 +43,11 @@
 
     {%- include search.html -%}
 
+    {%- if page.recipe -%}
+      <script type="application/json" id="ingredient-densities">{{ site.data.ingredient_densities | jsonify }}</script>
+      <script src="{{ '/assets/js/recipe.js' | relative_url }}" defer></script>
+    {%- endif -%}
+
     <script>
     (function() {
       // LLM toggle

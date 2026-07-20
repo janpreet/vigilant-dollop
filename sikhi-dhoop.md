@@ -28,6 +28,8 @@ Puratan sampradas carry this as living maryada: dhoop at parkash and sukhasan, d
 
 ## The puratan dhoop samagri
 
+Want to actually measure and mix a batch? The **[scalable dhoop recipe](/sikhi/dhoop-recipe/)** has the same samagri as a live ingredient card, adjustable batch size and metric/imperial units included.
+
 The measures, ਰੱਤੀ, ਮਾਸਾ, ਤੋਲਾ, ਛਟਾਂਕ, are the old subcontinental jeweller's and bazaar weights, which itself tells you the recipe's age.
 
 **Traditional measures:** 1 ਰੱਤੀ (ratti) ≈ 0.12 g · 1 ਮਾਸਾ (masa) = 8 ratti ≈ 0.97 g · 1 ਤੋਲਾ (tola) = 12 masa ≈ 11.66 g · 1 ਛਟਾਂਕ (chhatank) = 5 tola ≈ 58.3 g
@@ -53,7 +55,7 @@ The measures, ਰੱਤੀ, ਮਾਸਾ, ਤੋਲਾ, ਛਟਾਂਕ, are the
   <text class="hd" x="40" y="44" fill="#9a6b1f">① Rare essences</text>
   <text class="qty" x="40" y="64">measured in ratti &amp; masa, pinches</text>
   <text class="it" x="40" y="88">ਕਸਤੂਰੀ kasturi* · ਕੇਸਰ saffron</text>
-  <text class="it" x="40" y="110">ਮੁਸ਼ਕਪੂਰ musk camphor · ਸੁੱਚੇ ਮੋਤੀ pearl</text>
+  <text class="it" x="40" y="110">ਮੁਸ਼ਕਪੂਰ musk camphor · ਸੁੱਚੇ ਮੋਤੀ pearl*</text>
   <text class="it" x="40" y="132">ਮੁਸ਼ਕ ਅੰਬਰ ambergris*</text>
   <text class="it" x="40" y="154" font-style="italic">*use ethical substitutes, see note</text>
 
@@ -132,7 +134,7 @@ The measures, ਰੱਤੀ, ਮਾਸਾ, ਤੋਲਾ, ਛਟਾਂਕ, are the
 | ਕਸਤੂਰੀ | Kasturi (deer musk)* | ੨ ਰੱਤੀ | ~0.24 g |
 | ਕੇਸਰ | Saffron | ੪ ਮਾਸੇ | ~3.9 g |
 | ਮੁਸ਼ਕਪੂਰ | Mushakpur (musk camphor) | ੩ ਮਾਸੇ | ~2.9 g |
-| ਸੁੱਚੇ ਮੋਤੀ | Real pearl (powdered) |, | a pinch |
+| ਸੁੱਚੇ ਮੋਤੀ | Real pearl (powdered)* | — | a pinch |
 | ਗੋਕਾ ਘਿਉ | Cow's ghee | ੩ ਛਟਾਂਕ | ~175 g |
 | ਦੇਸੀ ਖੰਡ | Desi khand (raw sugar) | ੨ ਛਟਾਂਕ | ~117 g |
 | ਜਾਵਿਤ੍ਰੀ | Mace | ੧ ਤੋਲਾ | ~11.7 g |
@@ -157,34 +159,22 @@ The measures, ਰੱਤੀ, ਮਾਸਾ, ਤੋਲਾ, ਛਟਾਂਕ, are the
 | ਚਿੱਟੇ ਤਿਲ | White sesame | ੨ ਤੋਲੇ | ~23.3 g |
 | ਨਾਗਰ ਮੋਥਾ | Nagarmotha (*Cyperus rotundus*) | ੨ ਤੋਲੇ | ~23.3 g |
 | ਬਾਸਮਤੀ ਚੌਲ | Basmati rice | ੩ ਤੋਲੇ | ~35 g |
-| ਅਤਰ ਗੁਲਾਬ | Rose attar |, | few drops |
-| ਬ੍ਰਹਮੀ ਖੁਸ਼ਬੂਦਾਰ | Fragrant brahmi |, | small amount |
-| ਹਾਊ ਬੇਰ | Hauber (juniper berries) |, | small amount |
-| ਫੁਲ ਧਾਵੇ | Dhawa flowers (*Woodfordia fruticosa*) |, | small amount |
-| ਲੋਹਬਾਨ | Loban (benzoin resin) |, | small amount |
-| ਮੁਸ਼ਕ ਅੰਬਰ | Musk amber (ambergris) |, | small amount |
-| ਕਚੂਰ ਊਦ | Kachur (zedoary) with oud |, | small amount |
-| ਦਾਲਚੀਨੀ | Cinnamon |, | small amount |
+| ਅਤਰ ਗੁਲਾਬ | Rose attar | — | few drops |
+| ਬ੍ਰਹਮੀ ਖੁਸ਼ਬੂਦਾਰ | Fragrant brahmi | — | small amount |
+| ਹਾਊ ਬੇਰ | Hauber (juniper berries) | — | small amount |
+| ਫੁਲ ਧਾਵੇ | Dhawa flowers (*Woodfordia fruticosa*) | — | small amount |
+| ਲੋਹਬਾਨ | Loban (benzoin resin) | — | small amount |
+| ਮੁਸ਼ਕ ਅੰਬਰ | Musk amber (ambergris)* | — | small amount |
+| ਕਚੂਰ ਊਦ | Kachur (zedoary) with oud | — | small amount |
+| ਦਾਲਚੀਨੀ | Cinnamon | — | small amount |
 
 Reading the original list: everything from ਜਾਵਿਤ੍ਰੀ to ਵੱਡੀ ਅਲੈਚੀ is marked **ਸਭ ੧-੧ ਤੋਲਾ** (one tola each); the group from ਖੋਪਾ to ਨਾਗਰ ਮੋਥਾ is **੨-੨ ਤੋਲੇ** (two tolas each); the final group carries no measure and is added in small quantities for fragrance.
 
 \* **A note on kasturi, ambergris and pearl:** true deer musk comes from the endangered musk deer, trade is banned under CITES and India's Wildlife Protection Act, and natural ambergris is likewise restricted in many countries. These appear because the recipe is old; today sevadars use ethical substitutes (kasturi bhindi / muskroot seeds, plant-based musk accords) without any loss of maryada. The seva lives in the sucham and the bhavna, not in a rare ingredient. Don't let a missing item stop you, a dhoop of sandalwood, loban, khas and ghee made with sucham is complete seva.
 
-## Making dhoop batti, step by step
+## Making and burning dhoop
 
-This is how traditional dhoop is still made by hand; the samagri above slots straight into it. A first batch at home works fine with whatever subset of the list you can gather.
-
-1. **Sucham first.** Ishnaan, clean clothes, covered head, clean workspace. Puratan sevadars keep paath going, Mool Mantar or Japji Sahib, while the hands work. Dhoop for the Guru's darbar is made in the Guru's remembrance.
-2. **Dry everything fully.** Sun-dry the woods, roots, seeds, flowers and barks until they snap rather than bend. Any residual moisture will mould the batti later.
-3. **Grind and sieve.** Powder all the dry samagri, traditionally in an iron (sarbloh) mortar or hand-mill, and sieve to a fine, even powder. Hard woods like chandan and agar go in as fine dust; resins (loban) can stay slightly coarse since they melt in the heat.
-4. **Add the sweet base.** Powder the desi khand into the mix, and grate the khopa, chhuhare and badam in finely. Sugar and dried fruit are what make the smoke rich and slow; the ghee carries the fragrance.
-5. **Bind with warmed ghee.** Gently warm the ghee (never hot) and work it into the powder a little at a time, kneading until the mass holds together like a stiff dough. If it stays crumbly, add a few drops of rose water rather than more ghee, too much ghee makes the batti sputter.
-6. **Finish with fragrance.** Only once the dough is bound, work in the attar, kesar and the other finishing items, heat and long kneading would waste them.
-7. **Shape.** Roll finger-thick sticks (batti), small cones, or leave part of the batch as loose dhoop powder for burning on coals. Loose dhoop is the most puratan form, it is what the dhoop-dani and coals are for.
-8. **Dry in shade.** Lay the battis on a clean cloth in an airy, shaded place for two to four days. Direct sun bleeds out the volatile fragrances you just paid for in kesar and attar.
-9. **Store airtight**, away from moisture. Well-dried dhoop keeps for months and the fragrance deepens as it matures.
-
-**To burn:** for loose dhoop, place a spoonful on live coals in a ਧੂਪਦਾਨੀ (dhoop-dani or loban burner) and carry it gently through the darbar so the fragrance reaches every corner. For a batti, light the tip and put the flame out with a wave of the hand, never with the breath. The same etiquette as with the jot: breath does not touch what is offered in the Guru's hazoori.
+For the full step-by-step process, grinding and sieving, binding with warmed ghee, shaping, drying, see the **[dhoop recipe](/sikhi/dhoop-recipe/)**, it walks through each stage alongside the live ingredient card. One point of etiquette worth keeping here regardless of method: whether loose dhoop in a ਧੂਪਦਾਨੀ or a lit batti, the flame or ember is never put out with the breath, the same courtesy as with the jot, breath does not touch what is offered in the Guru's hazoori.
 
 ## The Jot
 
@@ -225,7 +215,7 @@ None of this requires wealth. A steel bowl for a dhoop-dani, a brass deeva, home
 
 ## Shastar pooja, what is actually revered
 
-Shastar hold a station in Khalsa maryada that outsiders often misread as idol worship. The Khalsa's own texts are explicit about what is revered. Sri Guru Gobind Singh Ji opens **Shastar Naam Mala** by naming weapons as his Pir, because they are forms of Akal Purakh's own power (ਭਗੌਤੀ):
+Shastars hold a station in Khalsa maryada that outsiders often misread as idol worship. The Khalsa's own texts are explicit about what is revered. Sri Guru Gobind Singh Ji opens **Shastar Naam Mala** by naming weapons as his Pir, because they are forms of Akal Purakh's own power (ਭਗੌਤੀ):
 
 > ਅਸ ਕ੍ਰਿਪਾਨ ਖੰਡੋ ਖੜਗ ਤੁਪਕ ਤਬਰ ਅਰੁ ਤੀਰ ॥
 > ਸੈਫ ਸਰੋਹੀ ਸੈਹਥੀ ਯਹੈ ਹਮਾਰੈ ਪੀਰ ॥
