@@ -52,7 +52,7 @@ A catalogue I keep of the women of Sikh itihas. From 1699 every Khalsa woman is 
 - **Gulab Kaur** (c. 1890–1941), Ghadar Party; gave up her passage to America, smuggled weapons and press materials, served prison time for the freedom struggle.
 - **Mata Kishan Kaur Kaonke** (1856–1952), rode at the head of Akali jathas in the Gurdwara Reform Movement; jailed by the British in her sixties.
 
-The pattern across five centuries: the first believer, the builder of langar, the leader of the Panth's longest regency, the general at Khidrana, the strategist behind the Sikh Empire, the transmission and the steel of Sikhi has run through its women. ਧੰਨ ਗੁਰੂ ਕੇ ਸਿੰਘ, ਧੰਨ ਗੁਰੂ ਕੀਆਂ ਸਿੰਘਣੀਆਂ।
+The pattern across five centuries: the first believer, the builder of langar, the leader of the Panth's longest regency, the general at Khidrana, the strategist behind the Sikh Empire, the transmission and the steel of Sikhi have run through its women. ਧੰਨ ਗੁਰੂ ਕੇ ਸਿੰਘ, ਧੰਨ ਗੁਰੂ ਕੀਆਂ ਸਿੰਘਣੀਆਂ।
 
 ---
 

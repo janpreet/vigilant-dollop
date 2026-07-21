@@ -240,7 +240,7 @@ On the tenth day at amrit vela the paath completes with Jaap Sahib, the full Ram
 
 ### And through the rest of the year
 
-Dussehra is the peak, not the whole, the daily home cycle above is the foundation, and the panth's calendar keeps returning to the shastars:
+Dussehra is the peak, not the whole, the daily home cycle above is the foundation, and the Panth's calendar keeps returning to the shastars:
 
 - **Daily at Hazur Sahib and Patna Sahib:** shastar darshan with dhoop and aarta every evening, not once a year.
 - **Hola Mahalla (Anandpur Sahib, spring):** the Khalsa's own festival of shastar vidya, mock battles, gatka, processions led by the Panj Pyare with shastars at the front.

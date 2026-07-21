@@ -67,27 +67,44 @@
           {%- assign cooking_count = cooking_count | plus: 1 -%}
         {%- endif -%}
       {%- endfor -%}
-      {%- capture tag_sizes %}{% for tag in site.tags %}{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}|{% endfor %}{% endcapture -%}
-      {%- assign sorted_tags = tag_sizes | split: '|' | sort | reverse -%}
+      {%- assign tagged_pages = site.pages | where_exp: "p", "p.tags.size > 0" -%}
+      {%- assign all_tagged_items = site.posts | concat: tagged_pages -%}
+      {%- assign all_tags = all_tagged_items | map: "tags" | join: "," | split: "," | uniq | sort -%}
+      {%- capture tag_sizes -%}
+        {%- for tag in all_tags -%}
+          {%- assign tag = tag | strip -%}
+          {%- if tag != "" -%}
+            {%- assign tag_count = all_tagged_items | where_exp: "item", "item.tags contains tag" | size -%}
+            {%- assign sort_key = 10000 | minus: tag_count -%}
+            {{ sort_key }}#{{ tag }}#{{ tag_count }}|
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+      {%- assign sorted_tags = tag_sizes | split: '|' | sort -%}
       {%- assign home_url = "/" | relative_url -%}
 
       <div class="sidebar-browse">
         <p class="eyebrow">Browse</p>
         <div class="feed-scroll">
           <div class="feed-tabs" id="feed" role="group" aria-label="Filter posts">
-            <a class="feed-tab" data-filter="all" href="{{ home_url }}" aria-pressed="false">All <span class="tab-count">{{ site.posts.size }}</span></a>
-            <a class="feed-tab feed-tab-tech" data-filter="tech" href="{{ home_url }}?filter=tech" aria-pressed="false"><span class="feed-tab-dot"></span>Tech <span class="tab-count">{{ tech_count }}</span></a>
-            <a class="feed-tab feed-tab-cooking" data-filter="cooking" href="{{ home_url }}?filter=cooking" aria-pressed="false"><span class="feed-tab-dot"></span>Cooking <span class="tab-count">{{ cooking_count }}</span></a>
+            <a class="feed-tab" data-filter="all" href="{{ home_url }}" aria-pressed="false">all <span class="tab-count">{{ site.posts.size }}</span></a>
+            <a class="feed-tab feed-tab-tech" data-filter="tech" href="{{ home_url }}?filter=tech" aria-pressed="false"><span class="feed-tab-dot"></span>tech <span class="tab-count">{{ tech_count }}</span></a>
+            <a class="feed-tab feed-tab-cooking" data-filter="cooking" href="{{ home_url }}?filter=cooking" aria-pressed="false"><span class="feed-tab-dot"></span>cooking <span class="tab-count">{{ cooking_count }}</span></a>
           </div>
 
           <div class="feed-tags" aria-label="Filter by tag">
             {%- for entry in sorted_tags -%}
-              {%- assign tag_name = entry | split: '#' | last -%}
-              {%- assign tag_count = entry | split: '#' | first | minus: 1000 -%}
+              {%- assign entry_parts = entry | split: '#' -%}
+              {%- assign tag_name = entry_parts[1] -%}
+              {%- assign tag_count = entry_parts[2] -%}
               {%- assign tag_slug = tag_name | slugify -%}
               {%- assign hue = forloop.index0 | modulo: 6 -%}
+              {%- assign is_page_tag = false -%}
+              {%- if page.tags and page.tags contains tag_name -%}
+                {%- assign is_page_tag = true -%}
+              {%- endif -%}
               {%- if tag_name != '' -%}
-              <a class="feed-tab feed-tag" data-tag="{{ tag_slug }}" href="{{ home_url }}?tag={{ tag_slug }}" aria-pressed="false"><span class="feed-tab-dot" style="background-color: var(--tag-hue-{{ hue }})"></span>{{ tag_name }} <span class="tab-count">{{ tag_count }}</span></a>
+              <a class="feed-tab feed-tag{% if is_page_tag %} active page-tag{% endif %}" data-tag="{{ tag_slug }}" href="{{ home_url }}?tag={{ tag_slug }}" aria-pressed="{{ is_page_tag }}"><span class="feed-tab-dot" style="background-color: var(--tag-hue-{{ hue }})"></span>{{ tag_name }} <span class="tab-count">{{ tag_count }}</span></a>
               {%- endif -%}
             {%- endfor -%}
           </div>
@@ -134,8 +151,8 @@
       items.forEach(function (item) {
         var show = tagFilter
           ? (' ' + (item.dataset.tags || '') + ' ').indexOf(' ' + tagFilter + ' ') !== -1
-          : (catFilter === 'all' || item.dataset.cat === catFilter);
-        item.style.display = show ? '' : 'none';
+          : (item.dataset.type !== 'ref' && (catFilter === 'all' || item.dataset.cat === catFilter));
+        item.style.display = show ? 'grid' : 'none';
       });
     }
 

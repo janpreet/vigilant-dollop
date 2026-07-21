@@ -48,6 +48,19 @@ layout: default
         </div>
       </li>
       {%- endfor -%}
+
+      {%- assign tagged_pages = site.pages | where_exp: "p", "p.tags.size > 0" -%}
+      {%- for ref in tagged_pages -%}
+      {%- capture ref_tag_slugs %}{% for t in ref.tags %}{{ t | slugify }} {% endfor %}{% endcapture -%}
+      <li class="post-item" data-type="ref" data-tags="{{ ref_tag_slugs | strip }}">
+        <div class="post-item-body">
+          <a class="post-link" href="{{ ref.url | relative_url }}">{{ ref.title | escape }}</a>
+          {%- if site.show_excerpts and ref.description -%}
+            <p class="post-excerpt">{{ ref.description }}</p>
+          {%- endif -%}
+        </div>
+      </li>
+      {%- endfor -%}
     </ul>
 
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
